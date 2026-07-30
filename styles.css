@@ -438,27 +438,41 @@ h3 {
 .hero-slider-controls {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   margin-top: 24px;
-  padding: 8px;
+  padding: 6px;
   border: 1px solid var(--white-line);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.52);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
 }
 
-.hero-slider-controls > button {
+.hero-edge-control {
   position: relative;
-  width: 36px;
-  height: 36px;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  width: 48px;
+  height: 48px;
   border: 0;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.84);
-  box-shadow: 0 8px 20px rgba(35, 45, 70, 0.1);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 16px 40px rgba(35, 45, 70, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   cursor: pointer;
+  transform: translateY(-50%);
 }
 
-.hero-slider-controls > button::before {
+.hero-edge-prev {
+  left: clamp(18px, 3vw, 44px);
+}
+
+.hero-edge-next {
+  right: clamp(18px, 3vw, 44px);
+}
+
+.hero-edge-control::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -469,32 +483,35 @@ h3 {
   border-bottom: 2px solid #9a332b;
 }
 
-[data-hero-prev]::before {
+.hero-edge-prev::before {
   transform: translateX(2px) rotate(45deg);
 }
 
-[data-hero-next]::before {
+.hero-edge-next::before {
   transform: translateX(-2px) rotate(225deg);
 }
 
 .hero-dots {
   display: inline-flex;
-  gap: 7px;
+  gap: 6px;
 }
 
 .hero-dots button {
-  width: 9px;
-  height: 9px;
-  padding: 0;
+  min-width: 0;
+  height: 34px;
+  padding: 0 14px;
   border: 0;
   border-radius: 999px;
   background: rgba(154, 51, 43, 0.24);
+  color: rgba(22, 24, 29, 0.6);
   cursor: pointer;
-  transition: width 160ms ease, background 160ms ease;
+  font-size: 12px;
+  font-weight: 850;
+  transition: color 160ms ease, background 160ms ease;
 }
 
 .hero-dots button.is-active {
-  width: 24px;
+  color: #fff;
   background: linear-gradient(135deg, #c94234 0%, #76bd72 100%);
 }
 
@@ -877,7 +894,7 @@ h3 {
 }
 
 .service-panel h3 {
-  font-size: clamp(24px, 2.6vw, 36px);
+  font-size: clamp(21px, 2vw, 28px);
 }
 
 .service-panel p {
@@ -1158,6 +1175,7 @@ h3 {
 }
 
 .green-hero,
+.green-image-section,
 .green-model,
 .green-products {
   background:
@@ -1170,19 +1188,26 @@ h3 {
 
 .green-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, .42fr);
-  gap: 26px;
-  align-items: end;
+  grid-template-columns: minmax(0, .96fr) minmax(280px, .42fr);
+  gap: clamp(18px, 3vw, 34px);
+  align-items: center;
   margin-top: 118px;
 }
 
 .green-hero h1 {
-  max-width: 940px;
-  font-size: clamp(42px, 6vw, 82px);
+  max-width: 820px;
+  font-size: clamp(34px, 4.8vw, 66px);
+  line-height: .98;
+}
+
+.green-hero .hero-lead {
+  max-width: 760px;
+  font-size: clamp(16px, 1.45vw, 20px);
+  line-height: 1.72;
 }
 
 .green-hero-card {
-  min-height: 360px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1205,7 +1230,8 @@ h3 {
 }
 
 .green-hero-card strong {
-  font-size: clamp(28px, 3vw, 44px);
+  font-size: clamp(24px, 2.3vw, 34px);
+  line-height: 1.08;
 }
 
 .green-hero-card p {
@@ -1222,6 +1248,37 @@ h3 {
   border: 1px solid rgba(31, 143, 98, 0.16);
   background: rgba(255, 255, 255, 0.66);
   color: #116747;
+}
+
+.green-image-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .62fr);
+  gap: clamp(18px, 3vw, 34px);
+  align-items: center;
+}
+
+.green-image-section img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 34px;
+  object-fit: cover;
+  box-shadow: 0 28px 72px rgba(35, 78, 62, 0.14);
+}
+
+.green-image-copy {
+  display: grid;
+  gap: 16px;
+}
+
+.green-image-copy h2 {
+  font-size: clamp(26px, 3.2vw, 44px);
+  line-height: 1.06;
+}
+
+.green-image-copy p:last-child {
+  margin: 0;
+  color: var(--soft-ink);
+  line-height: 1.78;
 }
 
 .green-principles {
@@ -1241,6 +1298,15 @@ h3 {
 
 .green-principles article {
   padding: clamp(24px, 3vw, 34px);
+}
+
+.green-principles h3 {
+  font-size: clamp(20px, 2vw, 26px);
+}
+
+.green-principles p {
+  color: var(--soft-ink);
+  line-height: 1.68;
 }
 
 .green-icon {
@@ -1276,12 +1342,13 @@ h3 {
 
 .green-product-card h3 {
   margin: 10px 0 12px;
-  font-size: clamp(22px, 2.3vw, 32px);
+  font-size: clamp(20px, 2vw, 27px);
 }
 
 .green-product-card p {
   margin: 0;
   color: var(--soft-ink);
+  line-height: 1.68;
 }
 
 .green-product-card.featured {
@@ -1675,7 +1742,8 @@ h3 {
 
   .global-feature,
   .global-showcase,
-  .green-hero {
+  .green-hero,
+  .green-image-section {
     grid-template-columns: 1fr;
   }
 
@@ -1792,7 +1860,7 @@ h3 {
   }
 
   .green-hero-card {
-    min-height: 260px;
+    min-height: 220px;
   }
 
   .timeline-list article {
@@ -1814,7 +1882,23 @@ h3 {
 
   .hero-slider-controls {
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
+  }
+
+  .hero-edge-control {
+    top: auto;
+    bottom: 26px;
+    width: 42px;
+    height: 42px;
+    transform: none;
+  }
+
+  .hero-edge-prev {
+    left: 22px;
+  }
+
+  .hero-edge-next {
+    right: 22px;
   }
 
   .button {
