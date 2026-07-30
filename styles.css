@@ -677,12 +677,42 @@ h3 {
 }
 
 .pillars article {
-  min-height: 286px;
-  padding: clamp(24px, 3vw, 36px);
+  min-height: 0;
+  padding: 12px 12px clamp(24px, 3vw, 32px);
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 16px;
+  justify-content: start;
+  overflow: hidden;
+}
+
+.pillar-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 24px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 16px 34px rgba(41, 36, 33, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.pillars article h3,
+.pillars article p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.pillars article h3 {
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.pillars article p {
+  margin-top: -4px;
+  margin-bottom: 0;
+  font-size: 15px;
 }
 
 .card-top {
@@ -2050,6 +2080,10 @@ h3 {
     width: min(100% - 28px, 1240px);
   }
 
+  .pillar-image {
+    aspect-ratio: 18 / 10;
+  }
+
   .section-heading {
     display: grid;
     align-items: start;
@@ -2354,9 +2388,18 @@ h3 {
     width: 100%;
   }
 
-  .pillars article,
   .process article {
     min-height: 210px;
+  }
+
+  .pillars article {
+    min-height: 0;
+    padding: 10px 10px 24px;
+    border-radius: 28px;
+  }
+
+  .pillar-image {
+    border-radius: 20px;
   }
 
   .process h3 {
