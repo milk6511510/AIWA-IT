@@ -1090,43 +1090,65 @@ h3 {
 }
 
 .global-hero-image {
-  display: grid;
-  grid-template-columns: minmax(0, .78fr) minmax(420px, .86fr);
-  gap: clamp(30px, 5vw, 78px);
+  position: relative;
+  width: min(1480px, calc(100% - clamp(28px, 5vw, 72px)));
+  min-height: clamp(620px, 78vh, 820px);
+  display: flex;
   align-items: center;
+  margin: 0 auto clamp(34px, 5vw, 68px);
+  padding: clamp(120px, 14vw, 180px) clamp(24px, 7vw, 96px) clamp(58px, 7vw, 100px);
   overflow: hidden;
+  border-radius: 0 0 clamp(34px, 6vw, 72px) clamp(34px, 6vw, 72px);
+  background: #f7f9fb;
 }
 
 .global-hero-copy {
-  max-width: 720px;
+  position: relative;
+  z-index: 1;
+  width: min(700px, 100%);
+  padding: clamp(34px, 5vw, 62px);
+  border: 1px solid var(--white-line);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.34));
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
 }
 
 .global-hero-image h1 {
-  font-size: clamp(38px, 5.2vw, 72px);
+  font-size: clamp(42px, 6vw, 82px);
   line-height: 1;
 }
 
 .global-hero-media {
-  padding: clamp(12px, 2vw, 22px);
-  border-radius: 42px;
-  background: rgba(255, 255, 255, 0.58);
-  box-shadow: 0 30px 82px rgba(72, 80, 96, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
 .global-hero-media img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: 32px;
+  height: 100%;
   object-fit: cover;
-  object-position: 58% center;
+  object-position: 62% center;
+  transform: scale(1.03);
+}
+
+.global-hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.78) 38%, rgba(255, 255, 255, 0.18) 74%),
+    linear-gradient(0deg, rgba(245, 247, 251, 0.9) 0%, rgba(245, 247, 251, 0.28) 34%, rgba(255, 255, 255, 0.05) 100%);
 }
 
 .premium-country-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 22px);
-  margin-top: clamp(32px, 5vw, 58px);
-  padding: clamp(18px, 3vw, 30px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 34px);
+  margin-top: clamp(38px, 5vw, 64px);
+  padding: clamp(26px, 4vw, 46px);
   border: 1px solid var(--white-line);
   border-radius: 34px;
   background:
@@ -1138,14 +1160,14 @@ h3 {
 .country-card {
   position: relative;
   display: grid;
-  gap: 14px;
+  gap: 18px;
   justify-items: center;
   align-content: center;
-  min-height: 168px;
-  padding: 22px 16px;
+  min-height: 220px;
+  padding: 32px 22px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.68);
-  border-radius: 28px;
+  border-radius: 32px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.36));
   color: var(--ink);
@@ -1205,7 +1227,7 @@ h3 {
 .country-card img {
   position: relative;
   z-index: 1;
-  width: 76px;
+  width: 98px;
   aspect-ratio: 1 / 1;
   border-radius: 999px;
   object-fit: cover;
@@ -1219,7 +1241,7 @@ h3 {
   max-width: 100%;
   overflow-wrap: anywhere;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 850;
 }
 
@@ -1911,7 +1933,6 @@ h3 {
   .history-hero,
   .timeline-section,
   .credo-section,
-  .global-hero,
   .global-feature,
   .global-directory,
   .green-hero,
@@ -1938,14 +1959,25 @@ h3 {
 
   .global-feature,
   .global-showcase,
-  .global-hero-image,
   .green-hero,
   .green-image-section {
     grid-template-columns: 1fr;
   }
 
-  .global-hero-media {
-    max-width: 780px;
+  .global-hero-image {
+    width: min(100% - 28px, 1240px);
+    min-height: auto;
+    display: block;
+    padding: 118px clamp(18px, 5vw, 42px) clamp(36px, 7vw, 72px);
+    border-radius: 34px;
+  }
+
+  .global-hero-copy {
+    width: 100%;
+  }
+
+  .global-hero-media img {
+    object-position: 68% center;
   }
 
   .green-hero {
@@ -2028,6 +2060,34 @@ h3 {
     border-radius: 30px;
     max-width: 100%;
     margin-top: 10px;
+  }
+
+  .global-hero-image {
+    width: min(100% - 24px, 1240px);
+    padding: 108px 18px 34px;
+  }
+
+  .global-hero-copy {
+    padding: 26px;
+    border-radius: 30px;
+  }
+
+  .global-hero-image h1 {
+    font-size: clamp(34px, 11vw, 50px);
+  }
+
+  .premium-country-grid {
+    gap: 18px;
+    padding: 18px;
+  }
+
+  .country-card {
+    min-height: 178px;
+    padding: 28px 18px;
+  }
+
+  .country-card img {
+    width: 88px;
   }
 
   .hero-status {
