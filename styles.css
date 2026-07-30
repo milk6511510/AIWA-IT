@@ -889,24 +889,42 @@ h3 {
 
 .process {
   display: grid;
-  grid-template-columns: repeat(5, minmax(150px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .process article {
-  min-height: 246px;
-  padding: 25px;
-  border-radius: var(--radius-md);
+  min-height: 0;
+  padding: 12px 12px clamp(22px, 2.4vw, 28px);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: hidden;
 }
 
 .process article:last-child {
-  background:
-    var(--warm-gradient-soft),
-    rgba(255, 255, 255, 0.74);
+  background: var(--surface);
 }
 
 .process h3 {
-  margin-top: 58px;
+  margin: 2px 10px 0;
+}
+
+.process p {
+  margin: -3px 10px 0;
+  font-size: 14px;
+}
+
+.process-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 22px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 16px 34px rgba(41, 36, 33, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
 }
 
 .services-section {
@@ -2469,10 +2487,6 @@ h3 {
     width: 100%;
   }
 
-  .process article {
-    min-height: 210px;
-  }
-
   .pillars article {
     min-height: 0;
     padding: 10px 10px 24px;
@@ -2483,8 +2497,14 @@ h3 {
     border-radius: 20px;
   }
 
-  .process h3 {
-    margin-top: 38px;
+  .process article {
+    min-height: 0;
+    padding: 10px 10px 24px;
+    border-radius: 28px;
+  }
+
+  .process-image {
+    border-radius: 20px;
   }
 
   .site-footer {
