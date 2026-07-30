@@ -1143,6 +1143,12 @@ h3 {
     linear-gradient(0deg, rgba(245, 247, 251, 0.9) 0%, rgba(245, 247, 251, 0.28) 34%, rgba(255, 255, 255, 0.05) 100%);
 }
 
+@media (min-width: 681px) {
+  .global-hero-image.is-mobile-layout {
+    display: none;
+  }
+}
+
 .premium-country-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1227,7 +1233,7 @@ h3 {
 .country-card img {
   position: relative;
   z-index: 1;
-  width: 98px;
+  width: 54px;
   aspect-ratio: 1 / 1;
   border-radius: 999px;
   object-fit: cover;
@@ -2064,16 +2070,53 @@ h3 {
 
   .global-hero-image {
     width: min(100% - 24px, 1240px);
-    padding: 108px 18px 34px;
+    min-height: 0;
+    display: grid;
+    gap: 14px;
+    padding: 102px 0 0;
+    overflow: visible;
+    background: transparent;
+    border-radius: 0;
   }
 
   .global-hero-copy {
-    padding: 26px;
+    width: calc(100% - 24px);
+    margin: 0 auto;
+    padding: 24px;
     border-radius: 30px;
+    background: rgba(255, 255, 255, 0.78);
   }
 
   .global-hero-image h1 {
-    font-size: clamp(34px, 11vw, 50px);
+    font-size: clamp(30px, 9vw, 42px);
+    line-height: 1.04;
+  }
+
+  .global-hero-image .hero-lead {
+    font-size: 15px;
+    line-height: 1.68;
+  }
+
+  .global-hero-media {
+    position: relative;
+    inset: auto;
+    order: -1;
+    width: calc(100% - 24px);
+    margin: 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .global-hero-media img {
+    height: auto;
+    aspect-ratio: 16 / 11;
+    object-position: 62% center;
+    transform: none;
+  }
+
+  .global-hero-image::after {
+    display: none;
   }
 
   .premium-country-grid {
@@ -2082,12 +2125,12 @@ h3 {
   }
 
   .country-card {
-    min-height: 178px;
-    padding: 28px 18px;
+    min-height: 150px;
+    padding: 26px 18px;
   }
 
   .country-card img {
-    width: 88px;
+    width: 46px;
   }
 
   .hero-status {
@@ -2152,7 +2195,8 @@ h3 {
   }
 
   .green-hero h1 {
-    font-size: clamp(32px, 11vw, 48px);
+    font-size: clamp(30px, 9vw, 42px);
+    line-height: 1.04;
   }
 
   .green-hero .hero-lead,
@@ -2166,6 +2210,7 @@ h3 {
   .green-hero-visual {
     padding: 10px;
     border-radius: 30px;
+    max-width: none;
   }
 
   .green-hero-visual img {
