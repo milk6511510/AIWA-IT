@@ -36,9 +36,14 @@
     <nav class="site-nav" id="site-nav" data-nav>
       <a href="#role">Our Role</a>
       <a href="#story">Brand Story</a>
-      <a href="#model">Licensing Model</a>
-      <a href="#quality">Quality Governance</a>
-      <a href="#oem">OEM/ODM</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-trigger">Services</button>
+        <div class="nav-dropdown-menu">
+          <a href="#model">Licensing Model</a>
+          <a href="#quality">Quality Governance</a>
+          <a href="#oem">OEM/ODM</a>
+        </div>
+      </div>
       <a href="#products">Products</a>
       <a href="global.html">Global</a>
       <a href="#news">News</a>
@@ -341,14 +346,20 @@
   </main>
 
   <footer class="site-footer">
-    <div>
+    <div class="footer-brand">
       <strong>AIWA Electronics International Co., Ltd.</strong>
       <span>Global Licensing & Market Operations Headquarters</span>
     </div>
-    <address>
-      <span>4F., No. 24, Ln. 141, Sec. 3, Beishen Rd., Shenkeng Dist., New Taipei City 222, Taiwan (R.O.C.)</span>
-      <a href="tel:+886226628038">T + 886 2 2662 8038</a>
-      <a href="mailto:globalsupport@int-aiwa.com">E globalsupport@int-aiwa.com</a>
+    <address class="footer-contact">
+      <div>
+        <span>Address</span>
+        <strong>4F., No. 24, Ln. 141, Sec. 3, Beishen Rd., Shenkeng Dist., New Taipei City 222, Taiwan (R.O.C.)</strong>
+      </div>
+      <div>
+        <span>Contact</span>
+        <a href="tel:+886226628038">+ 886 2 2662 8038</a>
+        <a href="mailto:globalsupport@int-aiwa.com">globalsupport@int-aiwa.com</a>
+      </div>
     </address>
   </footer>
 

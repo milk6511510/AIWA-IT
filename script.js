@@ -14,7 +14,7 @@ menuButton.addEventListener("click", () => {
 });
 
 nav.addEventListener("click", (event) => {
-  if (event.target.tagName !== "A") return;
+  if (!event.target.closest("a")) return;
   nav.classList.remove("is-open");
   document.body.classList.remove("menu-open");
   menuButton.setAttribute("aria-expanded", "false");
