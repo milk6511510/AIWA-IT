@@ -1121,92 +1121,91 @@ h3 {
   object-position: 58% center;
 }
 
-.global-showcase {
+.premium-country-grid {
   display: grid;
-  grid-template-columns: minmax(280px, .42fr) minmax(0, 1fr);
-  gap: clamp(20px, 3vw, 34px);
-  align-items: start;
-  margin-top: 32px;
-}
-
-.market-spotlight {
-  display: grid;
-  grid-template-columns: minmax(120px, .34fr) minmax(0, 1fr);
-  gap: 24px;
-  align-items: center;
-  min-height: 320px;
-  padding: clamp(24px, 3vw, 36px);
-  border-radius: 34px;
-  color: #fff;
-  background:
-    radial-gradient(circle at 88% 16%, rgba(255, 255, 255, 0.34), transparent 28%),
-    linear-gradient(135deg, #ce2d32 0%, #ef7441 100%);
-  box-shadow: 0 28px 70px rgba(141, 45, 38, 0.18);
-}
-
-.market-spotlight .eyebrow,
-.market-spotlight p {
-  color: rgba(255, 255, 255, 0.82);
-}
-
-.market-spotlight h3 {
-  margin-bottom: 14px;
-  color: #fff;
-  font-size: clamp(30px, 4vw, 52px);
-}
-
-.market-flag-frame {
-  padding: 14px;
-  border-radius: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
-}
-
-.market-flag-frame img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 24px;
-  object-fit: cover;
-  background: #fff;
-}
-
-.country-list {
-  display: grid;
-  gap: 10px;
-  max-height: 680px;
-  padding: 14px;
-  overflow-y: auto;
-  overscroll-behavior: contain;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+  margin-top: clamp(32px, 5vw, 58px);
+  padding: clamp(18px, 3vw, 30px);
   border: 1px solid var(--white-line);
   border-radius: 34px;
-  background: rgba(255, 255, 255, 0.66);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.86), transparent 30%),
+    rgba(255, 255, 255, 0.58);
   box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.92);
 }
 
 .country-card {
+  position: relative;
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
   gap: 14px;
-  align-items: center;
-  padding: 12px;
-  border: 1px solid transparent;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.54);
+  justify-items: center;
+  align-content: center;
+  min-height: 168px;
+  padding: 22px 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.36));
   color: var(--ink);
   cursor: pointer;
-  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(18px) saturate(155%);
+  -webkit-backdrop-filter: blur(18px) saturate(155%);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.country-card::before {
+  content: "";
+  position: absolute;
+  inset: -40% auto auto -30%;
+  width: 88%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(235, 162, 96, 0.22) 48%, transparent 70%);
+  opacity: 0;
+  transform: scale(.72);
+  transition: opacity 180ms ease, transform 220ms ease;
+}
+
+.country-card::after {
+  content: "Open Market";
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  color: rgba(163, 59, 49, 0.72);
+  font-size: 11px;
+  font-weight: 900;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 160ms ease, transform 160ms ease;
 }
 
 .country-card:hover,
 .country-card.is-active {
-  transform: translateX(4px);
-  border-color: rgba(213, 61, 46, 0.18);
-  background: #fff;
-  box-shadow: 0 14px 34px rgba(132, 47, 41, 0.1);
+  transform: translateY(-4px);
+  border-color: rgba(213, 61, 46, 0.2);
+  box-shadow: 0 22px 54px rgba(132, 47, 41, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.country-card:hover::before,
+.country-card.is-active::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.country-card:hover::after,
+.country-card.is-active::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .country-card img {
-  width: 48px;
+  position: relative;
+  z-index: 1;
+  width: 76px;
   aspect-ratio: 1 / 1;
   border-radius: 999px;
   object-fit: cover;
@@ -1215,9 +1214,11 @@ h3 {
 }
 
 .country-card span {
+  position: relative;
+  z-index: 1;
   max-width: 100%;
   overflow-wrap: anywhere;
-  text-align: left;
+  text-align: center;
   font-size: 14px;
   font-weight: 850;
 }
@@ -1257,6 +1258,46 @@ h3 {
 
 .green-hero-copy {
   max-width: 720px;
+}
+
+.green-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  padding: 10px 16px 10px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.green-brand-lockup img {
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.green-brand-lockup div {
+  display: grid;
+  gap: 3px;
+}
+
+.green-brand-lockup strong {
+  color: #1f6f45;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: .18em;
+}
+
+.green-brand-lockup span {
+  color: rgba(31, 111, 69, 0.68);
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .green-hero h1 {
@@ -1894,7 +1935,8 @@ h3 {
   .green-product-grid,
   .process,
   .news-list,
-  .country-grid {
+  .country-grid,
+  .premium-country-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -2008,6 +2050,7 @@ h3 {
   .category-matrix,
   .news-list,
   .country-grid,
+  .premium-country-grid,
   .service-overview,
   .service-flow,
   .green-principles,
@@ -2029,29 +2072,8 @@ h3 {
     min-height: 0;
   }
 
-  .global-showcase {
-    gap: 14px;
-  }
-
-  .market-spotlight {
-    grid-template-columns: 1fr;
-    min-height: 0;
-  }
-
-  .market-flag-frame {
-    width: min(190px, 100%);
-  }
-
-  .flag-rail {
-    padding: 20px;
-  }
-
   .country-card {
-    flex-basis: 108px;
-  }
-
-  .country-list {
-    max-height: 440px;
+    min-height: 142px;
   }
 
   .green-hero-card {

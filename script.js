@@ -230,37 +230,12 @@ const countries = [
 const countryGrid = document.querySelector("[data-country-grid]");
 
 if (countryGrid) {
-  const marketName = document.querySelector("[data-market-name]");
-  const marketType = document.querySelector("[data-market-type]");
-  const marketCopy = document.querySelector("[data-market-copy]");
-  const marketImage = document.querySelector("[data-market-image]");
-  const marketLink = document.querySelector("[data-market-link]");
-
-  function selectCountry(country, button) {
-    const [name, id, image, type] = country;
-    countryGrid.querySelectorAll(".country-card").forEach((item) => item.classList.remove("is-active"));
-    button.classList.add("is-active");
-    button.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    marketName.textContent = name;
-    marketType.textContent = type;
-    marketImage.src = `https://www.int-aiwa.com/upload/${image}`;
-    marketImage.alt = name;
-    marketLink.href = `https://www.int-aiwa.com/global_deatil.php?id=${id}`;
-    marketCopy.textContent = `${name} is presented as part of the AIWA international network, connecting visitors to market-specific brand information and regional partner context.`;
-  }
-
   countryGrid.innerHTML = countries.map(([name, id, image], index) => `
-    <button class="country-card${index === 1 ? " is-active" : ""}" type="button" data-country-index="${index}">
+    <a class="country-card${index === 1 ? " is-active" : ""}" href="https://www.int-aiwa.com/global_deatil.php?id=${id}" target="_blank" rel="noreferrer" data-country-index="${index}">
       <img src="https://www.int-aiwa.com/upload/${image}" alt="${name}">
       <span>${name}</span>
-    </button>
+    </a>
   `).join("");
-
-  countryGrid.querySelectorAll(".country-card").forEach((button) => {
-    button.addEventListener("click", () => {
-      selectCountry(countries[Number(button.dataset.countryIndex)], button);
-    });
-  });
 }
 
 if ("IntersectionObserver" in window) {
