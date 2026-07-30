@@ -1,6 +1,7 @@
 const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector("[data-menu-button]");
 const nav = document.querySelector("[data-nav]");
+const dropdowns = document.querySelectorAll(".nav-dropdown");
 
 function updateHeader() {
   header.classList.toggle("is-scrolled", window.scrollY > 10);
@@ -13,11 +14,40 @@ menuButton.addEventListener("click", () => {
   menuButton.setAttribute("aria-expanded", String(isOpen));
 });
 
+dropdowns.forEach((dropdown) => {
+  const trigger = dropdown.querySelector(".nav-dropdown-trigger");
+
+  trigger.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const willOpen = !dropdown.classList.contains("is-open");
+
+    dropdowns.forEach((item) => {
+      item.classList.remove("is-open");
+      item.querySelector(".nav-dropdown-trigger").setAttribute("aria-expanded", "false");
+    });
+
+    dropdown.classList.toggle("is-open", willOpen);
+    trigger.setAttribute("aria-expanded", String(willOpen));
+  });
+});
+
 nav.addEventListener("click", (event) => {
   if (!event.target.closest("a")) return;
+  dropdowns.forEach((dropdown) => {
+    dropdown.classList.remove("is-open");
+    dropdown.querySelector(".nav-dropdown-trigger").setAttribute("aria-expanded", "false");
+  });
   nav.classList.remove("is-open");
   document.body.classList.remove("menu-open");
   menuButton.setAttribute("aria-expanded", "false");
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest(".nav-dropdown")) return;
+  dropdowns.forEach((dropdown) => {
+    dropdown.classList.remove("is-open");
+    dropdown.querySelector(".nav-dropdown-trigger").setAttribute("aria-expanded", "false");
+  });
 });
 
 window.addEventListener("scroll", updateHeader, { passive: true });
