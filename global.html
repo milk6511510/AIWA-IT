@@ -35,7 +35,7 @@
     <nav class="site-nav" id="site-nav" data-nav>
       <a href="index.html#story">Brand Story</a>
       <div class="nav-dropdown">
-        <button type="button" class="nav-dropdown-trigger" aria-expanded="false">Our Services</button>
+        <button type="button" class="nav-dropdown-trigger" aria-expanded="false">Company Services</button>
         <div class="nav-dropdown-menu">
           <a href="index.html#model">Licensing Model</a>
           <a href="index.html#quality">Quality Governance</a>
@@ -43,6 +43,7 @@
         </div>
       </div>
       <a href="index.html#products">Products</a>
+      <a href="green.html">Green AIWA</a>
       <a href="history.html">History</a>
       <a href="global.html">Global</a>
       <a class="nav-cta" href="index.html#inquiry">Partner Inquiry</a>
@@ -56,40 +57,30 @@
       <p class="hero-lead">Explore AIWA regional headquarters and country pages from the international network. Each card links back to the corresponding AIWA international country profile.</p>
     </section>
 
-    <section class="global-feature section-shell reveal-on-scroll">
-      <div class="accent-card global-feature-card">
-        <i class="icon-badge" data-icon="globe"></i>
-        <strong>International reach</strong>
-        <span>AIWA's global network spans regional headquarters, local distributors, and country-level business partners.</span>
-      </div>
-      <div class="global-region-grid">
-        <a class="region-card" href="https://www.int-aiwa.com/global_deatil.php?id=174" target="_blank" rel="noreferrer">
-          <img src="https://www.int-aiwa.com/upload/2021_07_05_0933371.png" alt="EU Regional HQ">
-          <span>EU Regional HQ</span>
-        </a>
-        <a class="region-card" href="https://www.int-aiwa.com/global_deatil.php?id=27" target="_blank" rel="noreferrer">
-          <img src="https://www.int-aiwa.com/upload/2020_06_19_1530171.png" alt="India Regional HQ">
-          <span>India Regional HQ</span>
-        </a>
-        <a class="region-card" href="https://www.int-aiwa.com/global_deatil.php?id=62" target="_blank" rel="noreferrer">
-          <img src="https://www.int-aiwa.com/upload/2020_06_19_1614471.png" alt="UAE Regional HQ">
-          <span>UAE Regional HQ</span>
-        </a>
-        <a class="region-card" href="https://www.int-aiwa.com/global_deatil.php?id=57" target="_blank" rel="noreferrer">
-          <img src="https://www.int-aiwa.com/upload/2020_06_19_1613431.png" alt="Taiwan">
-          <span>Taiwan</span>
-        </a>
-      </div>
-    </section>
-
     <section class="global-directory section-shell reveal-on-scroll">
       <div class="section-heading product-heading">
         <div>
           <p class="eyebrow">Country Links</p>
-          <h2>Connect to AIWA pages by market.</h2>
+          <h2>Select a market from the global flag gallery.</h2>
         </div>
+        <p>Click a flag to enlarge the selected market and open the related AIWA international country profile.</p>
       </div>
-      <div class="country-grid" data-country-grid></div>
+
+      <div class="global-showcase">
+        <article class="market-spotlight" data-market-spotlight>
+          <div class="market-flag-frame">
+            <img src="https://www.int-aiwa.com/upload/2021_07_05_0933371.png" alt="EU Regional HQ" data-market-image>
+          </div>
+          <div>
+            <p class="eyebrow" data-market-type>Regional Headquarters</p>
+            <h3 data-market-name>EU Regional HQ</h3>
+            <p data-market-copy>AIWA's regional network supports international market development through headquarters, distributors, and country-level business partners.</p>
+            <a class="button primary" href="https://www.int-aiwa.com/global_deatil.php?id=174" target="_blank" rel="noreferrer" data-market-link>Open country page</a>
+          </div>
+        </article>
+
+        <div class="flag-rail" data-country-grid aria-label="AIWA country flag selector"></div>
+      </div>
     </section>
   </main>
 

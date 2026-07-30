@@ -50,6 +50,29 @@ document.addEventListener("click", (event) => {
   });
 });
 
+const heroSlides = document.querySelectorAll(".hero-slide");
+const heroDots = document.querySelectorAll("[data-hero-dots] button");
+const heroPrev = document.querySelector("[data-hero-prev]");
+const heroNext = document.querySelector("[data-hero-next]");
+let activeHeroSlide = 0;
+
+function showHeroSlide(index) {
+  if (!heroSlides.length) return;
+  activeHeroSlide = (index + heroSlides.length) % heroSlides.length;
+  heroSlides.forEach((slide, slideIndex) => {
+    slide.classList.toggle("is-active", slideIndex === activeHeroSlide);
+  });
+  heroDots.forEach((dot, dotIndex) => {
+    dot.classList.toggle("is-active", dotIndex === activeHeroSlide);
+  });
+}
+
+heroPrev?.addEventListener("click", () => showHeroSlide(activeHeroSlide - 1));
+heroNext?.addEventListener("click", () => showHeroSlide(activeHeroSlide + 1));
+heroDots.forEach((dot, dotIndex) => {
+  dot.addEventListener("click", () => showHeroSlide(dotIndex));
+});
+
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
 
@@ -173,44 +196,69 @@ if (productGrid && seriesRow) {
 }
 
 const countries = [
-  ["Japan Founding Legal HQ", "30", "2020_06_19_1531401.png"],
-  ["EU Regional HQ", "174", "2021_07_05_0933371.png"],
-  ["India Regional HQ", "27", "2020_06_19_1530171.png"],
-  ["UAE Regional HQ", "62", "2020_06_19_1614471.png"],
-  ["Thailand Regional HQ", "4", "2020_06_19_1554131.png"],
-  ["Africa HQ", "179", "2023_08_08_0937561.png"],
-  ["Australia Regional HQ", "109", "2020_06_19_1619251.png"],
-  ["China Regional HQ", "8", "2020_06_19_1519161.png"],
-  ["Austria", "74", "2020_06_19_1513011.png"],
-  ["Belgium", "9", "2020_06_19_1514221.png"],
-  ["Cambodia", "22", "2020_06_19_1527181.png"],
-  ["Denmark", "77", "2020_06_19_1527431.png"],
-  ["France", "80", "2020_06_19_1528171.png"],
-  ["Germany", "176", "2022_04_26_1529391.png"],
-  ["Greece", "11", "2020_06_19_1529401.png"],
-  ["Hong Kong", "110", "2020_06_22_0849171.png"],
-  ["Iran", "28", "2020_06_19_1531151.png"],
-  ["Italy", "85", "2020_06_19_1530521.png"],
-  ["Korea", "34", "2020_06_19_1531511.png"],
-  ["Malaysia", "5", "2020_06_19_1538221.png"],
-  ["Netherlands", "95", "2020_06_19_1541161.png"],
-  ["Philippines", "7", "2020_06_19_1543241.png"],
-  ["Singapore", "1", "2020_06_19_1554021.png"],
-  ["Taiwan", "57", "2020_06_19_1613431.png"],
-  ["United Kingdom", "106", "2020_06_19_1614331.png"],
-  ["USA", "14", "2020_06_19_1614021.png"],
-  ["Vietnam", "65", "2020_06_19_1615431.png"]
+  ["Japan Founding Legal HQ", "30", "2020_06_19_1531401.png", "Founding Market"],
+  ["EU Regional HQ", "174", "2021_07_05_0933371.png", "Regional Headquarters"],
+  ["India Regional HQ", "27", "2020_06_19_1530171.png", "Regional Headquarters"],
+  ["UAE Regional HQ", "62", "2020_06_19_1614471.png", "Regional Headquarters"],
+  ["Thailand Regional HQ", "4", "2020_06_19_1554131.png", "Regional Headquarters"],
+  ["Africa HQ", "179", "2023_08_08_0937561.png", "Regional Headquarters"],
+  ["Australia Regional HQ", "109", "2020_06_19_1619251.png", "Regional Headquarters"],
+  ["China Regional HQ", "8", "2020_06_19_1519161.png", "Regional Headquarters"],
+  ["Austria", "74", "2020_06_19_1513011.png", "Country Link"],
+  ["Belgium", "9", "2020_06_19_1514221.png", "Country Link"],
+  ["Cambodia", "22", "2020_06_19_1527181.png", "Country Link"],
+  ["Denmark", "77", "2020_06_19_1527431.png", "Country Link"],
+  ["France", "80", "2020_06_19_1528171.png", "Country Link"],
+  ["Germany", "176", "2022_04_26_1529391.png", "Country Link"],
+  ["Greece", "11", "2020_06_19_1529401.png", "Country Link"],
+  ["Hong Kong", "110", "2020_06_22_0849171.png", "Country Link"],
+  ["Iran", "28", "2020_06_19_1531151.png", "Country Link"],
+  ["Italy", "85", "2020_06_19_1530521.png", "Country Link"],
+  ["Korea", "34", "2020_06_19_1531511.png", "Country Link"],
+  ["Malaysia", "5", "2020_06_19_1538221.png", "Country Link"],
+  ["Netherlands", "95", "2020_06_19_1541161.png", "Country Link"],
+  ["Philippines", "7", "2020_06_19_1543241.png", "Country Link"],
+  ["Singapore", "1", "2020_06_19_1554021.png", "Country Link"],
+  ["Taiwan", "57", "2020_06_19_1613431.png", "Headquarters Market"],
+  ["United Kingdom", "106", "2020_06_19_1614331.png", "Country Link"],
+  ["USA", "14", "2020_06_19_1614021.png", "Country Link"],
+  ["Vietnam", "65", "2020_06_19_1615431.png", "Country Link"]
 ];
 
 const countryGrid = document.querySelector("[data-country-grid]");
 
 if (countryGrid) {
-  countryGrid.innerHTML = countries.map(([name, id, image]) => `
-    <a class="country-card" href="https://www.int-aiwa.com/global_deatil.php?id=${id}" target="_blank" rel="noreferrer">
+  const marketName = document.querySelector("[data-market-name]");
+  const marketType = document.querySelector("[data-market-type]");
+  const marketCopy = document.querySelector("[data-market-copy]");
+  const marketImage = document.querySelector("[data-market-image]");
+  const marketLink = document.querySelector("[data-market-link]");
+
+  function selectCountry(country, button) {
+    const [name, id, image, type] = country;
+    countryGrid.querySelectorAll(".country-card").forEach((item) => item.classList.remove("is-active"));
+    button.classList.add("is-active");
+    button.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    marketName.textContent = name;
+    marketType.textContent = type;
+    marketImage.src = `https://www.int-aiwa.com/upload/${image}`;
+    marketImage.alt = name;
+    marketLink.href = `https://www.int-aiwa.com/global_deatil.php?id=${id}`;
+    marketCopy.textContent = `${name} is presented as part of the AIWA international network, connecting visitors to market-specific brand information and regional partner context.`;
+  }
+
+  countryGrid.innerHTML = countries.map(([name, id, image], index) => `
+    <button class="country-card${index === 1 ? " is-active" : ""}" type="button" data-country-index="${index}">
       <img src="https://www.int-aiwa.com/upload/${image}" alt="${name}">
       <span>${name}</span>
-    </a>
+    </button>
   `).join("");
+
+  countryGrid.querySelectorAll(".country-card").forEach((button) => {
+    button.addEventListener("click", () => {
+      selectCountry(countries[Number(button.dataset.countryIndex)], button);
+    });
+  });
 }
 
 if ("IntersectionObserver" in window) {
