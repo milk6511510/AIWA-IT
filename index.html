@@ -36,9 +36,14 @@
     <nav class="site-nav" id="site-nav" data-nav>
       <a href="#role">Our Role</a>
       <a href="#story">Brand Story</a>
-      <a href="#model">Licensing Model</a>
-      <a href="#quality">Quality Governance</a>
-      <a href="#oem">OEM/ODM</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-trigger" aria-expanded="false">Company Services</button>
+        <div class="nav-dropdown-menu">
+          <a href="#model">Licensing Model</a>
+          <a href="#quality">Quality Governance</a>
+          <a href="#oem">OEM/ODM</a>
+        </div>
+      </div>
       <a href="#products">Products</a>
       <a href="green.html">Green AIWA</a>
       <a href="global.html">Global</a>
@@ -140,59 +145,102 @@
       </div>
     </section>
 
-    <section class="services-section section-shell reveal-on-scroll" id="services">
-      <div class="section-heading product-heading">
-        <div>
-          <p class="eyebrow">Company Services</p>
-          <h2>One cooperation system, three service pillars.</h2>
-        </div>
+    <section class="split-section section-shell reveal-on-scroll" id="model">
+      <div class="split-copy">
+        <p class="eyebrow">Licensing Model</p>
+        <h2>Partner-led markets, headquarters-led standards.</h2>
         <p>
-          AIWA Electronics International Co., Ltd. is not positioned as a simple product seller. The company service model combines licensing, quality governance, and OEM/ODM coordination under one Taiwan-led headquarters standard.
+          Local partners understand their sales channels and market needs. AIWA Electronics International Co., Ltd. provides the brand authorization framework, manufacturing coordination options, and final standard control.
+        </p>
+      </div>
+      <div class="model-grid">
+        <div class="model-card">
+          <i class="icon-badge small" data-icon="map"></i>
+          <strong>Territory</strong>
+          <span>Regional rights are reviewed by target market and business capability.</span>
+        </div>
+        <div class="model-card">
+          <i class="icon-badge small" data-icon="grid"></i>
+          <strong>Category</strong>
+          <span>Audio, display, home electronics, and market-specific proposals.</span>
+        </div>
+        <div class="model-card">
+          <i class="icon-badge small" data-icon="factory"></i>
+          <strong>Factory Route</strong>
+          <span>Partner-owned factory or approved OEM/ODM resource discussion.</span>
+        </div>
+        <div class="model-card">
+          <i class="icon-badge small" data-icon="ship"></i>
+          <strong>Shipment</strong>
+          <span>Products ship only after quality and brand approval are completed.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="quality-section section-shell reveal-on-scroll" id="quality">
+      <div class="section-heading">
+        <p class="eyebrow">Quality Governance</p>
+        <h2>Approved to ship is the core promise.</h2>
+      </div>
+
+      <div class="process">
+        <article>
+          <div class="card-top"><span>01</span><i class="icon-badge small" data-icon="document"></i></div>
+          <h3>Partner Review</h3>
+          <p>Company background, target market, product category, and channel plan.</p>
+        </article>
+        <article>
+          <div class="card-top"><span>02</span><i class="icon-badge small" data-icon="license"></i></div>
+          <h3>License Scope</h3>
+          <p>Territory, category, trademark usage, and cooperation terms.</p>
+        </article>
+        <article>
+          <div class="card-top"><span>03</span><i class="icon-badge small" data-icon="factory"></i></div>
+          <h3>Manufacturing Route</h3>
+          <p>Factory proposal, OEM/ODM option, production capability discussion.</p>
+        </article>
+        <article>
+          <div class="card-top"><span>04</span><i class="icon-badge small" data-icon="sample"></i></div>
+          <h3>Sample Approval</h3>
+          <p>Specifications, design, packaging, branding, and quality inspection.</p>
+        </article>
+        <article>
+          <div class="card-top"><span>05</span><i class="icon-badge small" data-icon="ship"></i></div>
+          <h3>Shipment Authorization</h3>
+          <p>Final approval before mass shipment under the AIWA brand.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="oem-section section-shell reveal-on-scroll" id="oem">
+      <div class="oem-panel">
+        <p class="eyebrow">OEM/ODM Cooperation</p>
+        <h2>Flexible manufacturing paths, controlled by brand standards.</h2>
+        <p>
+          The cooperation model allows authorized partners to bring their own factories or discuss existing manufacturing resources with AIWA Electronics International Co., Ltd. The key is not who owns the factory relationship, but whether the final product meets the brand standard.
         </p>
       </div>
 
-      <div class="service-overview">
-        <article class="service-panel service-panel-feature" id="model">
-          <i class="icon-badge small" data-icon="map"></i>
-          <span>01</span>
-          <h3>Licensing Model</h3>
-          <p>Partner-led markets, headquarters-led standards. Regional rights are reviewed by territory, category, business capability, and cooperation role.</p>
-          <a href="#inquiry">Start licensing inquiry</a>
-        </article>
-
-        <article class="service-panel" id="quality">
-          <i class="icon-badge small" data-icon="check"></i>
-          <span>02</span>
-          <h3>Quality Governance</h3>
-          <p>Product specifications, packaging, trademark usage, samples, and shipment authorization remain centrally reviewed before products enter the market.</p>
-          <a href="#inquiry">Discuss approval flow</a>
-        </article>
-
-        <article class="service-panel" id="oem">
-          <i class="icon-badge small" data-icon="factory"></i>
-          <span>03</span>
-          <h3>OEM/ODM Cooperation</h3>
-          <p>Authorized partners may propose their own factories or discuss suitable manufacturing resources already connected with AIWA Electronics International Co., Ltd.</p>
-          <a href="#inquiry">Review factory route</a>
-        </article>
-      </div>
-
-      <div class="service-flow" aria-label="Company service flow">
+      <div class="category-matrix" aria-label="Product category opportunities">
         <div>
-          <strong>Partner Review</strong>
-          <span>Company background, target market, category plan.</span>
+          <i class="icon-badge small" data-icon="audio"></i>
+          <strong>Audio</strong>
+          <span>Speakers, headphones, soundbars, portable audio.</span>
         </div>
         <div>
-          <strong>License Scope</strong>
-          <span>Territory, trademark usage, category rights.</span>
+          <i class="icon-badge small" data-icon="display"></i>
+          <strong>Display</strong>
+          <span>TV, monitor, visual entertainment products.</span>
         </div>
         <div>
-          <strong>Factory Route</strong>
-          <span>Partner factory or AIWA-connected OEM/ODM discussion.</span>
+          <i class="icon-badge small" data-icon="home"></i>
+          <strong>Home Electronics</strong>
+          <span>Market-specific appliance and lifestyle electronics.</span>
         </div>
         <div>
-          <strong>Approved to Ship</strong>
-          <span>Samples, branding, packaging, final quality control.</span>
+          <i class="icon-badge small" data-icon="plus"></i>
+          <strong>New Proposals</strong>
+          <span>Evaluated by territory, factory ability, and quality fit.</span>
         </div>
       </div>
     </section>
