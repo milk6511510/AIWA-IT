@@ -1,0 +1,124 @@
+<?php
+/*
+Template Name: Green AIWA
+*/
+get_header(); ?>
+<main>
+    <section class="green-hero section-shell reveal-on-scroll">
+      <div class="green-hero-copy">
+        <div class="green-brand-lockup">
+          <img src="<?php echo esc_url( aiwa_theme_asset( 'assets/green/green-aiwa-logo-06-clean.png' ) ); ?>" alt="Green AIWA temporary logo">
+          <div>
+            <strong>GREEN AIWA</strong>
+            <span>自然・共生・永續</span>
+          </div>
+        </div>
+        <p class="eyebrow">Green AIWA</p>
+        <h1>Cleaner air, smarter energy, and better water.</h1>
+        <p class="hero-lead">Green AIWA is a preliminary ESG+ business zone for partners exploring AIWA-branded home electronics with practical sustainability value. The focus is not a slogan, but a category framework that can be reviewed through efficiency, responsible materials, certification needs, and long-term product support.</p>
+        <div class="hero-actions">
+          <a class="button green-primary" href="#green-products">View green products</a>
+          <a class="button green-secondary" href="#green-model">ESG+ cooperation model</a>
+        </div>
+      </div>
+      <div class="green-hero-visual">
+        <img src="<?php echo esc_url( aiwa_theme_asset( 'assets/aiwa-green-hero.png' ) ); ?>" alt="Green AIWA sustainability concept showroom">
+      </div>
+    </section>
+
+    <section class="green-image-section section-shell reveal-on-scroll">
+      <div class="green-image-copy">
+        <p class="eyebrow">Concept Image</p>
+        <h2>A brighter product environment for ESG+ discussions.</h2>
+        <p>The visual direction keeps the AIWA site bright and premium, while adding a clear green language through air, water, and energy-related product contexts. It can later become a campaign area for verified green categories, partner factories, and market-specific compliance content.</p>
+      </div>
+      <div class="green-focus-list" aria-label="Green AIWA focus areas">
+        <div>
+          <span>01</span>
+          <strong>Category fit</strong>
+          <p>Air care, refrigeration, water wellness, and other home electronics with clear daily-use value.</p>
+        </div>
+        <div>
+          <span>02</span>
+          <strong>Market claims</strong>
+          <p>Energy saving, filtration, materials, and packaging claims must be reviewed before promotion.</p>
+        </div>
+        <div>
+          <span>03</span>
+          <strong>Approval route</strong>
+          <p>Samples, specifications, certification documents, and visual identity remain centrally checked.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="green-model section-shell reveal-on-scroll" id="green-model">
+      <div class="section-heading product-heading">
+        <div>
+          <p class="eyebrow">Green Cooperation</p>
+          <h2>From product idea to responsible market proposal.</h2>
+        </div>
+        <p>Each green category can be evaluated by energy performance, material direction, water or air impact, packaging reduction, repairability, after-sales planning, and market compliance needs.</p>
+      </div>
+      <div class="green-principles">
+        <article>
+          <i class="icon-badge green-icon" data-icon="check"></i>
+          <h3>Lower Consumption</h3>
+          <p>Prioritize efficient motors, smart standby behavior, optimized compressor or filtration systems, and category-specific energy targets before a market proposal is approved.</p>
+        </article>
+        <article>
+          <i class="icon-badge green-icon" data-icon="document"></i>
+          <h3>Traceable Approval</h3>
+          <p>Review environmental claims, certifications, packaging language, documentation, and product labeling so green communication remains credible in each market.</p>
+        </article>
+        <article>
+          <i class="icon-badge green-icon" data-icon="factory"></i>
+          <h3>OEM/ODM Fit</h3>
+          <p>Match product ideas with suitable factories, then keep samples, materials, packaging, and shipment approval under AIWA quality governance.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="green-products section-shell reveal-on-scroll" id="green-products">
+      <div class="section-heading product-heading">
+        <div>
+          <p class="eyebrow">Green Product Zone</p>
+          <h2>Initial ESG+ product directions.</h2>
+        </div>
+      </div>
+      <div class="green-product-grid">
+        <article class="green-product-card featured">
+          <img src="<?php echo esc_url( aiwa_theme_asset( 'assets/green/green-refrigerator.png' ) ); ?>" alt="Green AIWA refrigerator concept">
+          <div>
+            <span>Energy Care</span>
+            <h3>Efficient Refrigerator</h3>
+            <p>Household cooling concept focused on stable temperature, low power operation, durable components, and long lifecycle planning.</p>
+          </div>
+        </article>
+        <article class="green-product-card">
+          <img src="<?php echo esc_url( aiwa_theme_asset( 'assets/green/green-dehumidifier.png' ) ); ?>" alt="Green AIWA dehumidifier concept">
+          <div>
+            <span>Air Care</span>
+            <h3>Low-Energy Dehumidifier</h3>
+            <p>Humidity control for healthier living spaces, positioned around comfort, mold prevention, efficient air management, and practical household wellness.</p>
+          </div>
+        </article>
+        <article class="green-product-card">
+          <img src="<?php echo esc_url( aiwa_theme_asset( 'assets/green/green-portable-ac.png' ) ); ?>" alt="Green AIWA portable air conditioner concept">
+          <div>
+            <span>Climate Care</span>
+            <h3>Portable Air Conditioner</h3>
+            <p>Flexible cooling for rooms and small commercial spaces, positioned around mobility, efficient cooling control, and responsible seasonal energy use.</p>
+          </div>
+        </article>
+        <article class="green-product-card">
+          <img src="<?php echo esc_url( aiwa_theme_asset( 'assets/green/green-water-purifier.png' ) ); ?>" alt="Green AIWA water purifier concept">
+          <div>
+            <span>Water Care</span>
+            <h3>Water Purifier</h3>
+            <p>Countertop water wellness program for clean daily hydration, filter governance, service replacement cycles, and market-specific certification review.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+<?php get_footer(); ?>

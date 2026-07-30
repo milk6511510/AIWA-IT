@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "node -e \"const fs=require('fs'),path=require('path'); function copyDir(src,dst){fs.mkdirSync(dst,{recursive:true}); for(const entry of fs.readdirSync(src,{withFileTypes:true})){const s=path.join(src,entry.name),d=path.join(dst,entry.name); if(entry.isDirectory()) copyDir(s,d); else fs.copyFileSync(s,d);}} fs.rmSync('public',{recursive:true,force:true}); fs.mkdirSync('public',{recursive:true}); for (const name of ['index.html','history.html','global.html','green.html','styles.css','script.js']) fs.copyFileSync(name, 'public/' + name); copyDir('assets','public/assets');\""
+    "build": "node -e \"const fs=require('fs'),path=require('path'); function copyDir(src,dst){fs.mkdirSync(dst,{recursive:true}); for(const entry of fs.readdirSync(src,{withFileTypes:true})){const s=path.join(src,entry.name),d=path.join(dst,entry.name); if(entry.isDirectory()) copyDir(s,d); else fs.copyFileSync(s,d);}} fs.rmSync('public',{recursive:true,force:true}); fs.mkdirSync('public',{recursive:true}); for (const name of ['index.html','history.html','global.html','green.html','styles.css','script.js']) fs.copyFileSync(name, 'public/' + name); copyDir('assets','public/assets');\"",
+    "build:wordpress": "node tools/build-wordpress-theme.js"
   },
   "devDependencies": {}
 }
