@@ -197,6 +197,24 @@ if (productGrid && seriesRow) {
   renderProducts("TV");
 }
 
+const newsTrack = document.querySelector("[data-news-track]");
+const newsPrev = document.querySelector("[data-news-prev]");
+const newsNext = document.querySelector("[data-news-next]");
+
+function scrollNews(direction) {
+  if (!newsTrack) return;
+  const firstCard = newsTrack.querySelector(".news-card");
+  const gap = Number.parseFloat(getComputedStyle(newsTrack).columnGap || "16");
+  const cardWidth = firstCard ? firstCard.getBoundingClientRect().width + gap : newsTrack.clientWidth * 0.86;
+  newsTrack.scrollBy({
+    left: cardWidth * direction,
+    behavior: "smooth"
+  });
+}
+
+newsPrev?.addEventListener("click", () => scrollNews(-1));
+newsNext?.addEventListener("click", () => scrollNews(1));
+
 const countries = [
   ["Japan Founding Legal HQ", "30", "2020_06_19_1531401.png", "Founding Market"],
   ["EU Regional HQ", "174", "2021_07_05_0933371.png", "Regional Headquarters"],
