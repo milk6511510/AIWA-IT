@@ -1089,11 +1089,43 @@ h3 {
   margin-top: 118px;
 }
 
+.global-hero-image {
+  display: grid;
+  grid-template-columns: minmax(0, .78fr) minmax(420px, .86fr);
+  gap: clamp(30px, 5vw, 78px);
+  align-items: center;
+  overflow: hidden;
+}
+
+.global-hero-copy {
+  max-width: 720px;
+}
+
+.global-hero-image h1 {
+  font-size: clamp(38px, 5.2vw, 72px);
+  line-height: 1;
+}
+
+.global-hero-media {
+  padding: clamp(12px, 2vw, 22px);
+  border-radius: 42px;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 30px 82px rgba(72, 80, 96, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.global-hero-media img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 32px;
+  object-fit: cover;
+  object-position: 58% center;
+}
+
 .global-showcase {
   display: grid;
-  grid-template-columns: minmax(320px, .56fr) minmax(0, 1fr);
-  gap: 18px;
-  align-items: stretch;
+  grid-template-columns: minmax(280px, .42fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 34px);
+  align-items: start;
   margin-top: 32px;
 }
 
@@ -1138,15 +1170,13 @@ h3 {
   background: #fff;
 }
 
-.flag-rail {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-width: 0;
-  padding: 28px;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: x mandatory;
+.country-list {
+  display: grid;
+  gap: 10px;
+  max-height: 680px;
+  padding: 14px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   border: 1px solid var(--white-line);
   border-radius: 34px;
   background: rgba(255, 255, 255, 0.66);
@@ -1154,30 +1184,29 @@ h3 {
 }
 
 .country-card {
-  flex: 0 0 122px;
   display: grid;
-  gap: 12px;
-  justify-items: center;
-  padding: 14px;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 12px;
   border: 1px solid transparent;
-  border-radius: 26px;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.54);
   color: var(--ink);
   cursor: pointer;
-  scroll-snap-align: center;
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .country-card:hover,
 .country-card.is-active {
-  transform: scale(1.12);
+  transform: translateX(4px);
   border-color: rgba(213, 61, 46, 0.18);
   background: #fff;
-  box-shadow: 0 18px 44px rgba(132, 47, 41, 0.13);
+  box-shadow: 0 14px 34px rgba(132, 47, 41, 0.1);
 }
 
 .country-card img {
-  width: 72px;
+  width: 48px;
   aspect-ratio: 1 / 1;
   border-radius: 999px;
   object-fit: cover;
@@ -1188,8 +1217,8 @@ h3 {
 .country-card span {
   max-width: 100%;
   overflow-wrap: anywhere;
-  text-align: center;
-  font-size: 13px;
+  text-align: left;
+  font-size: 14px;
   font-weight: 850;
 }
 
@@ -1286,6 +1315,16 @@ h3 {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.2);
   font-weight: 900;
+}
+
+.green-mini-logo {
+  width: 72px;
+  height: 72px;
+  padding: 8px;
+  border-radius: 22px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .green-hero-card strong {
@@ -1861,9 +1900,14 @@ h3 {
 
   .global-feature,
   .global-showcase,
+  .global-hero-image,
   .green-hero,
   .green-image-section {
     grid-template-columns: 1fr;
+  }
+
+  .global-hero-media {
+    max-width: 780px;
   }
 
   .green-hero {
@@ -2004,6 +2048,10 @@ h3 {
 
   .country-card {
     flex-basis: 108px;
+  }
+
+  .country-list {
+    max-height: 440px;
   }
 
   .green-hero-card {

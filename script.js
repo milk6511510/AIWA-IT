@@ -240,7 +240,7 @@ if (countryGrid) {
     const [name, id, image, type] = country;
     countryGrid.querySelectorAll(".country-card").forEach((item) => item.classList.remove("is-active"));
     button.classList.add("is-active");
-    button.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    button.scrollIntoView({ behavior: "smooth", block: "nearest" });
     marketName.textContent = name;
     marketType.textContent = type;
     marketImage.src = `https://www.int-aiwa.com/upload/${image}`;
