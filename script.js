@@ -52,6 +52,7 @@ document.addEventListener("click", (event) => {
 
 const heroSlides = document.querySelectorAll(".hero-slide");
 const heroDots = document.querySelectorAll("[data-hero-dots] button");
+const heroControls = document.querySelector(".hero-slider-controls");
 const heroPrev = document.querySelector("[data-hero-prev]");
 const heroNext = document.querySelector("[data-hero-next]");
 let activeHeroSlide = 0;
@@ -65,6 +66,7 @@ function showHeroSlide(index) {
   heroDots.forEach((dot, dotIndex) => {
     dot.classList.toggle("is-active", dotIndex === activeHeroSlide);
   });
+  heroControls?.classList.toggle("is-green", activeHeroSlide === 1);
 }
 
 heroPrev?.addEventListener("click", () => showHeroSlide(activeHeroSlide - 1));

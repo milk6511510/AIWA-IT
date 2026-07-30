@@ -436,6 +436,7 @@ h3 {
 }
 
 .hero-slider-controls {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -445,6 +446,30 @@ h3 {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.52);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  overflow: hidden;
+}
+
+.hero-slider-controls::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: calc((100% - 12px) / 2);
+  height: calc(100% - 12px);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 22% 24%, rgba(255, 255, 255, 0.42), transparent 28%),
+    linear-gradient(135deg, #c94234 0%, #de7650 56%, #eba260 100%);
+  box-shadow: 0 12px 28px rgba(151, 58, 45, 0.18);
+  transition: transform 420ms cubic-bezier(.2, .9, .2, 1), background 420ms ease;
+}
+
+.hero-slider-controls.is-green::before {
+  transform: translateX(100%);
+  background:
+    radial-gradient(circle at 24% 24%, rgba(255, 255, 255, 0.42), transparent 28%),
+    linear-gradient(135deg, #1f8f62 0%, #6fbe70 58%, #a9d779 100%);
+  box-shadow: 0 12px 28px rgba(37, 105, 78, 0.2);
 }
 
 .hero-edge-control {
@@ -492,17 +517,20 @@ h3 {
 }
 
 .hero-dots {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
-  gap: 6px;
+  gap: 0;
 }
 
 .hero-dots button {
+  position: relative;
   min-width: 0;
   height: 34px;
-  padding: 0 14px;
+  padding: 0 18px;
   border: 0;
   border-radius: 999px;
-  background: rgba(154, 51, 43, 0.24);
+  background: transparent;
   color: rgba(22, 24, 29, 0.6);
   cursor: pointer;
   font-size: 12px;
@@ -512,7 +540,7 @@ h3 {
 
 .hero-dots button.is-active {
   color: #fff;
-  background: linear-gradient(135deg, #c94234 0%, #76bd72 100%);
+  background: transparent;
 }
 
 .button {
@@ -592,6 +620,10 @@ h3 {
 .timeline-section,
 .credo-section,
 .products-section,
+.green-hero,
+.green-image-section,
+.green-model,
+.green-products,
 .inquiry-section {
   width: min(1240px, calc(100% - clamp(32px, 7vw, 96px)));
   margin: clamp(18px, 3vw, 38px) auto;
@@ -1178,9 +1210,12 @@ h3 {
 .green-image-section,
 .green-model,
 .green-products {
-  background: transparent;
-  border: 0;
-  box-shadow: none;
+  background:
+    radial-gradient(circle at 14% 14%, rgba(255, 255, 255, 0.88), transparent 32%),
+    radial-gradient(circle at 92% 82%, rgba(88, 176, 119, 0.1), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(242, 249, 244, 0.58));
+  border: 1px solid var(--white-line);
+  box-shadow: var(--shadow-soft);
 }
 
 .green-hero {
@@ -1189,8 +1224,6 @@ h3 {
   gap: clamp(30px, 5vw, 76px);
   align-items: center;
   margin-top: 118px;
-  padding-top: clamp(58px, 8vw, 104px);
-  padding-bottom: clamp(54px, 8vw, 96px);
 }
 
 .green-hero-copy {
@@ -1278,18 +1311,16 @@ h3 {
 
 .green-image-section {
   display: grid;
-  grid-template-columns: minmax(0, .66fr) minmax(0, 1fr);
-  gap: clamp(24px, 5vw, 78px);
-  align-items: start;
-  padding-top: clamp(20px, 5vw, 70px);
-  padding-bottom: clamp(34px, 6vw, 80px);
+  grid-template-columns: minmax(0, .58fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 78px);
+  align-items: center;
 }
 
 .green-image-copy {
   display: grid;
   gap: 16px;
   max-width: 980px;
-  padding: clamp(28px, 4vw, 48px);
+  padding: clamp(30px, 4vw, 52px);
   border-radius: 34px;
   background:
     radial-gradient(circle at 88% 18%, rgba(136, 205, 125, 0.16), transparent 28%),
@@ -1306,6 +1337,46 @@ h3 {
   margin: 0;
   color: var(--soft-ink);
   line-height: 1.78;
+}
+
+.green-focus-list {
+  display: grid;
+  gap: 14px;
+}
+
+.green-focus-list div {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 8px 16px;
+  align-items: start;
+  padding: clamp(20px, 2.4vw, 28px);
+  border: 1px solid var(--white-line);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.66);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.green-focus-list span {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #1f8f62 0%, #8ccf78 100%);
+}
+
+.green-focus-list strong {
+  font-size: 18px;
+}
+
+.green-focus-list p {
+  margin: 0;
+  color: var(--soft-ink);
+  line-height: 1.62;
 }
 
 .green-principles {
@@ -1342,24 +1413,36 @@ h3 {
 
 .green-product-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(260px, .72fr);
-  gap: clamp(18px, 2vw, 24px);
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 3vw, 36px);
   margin-top: clamp(30px, 4vw, 52px);
 }
 
 .green-product-card {
+  display: grid;
+  grid-template-columns: minmax(280px, .9fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 54px);
+  align-items: center;
+  padding: clamp(18px, 2.4vw, 28px);
   overflow: hidden;
   align-self: stretch;
 }
 
+.green-product-card:nth-child(even) img {
+  order: 2;
+}
+
 .green-product-card img {
   width: 100%;
-  aspect-ratio: 16 / 12;
+  aspect-ratio: 16 / 11;
+  border-radius: 24px;
   object-fit: cover;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
 }
 
 .green-product-card div {
-  padding: clamp(24px, 3vw, 34px);
+  padding: clamp(18px, 3vw, 34px);
 }
 
 .green-product-card span {
@@ -1380,9 +1463,6 @@ h3 {
 }
 
 .green-product-card.featured {
-  grid-row: span 2;
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
   background:
     radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.38), transparent 28%),
     linear-gradient(135deg, #1b8b5d 0%, #79bf72 100%);
@@ -1390,8 +1470,7 @@ h3 {
 }
 
 .green-product-card.featured img {
-  height: 100%;
-  aspect-ratio: auto;
+  aspect-ratio: 16 / 11;
 }
 
 .green-product-card.featured span,
@@ -1800,15 +1879,11 @@ h3 {
   }
 
   .green-product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
-  .green-product-card.featured {
-    grid-row: auto;
-  }
-
-  .green-product-card.featured img {
-    aspect-ratio: 16 / 12;
+  .green-product-card {
+    grid-template-columns: minmax(240px, .8fr) minmax(0, 1fr);
   }
 
   .pillars {
@@ -1892,10 +1967,18 @@ h3 {
   .service-overview,
   .service-flow,
   .green-principles,
-  .green-product-grid,
   .global-region-grid,
   .product-grid {
     grid-template-columns: 1fr;
+  }
+
+  .green-product-card,
+  .green-product-card:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .green-product-card:nth-child(even) img {
+    order: 0;
   }
 
   .service-panel {
@@ -1935,7 +2018,7 @@ h3 {
   .green-model,
   .green-products {
     width: min(100% - 24px, 1240px);
-    padding: 34px 18px;
+    padding: 36px 18px;
   }
 
   .green-hero {
