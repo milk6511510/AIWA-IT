@@ -658,16 +658,6 @@ if (service3dVisual) {
       floor.receiveShadow = true;
       root.add(floor);
 
-      const floorLineMaterial = new THREE.LineBasicMaterial({ color: colors.coral, transparent: true, opacity: 0.32 });
-      const floorLine = new THREE.Line(
-        new THREE.BufferGeometry().setFromPoints([
-          new THREE.Vector3(-3.65, -1.2, 0.25),
-          new THREE.Vector3(3.65, -1.2, 0.25)
-        ]),
-        floorLineMaterial
-      );
-      root.add(floorLine);
-
       const roundedBoxGeometry = (width, height, depth, radius = 0.08) => {
         const shape = new THREE.Shape();
         const halfWidth = width / 2;
@@ -869,29 +859,6 @@ if (service3dVisual) {
       });
       addLabelToStage(factoryStage, "FACTORY", "COORDINATION", colors.red, 0, -0.02, 0.73, 1.4, 0.38);
 
-      const routeCurve = new THREE.CatmullRomCurve3([
-        new THREE.Vector3(-2.08, 0.38, 0.78),
-        new THREE.Vector3(-1.25, 0.96, 0.55),
-        new THREE.Vector3(0, 0.9, 0.56),
-        new THREE.Vector3(1.25, 0.84, 0.55),
-        new THREE.Vector3(2.06, 0.4, 0.78)
-      ]);
-      const routeTube = new THREE.Mesh(
-        new THREE.TubeGeometry(routeCurve, 64, 0.022, 8, false),
-        new THREE.MeshBasicMaterial({ color: colors.red, transparent: true, opacity: 0.04 })
-      );
-      root.add(routeTube);
-      const routeMarkers = [];
-      for (let index = 0; index < 7; index += 1) {
-        const marker = new THREE.Mesh(
-          new THREE.SphereGeometry(0.06, 16, 16),
-          new THREE.MeshBasicMaterial({ color: colors.coral, transparent: true, opacity: 0.04 })
-        );
-        marker.position.copy(routeCurve.getPoint(index / 6));
-        root.add(marker);
-        routeMarkers.push(marker);
-      }
-
       const service3dResize = () => {
         const bounds = service3dVisual.getBoundingClientRect();
         const width = Math.max(bounds.width, 1);
@@ -919,18 +886,10 @@ if (service3dVisual) {
 
       const updateScene = (time) => {
         const progress = prefersReducedMotion ? 1 : service3dProgress;
-        const brandEase = updateStage(brandStage, progress, time, 0.3);
-        const routeEase = updateStage(routeStage, progress, time, 1.6);
-        const factoryEase = updateStage(factoryStage, progress, time, 2.8);
-        const builtEase = Math.max(brandEase, routeEase, factoryEase);
+        updateStage(brandStage, progress, time, 0.3);
+        updateStage(routeStage, progress, time, 1.6);
+        updateStage(factoryStage, progress, time, 2.8);
         const normalizedTime = time * 0.001;
-
-        routeTube.material.opacity = Math.min(0.58, builtEase * 0.58);
-        routeMarkers.forEach((marker, index) => {
-          const markerEase = Math.max(0, Math.min(1, (progress - (0.2 + (index * 0.08))) / 0.28));
-          marker.material.opacity = markerEase * 0.88;
-          marker.scale.setScalar(0.65 + (markerEase * 0.35));
-        });
 
         movingPackages.forEach((packageMesh, index) => {
           const position = ((normalizedTime * 0.22) + (index * 0.24)) % 1;

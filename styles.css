@@ -886,6 +886,7 @@ h3 {
 .service-3d-canvas {
   display: block;
   width: 100%;
+  height: 100%;
   min-height: inherit;
   opacity: 1;
 }
@@ -907,17 +908,6 @@ h3 {
 .service-3d-visual.is-fallback .service-3d-canvas {
   opacity: 0;
   pointer-events: none;
-}
-
-.service-3d-fallback-line {
-  position: absolute;
-  left: 14%;
-  right: 14%;
-  top: 51%;
-  height: 2px;
-  background: var(--contact-gradient);
-  box-shadow: 0 0 22px rgba(255, 59, 54, .3);
-  transform: translateY(-50%) rotate(-7deg);
 }
 
 .service-3d-fallback-card {
@@ -961,36 +951,6 @@ h3 {
 .service-3d-fallback-factory {
   right: 2%;
   top: 43%;
-}
-
-.service-3d-caption {
-  position: absolute;
-  right: 20px;
-  bottom: 0;
-  left: 20px;
-  display: grid;
-  gap: 5px;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  pointer-events: none;
-}
-
-.service-3d-caption span {
-  color: #df222d;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: .12em;
-}
-
-.service-3d-caption strong {
-  color: var(--ink);
-  font-size: 12px;
-  line-height: 1.35;
 }
 
 .company-service-block {
@@ -4150,12 +4110,50 @@ body[data-language="zh-TW"] .footer-contact a {
   }
 
   .service-3d-visual {
-    min-height: 300px;
+    height: clamp(280px, 74vw, 360px);
+    min-height: 0;
+    margin-top: 4px;
   }
 
-  .service-3d-caption {
-    right: 4px;
-    left: 4px;
+  #licensing-model {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    width: min(100% - 24px, 1240px);
+    margin: 22px auto;
+    padding: 34px 18px 38px;
+    align-items: start;
+    overflow: hidden;
+  }
+
+  #licensing-model .split-copy,
+  #licensing-model .model-grid {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #licensing-model .split-copy h2 {
+    max-width: 100%;
+    margin-bottom: 16px;
+    font-size: clamp(30px, 8.4vw, 42px);
+    line-height: 1.08;
+  }
+
+  #licensing-model .split-copy p {
+    max-width: 100%;
+    line-height: 1.72;
+  }
+
+  #licensing-model .model-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin-top: 0;
+  }
+
+  #licensing-model .model-card {
+    min-height: 0;
+    padding: 22px;
+    border-radius: 22px;
   }
 
   .service-3d-fallback {
