@@ -34,10 +34,10 @@
     </button>
 
     <nav class="site-nav" id="site-nav" data-nav>
-      <a href="#role">Our Role</a>
       <a href="#story">Brand Story</a>
+      <a href="#role">Our Role</a>
       <div class="nav-dropdown">
-        <button type="button" class="nav-dropdown-trigger" aria-expanded="false">Company Services</button>
+        <button type="button" class="nav-dropdown-trigger" aria-expanded="false">Company Service</button>
         <div class="nav-dropdown-menu">
           <a href="#model">Licensing Model</a>
           <a href="#quality">Quality Governance</a>
@@ -45,11 +45,16 @@
         </div>
       </div>
       <a href="#products">Products</a>
+      <a href="#news">News</a>
       <a href="green.html">Green AIWA</a>
       <a href="global.html">Global</a>
-      <a href="#news">News</a>
-      <a class="nav-cta" href="#inquiry">Partner Inquiry</a>
+      <a href="download.html">Download</a>
+      <a class="nav-cta" href="#inquiry">Contact Us</a>
     </nav>
+    <div class="language-switcher header-language" role="group" aria-label="Language">
+      <button type="button" class="language-button is-active" data-language="en" aria-pressed="true">EN</button>
+      <button type="button" class="language-button" data-language="zh-TW" aria-pressed="false">繁中</button>
+    </div>
   </header>
 
   <main id="top">
@@ -80,20 +85,25 @@
         </div>
       </div>
 
-      <aside class="hero-status reveal-on-scroll" aria-label="Business scope">
-        <div>
-          <span>Scope</span>
-          <strong>Outside Japan & Korea</strong>
-        </div>
-        <div>
-          <span>Base</span>
-          <strong>Taiwan Headquarters</strong>
-        </div>
-        <div>
-          <span>Control Point</span>
-          <strong>Approved to Ship</strong>
-        </div>
-      </aside>
+    </section>
+
+    <section class="story-section section-shell reveal-on-scroll" id="story">
+      <div class="story-copy">
+        <p class="eyebrow">Brand Story</p>
+        <h2>Developing consumer electronics since 1951 in Japan.</h2>
+        <p>
+          AIWA has been developing products to meet the growing demands from consumers since 1951 in Japan. The commitment to designing and manufacturing cost effective, high-quality consumer electronics accompanied with world class after-sales service connects the brand with dedicated consumers throughout the regions.
+        </p>
+        <a class="button primary" href="history.html">View brand history</a>
+      </div>
+      <div class="story-card accent-card">
+        <i class="icon-badge" data-icon="globe"></i>
+        <strong data-count-display data-count-target="100" data-no-translate>
+          <span class="country-count-number" data-count-number>0</span><span class="country-count-plus">+</span>
+          <span class="country-count-label" data-count-label>countries worldwide</span>
+        </strong>
+        <span>Business partnerships, distribution, marketing, and retail departments adapting to cultural and market differences.</span>
+      </div>
     </section>
 
     <section class="intro-strip section-shell reveal-on-scroll" id="role">
@@ -127,22 +137,6 @@
         <h3>Quality Governance</h3>
         <p>Product specifications, packaging, brand identity, samples, and shipment approval remain centrally reviewed.</p>
       </article>
-    </section>
-
-    <section class="story-section section-shell reveal-on-scroll" id="story">
-      <div class="story-copy">
-        <p class="eyebrow">Brand Story</p>
-        <h2>Developing consumer electronics since 1951 in Japan.</h2>
-        <p>
-          AIWA has been developing products to meet the growing demands from consumers since 1951 in Japan. The commitment to designing and manufacturing cost effective, high-quality consumer electronics accompanied with world class after-sales service connects the brand with dedicated consumers throughout the regions.
-        </p>
-        <a class="button primary" href="history.html">View brand history</a>
-      </div>
-      <div class="story-card accent-card">
-        <i class="icon-badge" data-icon="globe"></i>
-        <strong>100+ countries worldwide</strong>
-        <span>Business partnerships, distribution, marketing, and retail departments adapting to cultural and market differences.</span>
-      </div>
     </section>
 
     <section class="split-section section-shell reveal-on-scroll" id="model">
@@ -341,7 +335,7 @@
 
     <section class="inquiry-section section-shell reveal-on-scroll" id="inquiry">
       <div>
-        <p class="eyebrow">Partner Inquiry</p>
+        <p class="eyebrow">Contact Us</p>
         <h2>Built to attract serious licensing conversations.</h2>
         <p>
           A high-end B2B site should guide visitors into a structured inquiry, collecting the information needed before a licensing discussion begins.
@@ -349,26 +343,47 @@
       </div>
 
       <form class="inquiry-form">
-        <label>
+        <label class="target-market-field">
           Target Market
-          <input type="text" placeholder="e.g. Thailand, UAE, Mexico">
+          <input class="target-market-input" type="text" placeholder="e.g. Thailand, UAE, Mexico">
         </label>
         <label>
           Product Category
-          <select>
-            <option>Audio</option>
-            <option>Display</option>
-            <option>Home Electronics</option>
-            <option>New Category Proposal</option>
-          </select>
+          <div class="inquiry-custom-select" data-custom-select>
+            <select class="inquiry-native-select" aria-hidden="true" tabindex="-1">
+              <option value="Audio">Audio</option>
+              <option value="Display">Display</option>
+              <option value="Home Electronics">Home Electronics</option>
+              <option value="New Category Proposal">New Category Proposal</option>
+            </select>
+            <button class="inquiry-select-trigger" type="button" aria-expanded="false" aria-haspopup="listbox">
+              <span data-select-value>Audio</span>
+            </button>
+            <div class="inquiry-select-menu" role="listbox">
+              <button class="inquiry-select-option is-active" type="button" role="option" data-value="Audio">Audio</button>
+              <button class="inquiry-select-option" type="button" role="option" data-value="Display">Display</button>
+              <button class="inquiry-select-option" type="button" role="option" data-value="Home Electronics">Home Electronics</button>
+              <button class="inquiry-select-option" type="button" role="option" data-value="New Category Proposal">New Category Proposal</button>
+            </div>
+          </div>
         </label>
         <label>
           Manufacturing Route
-          <select>
-            <option>We have our own factory</option>
-            <option>We want to discuss AIWA-approved OEM/ODM resources</option>
-            <option>Not yet decided</option>
-          </select>
+          <div class="inquiry-custom-select" data-custom-select>
+            <select class="inquiry-native-select" aria-hidden="true" tabindex="-1">
+              <option value="We have our own factory">We have our own factory</option>
+              <option value="We want to discuss AIWA-approved OEM/ODM resources">We want to discuss AIWA-approved OEM/ODM resources</option>
+              <option value="Not yet decided">Not yet decided</option>
+            </select>
+            <button class="inquiry-select-trigger" type="button" aria-expanded="false" aria-haspopup="listbox">
+              <span data-select-value>We have our own factory</span>
+            </button>
+            <div class="inquiry-select-menu" role="listbox">
+              <button class="inquiry-select-option is-active" type="button" role="option" data-value="We have our own factory">We have our own factory</button>
+              <button class="inquiry-select-option" type="button" role="option" data-value="We want to discuss AIWA-approved OEM/ODM resources">We want to discuss AIWA-approved OEM/ODM resources</button>
+              <button class="inquiry-select-option" type="button" role="option" data-value="Not yet decided">Not yet decided</button>
+            </div>
+          </div>
         </label>
         <label>
           Company Background
