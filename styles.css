@@ -444,6 +444,8 @@ textarea {
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   width: min(720px, 100%);
   max-width: calc(100vw - clamp(32px, 8vw, 112px));
   padding: clamp(30px, 5vw, 60px);
@@ -454,6 +456,21 @@ textarea {
   box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(24px) saturate(150%);
   -webkit-backdrop-filter: blur(24px) saturate(150%);
+}
+
+.hero-green-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  transition: opacity 320ms ease;
+}
+
+.hero-green-link.is-active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .eyebrow {
@@ -1483,11 +1500,11 @@ h3 {
 .global-hero-image {
   position: relative;
   width: min(1480px, calc(100% - clamp(28px, 5vw, 72px)));
-  min-height: clamp(390px, 48vh, 540px);
+  min-height: clamp(310px, 38vh, 420px);
   display: flex;
   align-items: center;
-  margin: 0 auto clamp(34px, 5vw, 68px);
-  padding: clamp(72px, 8vw, 112px) clamp(24px, 7vw, 96px) clamp(42px, 5vw, 68px);
+  margin: 0 auto clamp(24px, 4vw, 48px);
+  padding: clamp(48px, 6vw, 82px) clamp(24px, 6vw, 80px) clamp(30px, 4vw, 52px);
   overflow: hidden;
   border-radius: 0 0 clamp(34px, 6vw, 72px) clamp(34px, 6vw, 72px);
   background: #f7f9fb;
@@ -1496,8 +1513,8 @@ h3 {
 .global-hero-copy {
   position: relative;
   z-index: 1;
-  width: min(560px, 100%);
-  padding: clamp(24px, 3.2vw, 40px);
+  width: min(470px, 100%);
+  padding: clamp(20px, 2.4vw, 30px);
   border: 1px solid var(--white-line);
   border-radius: var(--radius-xl);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.34));
@@ -1507,8 +1524,16 @@ h3 {
 }
 
 .global-hero-image h1 {
-  font-size: clamp(30px, 4vw, 54px);
-  line-height: 1.06;
+  max-width: 620px;
+  margin-bottom: 14px;
+  font-size: clamp(24px, 3vw, 40px);
+  line-height: 1.08;
+}
+
+.global-hero-image .hero-lead {
+  max-width: 620px;
+  font-size: clamp(14px, 1.2vw, 17px);
+  line-height: 1.62;
 }
 
 .global-hero-media {
@@ -1537,7 +1562,7 @@ h3 {
 .global-directory-tools {
   display: flex;
   justify-content: center;
-  margin: 10px 0 clamp(20px, 3vw, 32px);
+  margin: 0 0 clamp(20px, 3vw, 32px);
 }
 
 .global-directory-search {
@@ -1553,7 +1578,7 @@ h3 {
 }
 
 .global-directory {
-  padding-top: clamp(76px, 8vw, 116px);
+  padding-top: clamp(58px, 6vw, 92px);
 }
 
 .global-directory-search label {
@@ -1877,7 +1902,7 @@ body[data-language="zh-TW"] .region-count-zh {
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 42%, rgba(255, 255, 255, 0.38) 76%, rgba(255, 255, 255, 0.12) 100%),
     var(--contact-gradient-soft),
-    url("assets/services/service-oem-odm.png") right center / cover no-repeat;
+    url("assets/news/news-ifa-berlin.jpeg") right center / cover no-repeat;
 }
 
 .news-page-hero > div {
@@ -3409,7 +3434,8 @@ body[data-language="zh-TW"] .footer-contact a {
     width: min(100% - 28px, 1240px);
     min-height: auto;
     display: block;
-    padding: 118px clamp(18px, 5vw, 42px) clamp(36px, 7vw, 72px);
+    margin-bottom: 18px;
+    padding: 92px clamp(18px, 5vw, 42px) clamp(30px, 5vw, 54px);
     border-radius: 34px;
   }
 
@@ -3433,7 +3459,7 @@ body[data-language="zh-TW"] .footer-contact a {
   }
 
   .global-directory {
-    padding-top: clamp(56px, 8vw, 88px);
+    padding-top: clamp(34px, 5vw, 58px);
   }
 
   .green-hero {
@@ -3566,7 +3592,8 @@ body[data-language="zh-TW"] .footer-contact a {
     min-height: 0;
     display: grid;
     gap: 14px;
-    padding: 102px 0 0;
+    margin-bottom: 14px;
+    padding: 86px 0 0;
     overflow: visible;
     background: transparent;
     border-radius: 0;
@@ -3581,7 +3608,7 @@ body[data-language="zh-TW"] .footer-contact a {
   }
 
   .global-hero-image h1 {
-    font-size: clamp(30px, 9vw, 42px);
+    font-size: clamp(26px, 8vw, 36px);
     line-height: 1.04;
   }
 
@@ -3600,7 +3627,7 @@ body[data-language="zh-TW"] .footer-contact a {
   }
 
   .global-hero-image .hero-lead {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.68;
   }
 
@@ -3615,7 +3642,7 @@ body[data-language="zh-TW"] .footer-contact a {
   }
 
   .global-directory {
-    padding-top: 54px;
+    padding-top: 30px;
   }
 
   #licensing-model {
