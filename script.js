@@ -572,7 +572,6 @@ if (service3dVisual) {
   const service3dCanvas = service3dVisual.querySelector(".service-3d-canvas");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let service3dProgress = 0;
-  let service3dResize = () => {};
 
   const updateService3dProgress = () => {
     const bounds = service3dVisual.getBoundingClientRect();
@@ -599,10 +598,21 @@ if (service3dVisual) {
     .then((THREE) => {
       if (!service3dCanvas) throw new Error("Three-dimensional canvas is missing.");
 
+      const colors = {
+        red: 0xff3b36,
+        coral: 0xff756b,
+        burgundy: 0x9b1c2b,
+        graphite: 0x3a414c,
+        steel: 0xb8c2cc,
+        silver: 0xe9edf1,
+        white: 0xffffff,
+        glass: 0xd3dce4
+      };
+
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
-      camera.position.set(0, 2.3, 8.4);
-      camera.lookAt(0, 0.35, 0);
+      const camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
+      camera.position.set(0, 2.6, 9.8);
+      camera.lookAt(0, -0.05, 0);
 
       const renderer = new THREE.WebGLRenderer({
         canvas: service3dCanvas,
@@ -613,128 +623,276 @@ if (service3dVisual) {
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
       renderer.outputColorSpace = THREE.SRGBColorSpace;
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.08;
+      renderer.toneMappingExposure = 1.12;
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-      scene.add(new THREE.HemisphereLight(0xffffff, 0xcfd6df, 2.2));
+      scene.add(new THREE.HemisphereLight(colors.white, colors.silver, 2.5));
 
-      const keyLight = new THREE.DirectionalLight(0xffffff, 3.8);
-      keyLight.position.set(-4, 7, 5);
+      const keyLight = new THREE.DirectionalLight(colors.white, 4.4);
+      keyLight.position.set(-4, 7, 6);
+      keyLight.castShadow = true;
+      keyLight.shadow.mapSize.set(1024, 1024);
+      keyLight.shadow.camera.left = -6;
+      keyLight.shadow.camera.right = 6;
+      keyLight.shadow.camera.top = 5;
+      keyLight.shadow.camera.bottom = -4;
       scene.add(keyLight);
 
-      const redLight = new THREE.PointLight(0xff4b45, 2.2, 8);
-      redLight.position.set(3.4, 1.8, 2.4);
+      const redLight = new THREE.PointLight(colors.red, 2.5, 9);
+      redLight.position.set(3.4, 2.4, 2.8);
       scene.add(redLight);
 
       const root = new THREE.Group();
-      root.position.y = -0.35;
-      root.rotation.x = -0.08;
+      root.position.y = -0.18;
+      root.rotation.x = -0.14;
       scene.add(root);
 
       const floor = new THREE.Mesh(
-        new THREE.CircleGeometry(4.15, 64),
-        new THREE.MeshBasicMaterial({ color: 0xf4f6f8, transparent: true, opacity: 0.78 })
+        new THREE.CircleGeometry(4.2, 64),
+        new THREE.MeshStandardMaterial({ color: colors.silver, roughness: 1, transparent: true, opacity: 0.5 })
       );
       floor.rotation.x = -Math.PI / 2;
-      floor.position.y = -1.05;
-      floor.scale.set(1.18, 0.52, 1);
+      floor.position.y = -1.23;
+      floor.scale.set(1.25, 0.5, 1);
+      floor.receiveShadow = true;
       root.add(floor);
 
-      const floorLineMaterial = new THREE.LineBasicMaterial({ color: 0xff786f, transparent: true, opacity: 0.35 });
+      const floorLineMaterial = new THREE.LineBasicMaterial({ color: colors.coral, transparent: true, opacity: 0.32 });
       const floorLine = new THREE.Line(
         new THREE.BufferGeometry().setFromPoints([
-          new THREE.Vector3(-3.2, -1.02, 0.2),
-          new THREE.Vector3(3.2, -1.02, 0.2)
+          new THREE.Vector3(-3.65, -1.2, 0.25),
+          new THREE.Vector3(3.65, -1.2, 0.25)
         ]),
         floorLineMaterial
       );
       root.add(floorLine);
 
-      const makeLabel = (label, sublabel, color) => {
+      const roundedBoxGeometry = (width, height, depth, radius = 0.08) => {
+        const shape = new THREE.Shape();
+        const halfWidth = width / 2;
+        const halfHeight = height / 2;
+        const safeRadius = Math.min(radius, halfWidth * 0.45, halfHeight * 0.45);
+        shape.moveTo(-halfWidth + safeRadius, -halfHeight);
+        shape.lineTo(halfWidth - safeRadius, -halfHeight);
+        shape.quadraticCurveTo(halfWidth, -halfHeight, halfWidth, -halfHeight + safeRadius);
+        shape.lineTo(halfWidth, halfHeight - safeRadius);
+        shape.quadraticCurveTo(halfWidth, halfHeight, halfWidth - safeRadius, halfHeight);
+        shape.lineTo(-halfWidth + safeRadius, halfHeight);
+        shape.quadraticCurveTo(-halfWidth, halfHeight, -halfWidth, halfHeight - safeRadius);
+        shape.lineTo(-halfWidth, -halfHeight + safeRadius);
+        shape.quadraticCurveTo(-halfWidth, -halfHeight, -halfWidth + safeRadius, -halfHeight);
+        const geometry = new THREE.ExtrudeGeometry(shape, {
+          depth,
+          bevelEnabled: true,
+          bevelSegments: 3,
+          bevelSize: Math.min(safeRadius * 0.5, 0.06),
+          bevelThickness: Math.min(safeRadius * 0.42, 0.05),
+          curveSegments: 5,
+          steps: 1
+        });
+        geometry.center();
+        return geometry;
+      };
+
+      const makeMaterial = (color, options = {}) => new THREE.MeshStandardMaterial({
+        color,
+        roughness: options.roughness ?? 0.32,
+        metalness: options.metalness ?? 0.06,
+        transparent: true,
+        opacity: 0.04,
+        emissive: options.emissive ?? 0x000000,
+        emissiveIntensity: options.emissiveIntensity ?? 0
+      });
+
+      const makeLabel = (label, sublabel, color, width = 1.25, height = 0.42) => {
         const labelCanvas = document.createElement("canvas");
-        labelCanvas.width = 420;
-        labelCanvas.height = 150;
+        labelCanvas.width = 560;
+        labelCanvas.height = 190;
         const context = labelCanvas.getContext("2d");
         context.clearRect(0, 0, labelCanvas.width, labelCanvas.height);
-        context.fillStyle = "rgba(255,255,255,.94)";
-        context.roundRect(8, 8, labelCanvas.width - 16, labelCanvas.height - 16, 24);
+        context.fillStyle = "rgba(255,255,255,.96)";
+        context.roundRect(8, 8, labelCanvas.width - 16, labelCanvas.height - 16, 28);
         context.fill();
         context.fillStyle = color;
-        context.font = "900 32px Arial, sans-serif";
-        context.letterSpacing = "3px";
-        context.fillText(label, 30, 65);
+        context.font = "900 40px Arial, sans-serif";
+        context.fillText(label, 32, 78);
         context.fillStyle = "rgba(36,41,50,.62)";
-        context.font = "700 18px Arial, sans-serif";
-        context.fillText(sublabel, 30, 105);
+        context.font = "700 19px Arial, sans-serif";
+        context.fillText(sublabel, 32, 126);
         const texture = new THREE.CanvasTexture(labelCanvas);
         texture.colorSpace = THREE.SRGBColorSpace;
         const labelMesh = new THREE.Mesh(
-          new THREE.PlaneGeometry(1.28, 0.46),
-          new THREE.MeshBasicMaterial({ map: texture, transparent: true, opacity: 0.08 })
+          new THREE.PlaneGeometry(width, height),
+          new THREE.MeshBasicMaterial({ map: texture, transparent: true, opacity: 0.04, depthWrite: false })
         );
-        labelMesh.position.set(0, 0.08, 0.46);
+        labelMesh.position.z = 0.03;
         return { mesh: labelMesh, material: labelMesh.material };
       };
 
-      const makeBlock = ({ label, sublabel, color, x, y, z, width = 1.7, height = 0.95, depth = 1.05, delay }) => {
+      const addStagePart = (stage, mesh) => {
+        stage.add(mesh);
+        mesh.traverse((child) => {
+          if (!child.material) return;
+          const materials = Array.isArray(child.material) ? child.material : [child.material];
+          materials.forEach((material) => {
+            material.transparent = true;
+            material.opacity = 0.04;
+            stage.userData.materials.push(material);
+          });
+        });
+        return mesh;
+      };
+
+      const createStage = (x, y, z, delay) => {
         const group = new THREE.Group();
-        const bodyMaterial = new THREE.MeshStandardMaterial({
-          color,
-          roughness: 0.28,
-          metalness: 0.08,
-          transparent: true,
-          opacity: 0.08
-        });
-        const body = new THREE.Mesh(new THREE.BoxGeometry(width, height, depth), bodyMaterial);
-        group.add(body);
-
-        const capMaterial = new THREE.MeshStandardMaterial({
-          color: 0xffffff,
-          roughness: 0.2,
-          metalness: 0.04,
-          transparent: true,
-          opacity: 0.08
-        });
-        const cap = new THREE.Mesh(new THREE.BoxGeometry(width * 0.88, 0.08, depth * 0.88), capMaterial);
-        cap.position.y = height / 2 + 0.06;
-        group.add(cap);
-
-        const edge = new THREE.LineSegments(
-          new THREE.EdgesGeometry(new THREE.BoxGeometry(width, height, depth)),
-          new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.08 })
-        );
-        group.add(edge);
-
-        const labelTexture = makeLabel(label, sublabel, color);
-        group.add(labelTexture.mesh);
-
         group.userData = {
           delay,
-          startY: -2.05,
+          startY: -2.5,
           target: new THREE.Vector3(x, y, z),
-          materials: [bodyMaterial, capMaterial, edge.material, labelTexture.material]
+          materials: []
         };
-        group.position.set(x, -2.05, z);
-        group.rotation.y = -0.34;
-        group.scale.setScalar(0.78);
+        group.position.set(x, -2.5, z);
         root.add(group);
         return group;
       };
 
-      const brandBlock = makeBlock({ label: "AIWA", sublabel: "BRAND", color: 0xff4b45, x: -2.55, y: -0.22, z: 0, width: 1.62, height: 0.92, delay: 0.02 });
-      const routeBlock = makeBlock({ label: "ROUTE", sublabel: "PARTNER", color: 0xf38b7e, x: 0, y: 0.7, z: 0.18, width: 1.7, height: 0.98, delay: 0.28 });
-      const factoryBlock = makeBlock({ label: "FACTORY", sublabel: "COORDINATION", color: 0xd82432, x: 2.52, y: -0.02, z: 0, width: 1.82, height: 1.06, delay: 0.55 });
+      const addFrontWindow = (stage, x, y, z, width = 0.26, height = 0.36) => {
+        const window = new THREE.Mesh(
+          roundedBoxGeometry(width, height, 0.035, 0.035),
+          makeMaterial(colors.graphite, { roughness: 0.2, metalness: 0.2 })
+        );
+        window.position.set(x, y, z);
+        addStagePart(stage, window);
+      };
 
-      const beamMaterial = new THREE.LineBasicMaterial({ color: 0xff5a52, transparent: true, opacity: 0.08 });
-      const beams = [
-        [new THREE.Vector3(-1.7, 0.16, 0.08), new THREE.Vector3(-0.88, 0.55, 0.18)],
-        [new THREE.Vector3(0.86, 0.55, 0.18), new THREE.Vector3(1.68, 0.14, 0.08)]
-      ].map(([start, end]) => {
-        const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints([start, end]), beamMaterial.clone());
-        root.add(line);
-        return line;
+      const addAccentBar = (stage, x, y, z, width, color = colors.red) => {
+        const bar = new THREE.Mesh(
+          roundedBoxGeometry(width, 0.035, 0.025, 0.01),
+          makeMaterial(color, { roughness: 0.22, emissive: color, emissiveIntensity: 0.06 })
+        );
+        bar.position.set(x, y, z);
+        addStagePart(stage, bar);
+      };
+
+      const addLabelToStage = (stage, label, sublabel, color, x, y, z, width = 1.25, height = 0.42) => {
+        const labelTexture = makeLabel(label, sublabel, color, width, height);
+        labelTexture.mesh.position.set(x, y, z);
+        addStagePart(stage, labelTexture.mesh);
+      };
+
+      const brandStage = createStage(-2.58, -0.05, 0.12, 0.02);
+      addStagePart(brandStage, new THREE.Mesh(roundedBoxGeometry(1.8, 0.18, 1.22, 0.08), makeMaterial(colors.steel, { metalness: 0.18 })));
+      brandStage.children[0].position.y = -0.94;
+      const brandBody = new THREE.Mesh(roundedBoxGeometry(1.52, 1.45, 1.02, 0.1), makeMaterial(colors.white, { roughness: 0.25 }));
+      brandBody.position.y = -0.18;
+      brandBody.castShadow = true;
+      brandBody.receiveShadow = true;
+      addStagePart(brandStage, brandBody);
+      const brandRoof = new THREE.Mesh(roundedBoxGeometry(1.75, 0.18, 1.16, 0.08), makeMaterial(colors.red, { emissive: colors.red, emissiveIntensity: 0.04 }));
+      brandRoof.position.y = 0.64;
+      brandRoof.castShadow = true;
+      addStagePart(brandStage, brandRoof);
+      addFrontWindow(brandStage, -0.42, 0.02, 0.53, 0.26, 0.36);
+      addFrontWindow(brandStage, 0.42, 0.02, 0.53, 0.26, 0.36);
+      const brandDoor = new THREE.Mesh(roundedBoxGeometry(0.33, 0.62, 0.04, 0.035), makeMaterial(colors.burgundy, { roughness: 0.24 }));
+      brandDoor.position.set(0, -0.56, 0.53);
+      addStagePart(brandStage, brandDoor);
+      addAccentBar(brandStage, -0.38, 0.23, 0.56, 0.42, colors.coral);
+      addAccentBar(brandStage, 0.38, 0.23, 0.56, 0.42, colors.coral);
+      addLabelToStage(brandStage, "AIWA", "BRAND AUTHORIZATION", colors.red, 0, -0.04, 0.555, 1.08, 0.34);
+
+      const documentCard = new THREE.Mesh(roundedBoxGeometry(0.78, 0.58, 0.1, 0.06), makeMaterial(colors.white, { roughness: 0.2 }));
+      documentCard.position.set(0.68, 0.98, 0.06);
+      documentCard.rotation.z = -0.12;
+      addStagePart(brandStage, documentCard);
+      addAccentBar(brandStage, 0.61, 1.1, 0.12, 0.3, colors.red);
+      addAccentBar(brandStage, 0.61, 0.97, 0.12, 0.42, colors.steel);
+      addAccentBar(brandStage, 0.61, 0.87, 0.12, 0.36, colors.steel);
+      const documentCheck = new THREE.Mesh(new THREE.TorusGeometry(0.11, 0.025, 8, 20), makeMaterial(colors.red, { emissive: colors.red, emissiveIntensity: 0.12 }));
+      documentCheck.position.set(0.88, 1.05, 0.12);
+      documentCheck.rotation.x = Math.PI / 2;
+      addStagePart(brandStage, documentCheck);
+
+      const routeStage = createStage(0, 0.02, 0.16, 0.28);
+      const conveyorBase = new THREE.Mesh(roundedBoxGeometry(2.62, 0.18, 0.86, 0.08), makeMaterial(colors.graphite, { roughness: 0.44, metalness: 0.12 }));
+      conveyorBase.position.y = -0.94;
+      conveyorBase.castShadow = true;
+      addStagePart(routeStage, conveyorBase);
+      const conveyorBelt = new THREE.Mesh(roundedBoxGeometry(2.48, 0.11, 0.64, 0.05), makeMaterial(colors.coral, { roughness: 0.32, emissive: colors.coral, emissiveIntensity: 0.035 }));
+      conveyorBelt.position.y = -0.79;
+      addStagePart(routeStage, conveyorBelt);
+      for (let index = 0; index < 9; index += 1) {
+        const roller = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.58, 18), makeMaterial(colors.silver, { metalness: 0.22, roughness: 0.22 }));
+        roller.rotation.x = Math.PI / 2;
+        roller.position.set(-1.02 + (index * 0.255), -0.7, 0);
+        addStagePart(routeStage, roller);
+      }
+      addLabelToStage(routeStage, "ROUTE", "PARTNER REVIEW", colors.burgundy, 0, 0.6, 0.46, 1.18, 0.36);
+      const movingPackages = [];
+      [colors.white, colors.red, colors.coral, colors.silver].forEach((color, index) => {
+        const packageMesh = new THREE.Mesh(roundedBoxGeometry(0.28, 0.28, 0.28, 0.04), makeMaterial(color, { roughness: 0.27, emissive: color === colors.red ? colors.red : 0x000000, emissiveIntensity: 0.03 }));
+        packageMesh.position.set(-0.98 + (index * 0.48), -0.48, 0);
+        packageMesh.castShadow = true;
+        addStagePart(routeStage, packageMesh);
+        movingPackages.push(packageMesh);
       });
 
-      service3dResize = () => {
+      const factoryStage = createStage(2.58, -0.02, 0.08, 0.54);
+      const factoryBase = new THREE.Mesh(roundedBoxGeometry(2.42, 0.18, 1.48, 0.08), makeMaterial(colors.steel, { metalness: 0.16 }));
+      factoryBase.position.y = -0.94;
+      addStagePart(factoryStage, factoryBase);
+      const factoryBody = new THREE.Mesh(roundedBoxGeometry(2.2, 1.25, 1.34, 0.1), makeMaterial(colors.white, { roughness: 0.27 }));
+      factoryBody.position.y = -0.24;
+      factoryBody.castShadow = true;
+      factoryBody.receiveShadow = true;
+      addStagePart(factoryStage, factoryBody);
+      const factoryRoof = new THREE.Mesh(roundedBoxGeometry(2.46, 0.2, 1.48, 0.08), makeMaterial(colors.burgundy, { emissive: colors.burgundy, emissiveIntensity: 0.04 }));
+      factoryRoof.position.y = 0.47;
+      factoryRoof.castShadow = true;
+      addStagePart(factoryStage, factoryRoof);
+      for (let index = 0; index < 4; index += 1) {
+        addFrontWindow(factoryStage, -0.72 + (index * 0.48), -0.08, 0.7, 0.21, 0.3);
+      }
+      const factoryDoor = new THREE.Mesh(roundedBoxGeometry(0.48, 0.76, 0.05, 0.04), makeMaterial(colors.graphite, { roughness: 0.25 }));
+      factoryDoor.position.set(0.75, -0.42, 0.7);
+      addStagePart(factoryStage, factoryDoor);
+      const chimneyMaterial = makeMaterial(colors.steel, { metalness: 0.24, roughness: 0.26 });
+      [0.58, 0.92].forEach((x, index) => {
+        const chimney = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.16, 0.78, 20), chimneyMaterial.clone());
+        chimney.position.set(x, 0.94 + (index * 0.08), -0.08);
+        chimney.castShadow = true;
+        addStagePart(factoryStage, chimney);
+        const chimneyCap = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.17, 0.06, 20), makeMaterial(colors.red, { emissive: colors.red, emissiveIntensity: 0.04 }));
+        chimneyCap.position.set(x, 1.34 + (index * 0.08), -0.08);
+        addStagePart(factoryStage, chimneyCap);
+      });
+      addLabelToStage(factoryStage, "FACTORY", "COORDINATION", colors.red, 0, -0.02, 0.73, 1.4, 0.38);
+
+      const routeCurve = new THREE.CatmullRomCurve3([
+        new THREE.Vector3(-2.08, 0.38, 0.78),
+        new THREE.Vector3(-1.25, 0.96, 0.55),
+        new THREE.Vector3(0, 0.9, 0.56),
+        new THREE.Vector3(1.25, 0.84, 0.55),
+        new THREE.Vector3(2.06, 0.4, 0.78)
+      ]);
+      const routeTube = new THREE.Mesh(
+        new THREE.TubeGeometry(routeCurve, 64, 0.022, 8, false),
+        new THREE.MeshBasicMaterial({ color: colors.red, transparent: true, opacity: 0.04 })
+      );
+      root.add(routeTube);
+      const routeMarkers = [];
+      for (let index = 0; index < 7; index += 1) {
+        const marker = new THREE.Mesh(
+          new THREE.SphereGeometry(0.06, 16, 16),
+          new THREE.MeshBasicMaterial({ color: colors.coral, transparent: true, opacity: 0.04 })
+        );
+        marker.position.copy(routeCurve.getPoint(index / 6));
+        root.add(marker);
+        routeMarkers.push(marker);
+      }
+
+      const service3dResize = () => {
         const bounds = service3dVisual.getBoundingClientRect();
         const width = Math.max(bounds.width, 1);
         const height = Math.max(bounds.height, 1);
@@ -743,31 +901,45 @@ if (service3dVisual) {
         renderer.setSize(width, height, false);
       };
 
+      const updateStage = (stage, progress, time, phase) => {
+        const local = Math.max(0, Math.min(1, (progress - stage.userData.delay) / 0.34));
+        const ease = 1 - ((1 - local) ** 3);
+        const target = stage.userData.target;
+        stage.position.y = stage.userData.startY + ((target.y - stage.userData.startY) * ease);
+        stage.position.x = target.x;
+        stage.position.z = target.z + ((1 - ease) * 0.42);
+        stage.rotation.y = -0.42 + (ease * 0.42) + (prefersReducedMotion ? 0 : Math.sin((time * 0.00045) + phase) * 0.018);
+        stage.rotation.z = prefersReducedMotion ? 0 : Math.sin((time * 0.00034) + phase) * 0.008;
+        stage.scale.setScalar(0.76 + (ease * 0.24));
+        stage.userData.materials.forEach((material) => {
+          material.opacity = 0.04 + (ease * 0.96);
+        });
+        return ease;
+      };
+
       const updateScene = (time) => {
+        const progress = prefersReducedMotion ? 1 : service3dProgress;
+        const brandEase = updateStage(brandStage, progress, time, 0.3);
+        const routeEase = updateStage(routeStage, progress, time, 1.6);
+        const factoryEase = updateStage(factoryStage, progress, time, 2.8);
+        const builtEase = Math.max(brandEase, routeEase, factoryEase);
         const normalizedTime = time * 0.001;
-        const easedProgress = prefersReducedMotion ? 1 : service3dProgress;
 
-        [brandBlock, routeBlock, factoryBlock].forEach((block) => {
-          const local = Math.max(0, Math.min(1, (easedProgress - block.userData.delay) / 0.34));
-          const ease = 1 - ((1 - local) ** 3);
-          const target = block.userData.target;
-          block.position.y = block.userData.startY + ((target.y - block.userData.startY) * ease);
-          block.position.x = target.x;
-          block.position.z = target.z + ((1 - ease) * 0.42);
-          block.rotation.y = -0.34 + (ease * 0.34) + (prefersReducedMotion ? 0 : Math.sin(normalizedTime * 0.65 + target.x) * 0.025);
-          block.scale.setScalar(0.78 + (ease * 0.22));
-          block.userData.materials.forEach((material) => {
-            material.opacity = 0.08 + (ease * 0.92);
-          });
+        routeTube.material.opacity = Math.min(0.58, builtEase * 0.58);
+        routeMarkers.forEach((marker, index) => {
+          const markerEase = Math.max(0, Math.min(1, (progress - (0.2 + (index * 0.08))) / 0.28));
+          marker.material.opacity = markerEase * 0.88;
+          marker.scale.setScalar(0.65 + (markerEase * 0.35));
         });
 
-        beams.forEach((beam, index) => {
-          const local = Math.max(0, Math.min(1, (easedProgress - (0.2 + (index * 0.2))) / 0.34));
-          beam.material.opacity = local * 0.58;
+        movingPackages.forEach((packageMesh, index) => {
+          const position = ((normalizedTime * 0.22) + (index * 0.24)) % 1;
+          packageMesh.position.x = -1.02 + (position * 2.04);
+          packageMesh.rotation.y = prefersReducedMotion ? 0 : normalizedTime * 0.4 + index;
         });
 
-        root.rotation.y = -0.2 + (easedProgress * 0.46) + (prefersReducedMotion ? 0 : Math.sin(normalizedTime * 0.42) * 0.018);
-        root.rotation.z = prefersReducedMotion ? 0 : Math.sin(normalizedTime * 0.36) * 0.008;
+        root.rotation.y = -0.14 + (progress * 0.28) + (prefersReducedMotion ? 0 : Math.sin(normalizedTime * 0.36) * 0.012);
+        root.rotation.z = prefersReducedMotion ? 0 : Math.sin(normalizedTime * 0.28) * 0.006;
         renderer.render(scene, camera);
         window.requestAnimationFrame(updateScene);
       };
