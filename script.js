@@ -513,7 +513,18 @@ languageButtons.forEach((button) => {
 function updateHeader() {
   header.classList.toggle("is-scrolled", window.scrollY > 10);
   document.documentElement.style.setProperty("--scroll-y", String(window.scrollY));
+  backToTop?.classList.toggle("is-visible", window.scrollY > 360);
 }
+
+const backToTop = document.createElement("button");
+backToTop.type = "button";
+backToTop.className = "back-to-top";
+backToTop.setAttribute("aria-label", "Back to top");
+backToTop.innerHTML = '<span aria-hidden="true">↑</span>';
+document.body.append(backToTop);
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 menuButton.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("is-open");

@@ -375,10 +375,91 @@ textarea {
   box-shadow: 0 6px 16px rgba(185, 24, 43, 0.18);
 }
 
+.green-page .nav-cta {
+  border-color: rgba(24, 135, 89, 0.24);
+  background: linear-gradient(135deg, #1f8f62 0%, #6fbe70 58%, #a9d779 100%);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(37, 105, 78, 0.18);
+}
+
+.green-page .nav-cta:hover,
+.green-page .nav-cta:focus-visible {
+  color: #fff;
+  background: linear-gradient(135deg, #187b54 0%, #58ad68 58%, #8fca70 100%);
+  box-shadow: 0 12px 30px rgba(37, 105, 78, 0.24);
+}
+
+.green-page .language-button:hover,
+.green-page .language-button:focus-visible {
+  color: #116747;
+  background: linear-gradient(135deg, rgba(44, 160, 111, 0.14), rgba(161, 211, 127, 0.18));
+}
+
+.green-page .language-button.is-active {
+  background: linear-gradient(135deg, #1f8f62 0%, #6fbe70 58%, #a9d779 100%);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(37, 105, 78, 0.2);
+}
+
 .green-cta {
   border-color: rgba(24, 135, 89, 0.16);
   background: linear-gradient(135deg, rgba(44, 160, 111, 0.14), rgba(161, 211, 127, 0.18));
   color: #116747;
+}
+
+.back-to-top {
+  position: fixed;
+  right: clamp(16px, 3vw, 34px);
+  bottom: clamp(18px, 3vw, 34px);
+  z-index: 19;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.84);
+  border-radius: 999px;
+  background: var(--contact-gradient);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(166, 25, 35, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease, background 180ms ease;
+  cursor: pointer;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  background: var(--contact-gradient);
+  filter: brightness(.88);
+  transform: translateY(-2px);
+  outline: 3px solid rgba(255, 59, 54, 0.2);
+  outline-offset: 3px;
+}
+
+.back-to-top span {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.green-page .back-to-top {
+  background: linear-gradient(135deg, #1f8f62 0%, #6fbe70 58%, #a9d779 100%);
+  box-shadow: 0 14px 30px rgba(37, 105, 78, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+.green-page .back-to-top:hover,
+.green-page .back-to-top:focus-visible {
+  background: linear-gradient(135deg, #187b54 0%, #58ad68 58%, #8fca70 100%);
+  outline-color: rgba(44, 160, 111, 0.24);
 }
 
 .menu-button {
