@@ -1,7 +1,6 @@
 const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector("[data-menu-button]");
 const nav = document.querySelector("[data-nav]");
-const dropdowns = document.querySelectorAll(".nav-dropdown");
 const languageButtons = document.querySelectorAll("[data-language]");
 const originalTextNodes = new WeakMap();
 const originalAttributes = new WeakMap();
@@ -14,6 +13,7 @@ const translations = {
   "Our Role": "我們的角色",
   "Our advantages": "我們的優勢",
   "Company Service": "公司服務",
+  "Company Services": "公司服務",
   "Licensing Model": "授權模式",
   "Quality Governance": "品質治理",
   "Factory Partnership": "工廠合作",
@@ -491,40 +491,11 @@ menuButton.addEventListener("click", () => {
   menuButton.setAttribute("aria-expanded", String(isOpen));
 });
 
-dropdowns.forEach((dropdown) => {
-  const trigger = dropdown.querySelector(".nav-dropdown-trigger");
-
-  trigger.addEventListener("click", (event) => {
-    event.stopPropagation();
-    const willOpen = !dropdown.classList.contains("is-open");
-
-    dropdowns.forEach((item) => {
-      item.classList.remove("is-open");
-      item.querySelector(".nav-dropdown-trigger").setAttribute("aria-expanded", "false");
-    });
-
-    dropdown.classList.toggle("is-open", willOpen);
-    trigger.setAttribute("aria-expanded", String(willOpen));
-  });
-});
-
 nav.addEventListener("click", (event) => {
   if (!event.target.closest("a")) return;
-  dropdowns.forEach((dropdown) => {
-    dropdown.classList.remove("is-open");
-    dropdown.querySelector(".nav-dropdown-trigger").setAttribute("aria-expanded", "false");
-  });
   nav.classList.remove("is-open");
   document.body.classList.remove("menu-open");
   menuButton.setAttribute("aria-expanded", "false");
-});
-
-document.addEventListener("click", (event) => {
-  if (event.target.closest(".nav-dropdown")) return;
-  dropdowns.forEach((dropdown) => {
-    dropdown.classList.remove("is-open");
-    dropdown.querySelector(".nav-dropdown-trigger").setAttribute("aria-expanded", "false");
-  });
 });
 
 const heroSlides = document.querySelectorAll(".hero-slide");
