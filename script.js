@@ -566,6 +566,222 @@ heroDots.forEach((dot, dotIndex) => {
   dot.addEventListener("click", () => showHeroSlide(dotIndex));
 });
 
+const service3dVisual = document.querySelector("[data-service-3d]");
+
+if (service3dVisual) {
+  const service3dCanvas = service3dVisual.querySelector(".service-3d-canvas");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let service3dProgress = 0;
+  let service3dResize = () => {};
+
+  const updateService3dProgress = () => {
+    const bounds = service3dVisual.getBoundingClientRect();
+    const travel = Math.max(bounds.height * 1.05, 1);
+    service3dProgress = prefersReducedMotion
+      ? 1
+      : Math.max(0, Math.min(1, (window.innerHeight * 0.84 - bounds.top) / travel));
+  };
+
+  window.addEventListener("scroll", updateService3dProgress, { passive: true });
+  window.addEventListener("resize", updateService3dProgress, { passive: true });
+  updateService3dProgress();
+
+  const service3dObserver = new IntersectionObserver((entries) => {
+    if (entries.some((entry) => entry.isIntersecting)) {
+      service3dVisual.classList.add("is-in-view");
+      service3dObserver.disconnect();
+    }
+  }, { threshold: 0.2 });
+
+  service3dObserver.observe(service3dVisual);
+
+  import("https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js")
+    .then((THREE) => {
+      if (!service3dCanvas) throw new Error("Three-dimensional canvas is missing.");
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+      camera.position.set(0, 2.3, 8.4);
+      camera.lookAt(0, 0.35, 0);
+
+      const renderer = new THREE.WebGLRenderer({
+        canvas: service3dCanvas,
+        alpha: true,
+        antialias: true,
+        powerPreference: "high-performance"
+      });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.08;
+
+      scene.add(new THREE.HemisphereLight(0xffffff, 0xcfd6df, 2.2));
+
+      const keyLight = new THREE.DirectionalLight(0xffffff, 3.8);
+      keyLight.position.set(-4, 7, 5);
+      scene.add(keyLight);
+
+      const redLight = new THREE.PointLight(0xff4b45, 2.2, 8);
+      redLight.position.set(3.4, 1.8, 2.4);
+      scene.add(redLight);
+
+      const root = new THREE.Group();
+      root.position.y = -0.35;
+      root.rotation.x = -0.08;
+      scene.add(root);
+
+      const floor = new THREE.Mesh(
+        new THREE.CircleGeometry(4.15, 64),
+        new THREE.MeshBasicMaterial({ color: 0xf4f6f8, transparent: true, opacity: 0.78 })
+      );
+      floor.rotation.x = -Math.PI / 2;
+      floor.position.y = -1.05;
+      floor.scale.set(1.18, 0.52, 1);
+      root.add(floor);
+
+      const floorLineMaterial = new THREE.LineBasicMaterial({ color: 0xff786f, transparent: true, opacity: 0.35 });
+      const floorLine = new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints([
+          new THREE.Vector3(-3.2, -1.02, 0.2),
+          new THREE.Vector3(3.2, -1.02, 0.2)
+        ]),
+        floorLineMaterial
+      );
+      root.add(floorLine);
+
+      const makeLabel = (label, sublabel, color) => {
+        const labelCanvas = document.createElement("canvas");
+        labelCanvas.width = 420;
+        labelCanvas.height = 150;
+        const context = labelCanvas.getContext("2d");
+        context.clearRect(0, 0, labelCanvas.width, labelCanvas.height);
+        context.fillStyle = "rgba(255,255,255,.94)";
+        context.roundRect(8, 8, labelCanvas.width - 16, labelCanvas.height - 16, 24);
+        context.fill();
+        context.fillStyle = color;
+        context.font = "900 32px Arial, sans-serif";
+        context.letterSpacing = "3px";
+        context.fillText(label, 30, 65);
+        context.fillStyle = "rgba(36,41,50,.62)";
+        context.font = "700 18px Arial, sans-serif";
+        context.fillText(sublabel, 30, 105);
+        const texture = new THREE.CanvasTexture(labelCanvas);
+        texture.colorSpace = THREE.SRGBColorSpace;
+        const labelMesh = new THREE.Mesh(
+          new THREE.PlaneGeometry(1.28, 0.46),
+          new THREE.MeshBasicMaterial({ map: texture, transparent: true, opacity: 0.08 })
+        );
+        labelMesh.position.set(0, 0.08, 0.46);
+        return { mesh: labelMesh, material: labelMesh.material };
+      };
+
+      const makeBlock = ({ label, sublabel, color, x, y, z, width = 1.7, height = 0.95, depth = 1.05, delay }) => {
+        const group = new THREE.Group();
+        const bodyMaterial = new THREE.MeshStandardMaterial({
+          color,
+          roughness: 0.28,
+          metalness: 0.08,
+          transparent: true,
+          opacity: 0.08
+        });
+        const body = new THREE.Mesh(new THREE.BoxGeometry(width, height, depth), bodyMaterial);
+        group.add(body);
+
+        const capMaterial = new THREE.MeshStandardMaterial({
+          color: 0xffffff,
+          roughness: 0.2,
+          metalness: 0.04,
+          transparent: true,
+          opacity: 0.08
+        });
+        const cap = new THREE.Mesh(new THREE.BoxGeometry(width * 0.88, 0.08, depth * 0.88), capMaterial);
+        cap.position.y = height / 2 + 0.06;
+        group.add(cap);
+
+        const edge = new THREE.LineSegments(
+          new THREE.EdgesGeometry(new THREE.BoxGeometry(width, height, depth)),
+          new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.08 })
+        );
+        group.add(edge);
+
+        const labelTexture = makeLabel(label, sublabel, color);
+        group.add(labelTexture.mesh);
+
+        group.userData = {
+          delay,
+          startY: -2.05,
+          target: new THREE.Vector3(x, y, z),
+          materials: [bodyMaterial, capMaterial, edge.material, labelTexture.material]
+        };
+        group.position.set(x, -2.05, z);
+        group.rotation.y = -0.34;
+        group.scale.setScalar(0.78);
+        root.add(group);
+        return group;
+      };
+
+      const brandBlock = makeBlock({ label: "AIWA", sublabel: "BRAND", color: 0xff4b45, x: -2.55, y: -0.22, z: 0, width: 1.62, height: 0.92, delay: 0.02 });
+      const routeBlock = makeBlock({ label: "ROUTE", sublabel: "PARTNER", color: 0xf38b7e, x: 0, y: 0.7, z: 0.18, width: 1.7, height: 0.98, delay: 0.28 });
+      const factoryBlock = makeBlock({ label: "FACTORY", sublabel: "COORDINATION", color: 0xd82432, x: 2.52, y: -0.02, z: 0, width: 1.82, height: 1.06, delay: 0.55 });
+
+      const beamMaterial = new THREE.LineBasicMaterial({ color: 0xff5a52, transparent: true, opacity: 0.08 });
+      const beams = [
+        [new THREE.Vector3(-1.7, 0.16, 0.08), new THREE.Vector3(-0.88, 0.55, 0.18)],
+        [new THREE.Vector3(0.86, 0.55, 0.18), new THREE.Vector3(1.68, 0.14, 0.08)]
+      ].map(([start, end]) => {
+        const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints([start, end]), beamMaterial.clone());
+        root.add(line);
+        return line;
+      });
+
+      service3dResize = () => {
+        const bounds = service3dVisual.getBoundingClientRect();
+        const width = Math.max(bounds.width, 1);
+        const height = Math.max(bounds.height, 1);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height, false);
+      };
+
+      const updateScene = (time) => {
+        const normalizedTime = time * 0.001;
+        const easedProgress = prefersReducedMotion ? 1 : service3dProgress;
+
+        [brandBlock, routeBlock, factoryBlock].forEach((block) => {
+          const local = Math.max(0, Math.min(1, (easedProgress - block.userData.delay) / 0.34));
+          const ease = 1 - ((1 - local) ** 3);
+          const target = block.userData.target;
+          block.position.y = block.userData.startY + ((target.y - block.userData.startY) * ease);
+          block.position.x = target.x;
+          block.position.z = target.z + ((1 - ease) * 0.42);
+          block.rotation.y = -0.34 + (ease * 0.34) + (prefersReducedMotion ? 0 : Math.sin(normalizedTime * 0.65 + target.x) * 0.025);
+          block.scale.setScalar(0.78 + (ease * 0.22));
+          block.userData.materials.forEach((material) => {
+            material.opacity = 0.08 + (ease * 0.92);
+          });
+        });
+
+        beams.forEach((beam, index) => {
+          const local = Math.max(0, Math.min(1, (easedProgress - (0.2 + (index * 0.2))) / 0.34));
+          beam.material.opacity = local * 0.58;
+        });
+
+        root.rotation.y = -0.2 + (easedProgress * 0.46) + (prefersReducedMotion ? 0 : Math.sin(normalizedTime * 0.42) * 0.018);
+        root.rotation.z = prefersReducedMotion ? 0 : Math.sin(normalizedTime * 0.36) * 0.008;
+        renderer.render(scene, camera);
+        window.requestAnimationFrame(updateScene);
+      };
+
+      service3dResize();
+      window.addEventListener("resize", service3dResize, { passive: true });
+      service3dVisual.classList.add("is-ready");
+      window.requestAnimationFrame(updateScene);
+    })
+    .catch(() => {
+      service3dVisual.classList.add("is-fallback");
+    });
+}
+
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
 
