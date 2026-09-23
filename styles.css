@@ -816,6 +816,11 @@ h3 {
     inset 0 1px 0 rgba(255, 255, 255, 0.92);
 }
 
+.pillar-image--sustainability {
+  filter: brightness(1.04) saturate(0.82) contrast(0.96);
+  object-position: center;
+}
+
 .pillars article h3,
 .pillars article p {
   margin-left: 10px;
