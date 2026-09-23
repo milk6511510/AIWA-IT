@@ -129,7 +129,7 @@ const translations = {
   "Aiwa India 2023: MI-X440 Enigma Beta Coverage on Times of India": "AIWA 印度 2023：MI-X440 Enigma Beta 登上 Times of India",
   "New Product Range Release: Aiwa M-Series Monitors": "新品系列發表：AIWA M 系列顯示器",
   "Latest News": "最新消息",
-  "Market activity and product updates from AIWA international channels.": "來自 AIWA 國際通路的市場動態與產品更新。",
+  "Market activity and product updates from AIWA international channels.": "AIWA 國際市場的動態與產品更新。",
   "Contact Us": "聯絡我們",
   "Built to attract serious licensing conversations.": "為正式的品牌授權洽談而設計。",
   "A high-end B2B site should guide visitors into a structured inquiry, collecting the information needed before a licensing discussion begins.": "高階 B2B 網站應引導訪客提出結構化需求，在授權討論開始前先收集必要資訊。",
@@ -180,6 +180,11 @@ const translations = {
   "Built for the next stage of product review.": "為下一階段產品審查而設計。",
   "The final WordPress version can turn this area into a managed document library, with protected files, product categories, language versions, revision dates, and market-specific downloads controlled from the headquarters.": "正式 WordPress 版本可將此區域升級為可管理的文件資料庫，由總部控管受保護檔案、產品分類、語言版本、修訂日期與各市場專用下載內容。",
   "Global Network": "全球網絡",
+  "News Archive": "新聞資料庫",
+  "Market activity and product updates from AIWA international channels.": "來自 AIWA 國際市場的活動與產品更新。",
+  "A focused view of brand activity, product announcements, and market stories shared through AIWA's international network.": "集中整理 AIWA 國際網絡分享的品牌活動、產品發表與市場故事。",
+  "Stories from the markets and categories shaping AIWA's next chapter.": "來自各市場與產品類別的 AIWA 最新故事。",
+  "Browse selected updates from AIWA's international channels. Each story opens the related article on the original AIWA website.": "瀏覽 AIWA 國際頻道的精選更新，每則故事都會開啟原始 AIWA 官網的相關文章。",
   "Search country / 搜尋國家": "搜尋國家 / Search country",
   "Showing": "顯示",
   "markets found": "個市場",
@@ -213,7 +218,7 @@ const translations = {
   "USA": "美國",
   "Vietnam": "越南",
   "Green AIWA": "綠色 AIWA",
-  "Cleaner air, smarter energy, and better water.": "更潔淨的空氣、更聰明的能源運用，以及更好的水生活。",
+  "Cleaner air, smarter energy, and better water.": "更潔淨的空氣、更高效的能源，以及更優質的用水體驗。",
   "Green AIWA is a preliminary ESG+ business zone for partners exploring AIWA-branded home electronics with practical sustainability value. The focus is not a slogan, but a category framework that can be reviewed through efficiency, responsible materials, certification needs, and long-term product support.": "綠色 AIWA 是一個初步的 ESG+ 商務專區，提供夥伴探索具備實際永續價值的 AIWA 家用電子產品。重點不只是口號，而是能從效率、負責任材料、認證需求與長期產品支援等面向審查的產品架構。",
   "View green products": "查看綠色產品",
   "ESG+ cooperation model": "ESG+ 合作模式",
@@ -257,14 +262,31 @@ const translations = {
   "Consumer electronics era": "消費電子時代",
   "Product development and regional reach": "產品發展與區域拓展",
   "The brand grew through cost effective, high-quality consumer electronics supported by after-sales service.": "品牌透過兼具成本效益與高品質的消費電子產品，以及完善的售後服務逐步成長。",
-  "International network": "國際網絡",
+  "International network": "國際合作網絡",
   "Business partnerships across 100+ countries": "遍及 100 多個國家的商業夥伴",
   "Distribution, marketing, and retail cooperation expanded across different cultural and market conditions.": "經銷、行銷與零售合作，延伸至不同文化與市場環境。",
   "Today": "現在",
   "Taiwan-led operations": "台灣主導的營運",
   "AIWA Electronics International Co., Ltd. coordinates brand licensing, factory partnerships, and product approval for markets outside Japan and Korea.": "AIWA Electronics International Co., Ltd. 協調日本與韓國以外市場的品牌授權、工廠合作與產品核准。",
   "Brand credo": "品牌信念",
-  "Purpose, belief, planning, action, result.": "目的、信念、計畫、行動、成果。"
+  "Purpose, belief, planning, action, result.": "目的、信念、規劃、行動，最終成就成果。",
+  "AIWA Electronics International Co., Ltd. | Global Licensing & Market Operations": "AIWA Electronics International Co., Ltd.｜全球品牌授權與市場營運",
+  "One cooperation framework, from brand authorization to factory coordination.": "從品牌授權到工廠協調，建立一致的合作框架。",
+  "AIWA Electronics International Co., Ltd. gives partners a clear route to develop market opportunities while keeping brand standards, product direction, and review expectations aligned from the first discussion to the final proposal.": "AIWA Electronics International Co., Ltd. 為合作夥伴建立清晰的市場開發路徑，從初步洽談到最終提案，持續對齊品牌標準、產品方向與審查要求。",
+  "October 04, 2023": "2023 年 10 月 4 日",
+  "September 27, 2023": "2023 年 9 月 27 日",
+  "September 25, 2023": "2023 年 9 月 25 日",
+  "September 18, 2023": "2023 年 9 月 18 日",
+  "September 05, 2023": "2023 年 9 月 5 日",
+  "July 26, 2023": "2023 年 7 月 26 日",
+  "July 03, 2023": "2023 年 7 月 3 日",
+  "Global Licensing & Market Operations": "全球品牌授權與市場營運",
+  "International channels": "國際市場頻道",
+  "AIWA AT-X80C User's Manual": "AIWA AT-X80C 使用手冊",
+  "AIWA AT-X80T User's Manual": "AIWA AT-X80T 使用手冊",
+  "AIWA NB-A23E User's Manual": "AIWA NB-A23E 使用手冊",
+  "AIWA KF-H23 User's Manual": "AIWA KF-H23 使用手冊",
+  "AIWA AT-H08 LINK User's Manual": "AIWA AT-H08 LINK 使用手冊"
 };
 
 const attributeTranslations = {
@@ -276,7 +298,12 @@ const attributeTranslations = {
   "Previous news": "上一則消息",
   "Next news": "下一則消息",
   "AIWA country selector": "AIWA 國家選擇器",
+  "Country suggestions": "國家搜尋建議",
   "Clear country search": "清除國家搜尋",
+  "AIWA news archive": "AIWA 新聞資料庫",
+  "Green AIWA temporary logo": "Green AIWA 暫用標誌",
+  "Green AIWA sustainability concept showroom": "Green AIWA 永續概念展示空間",
+  "Sustainable packaging and material coordination concept": "永續包裝與材料協調概念",
   "Search in English or Traditional Chinese": "可輸入英文或繁體中文",
   "Product category opportunities": "產品類別機會",
   "Product catalog categories": "產品目錄分類",
@@ -289,6 +316,7 @@ const attributeTranslations = {
 const pageTitles = {
   "index.html": "AIWA Electronics International Co., Ltd.｜全球品牌授權與市場營運",
   "global.html": "全球網絡｜AIWA Electronics International Co., Ltd.",
+  "news.html": "最新消息｜AIWA Electronics International Co., Ltd.",
   "green.html": "綠色 AIWA｜AIWA Electronics International Co., Ltd.",
   "history.html": "品牌歷史｜AIWA Electronics International Co., Ltd.",
   "download.html": "下載中心｜AIWA Electronics International Co., Ltd."
@@ -467,6 +495,8 @@ function applyLanguage(language) {
     document.title = "AIWA Electronics International Co., Ltd. | Global Licensing & Market Operations";
   } else if (fileName === "global.html") {
     document.title = "Global Network | AIWA Electronics International Co., Ltd.";
+  } else if (fileName === "news.html") {
+    document.title = "Latest News | AIWA Electronics International Co., Ltd.";
   } else if (fileName === "green.html") {
     document.title = "Green AIWA | AIWA Electronics International Co., Ltd.";
   } else if (fileName === "history.html") {
@@ -664,6 +694,28 @@ function scrollNews(direction) {
 newsPrev?.addEventListener("click", () => scrollNews(-1));
 newsNext?.addEventListener("click", () => scrollNews(1));
 
+const newsData = [
+  { date: "October 04, 2023", title: "Aiwa India's Marketing Triumphs: A Showcase of Success", image: "assets/news/news-india-marketing.jpeg", alt: "Aiwa India's Marketing Triumphs preview", id: "88" },
+  { date: "September 27, 2023", title: "Aiwa Europe Unveils 2024 Product Lineup at IFA Berlin 2023", image: "assets/news/news-ifa-berlin.jpeg", alt: "Aiwa Europe IFA Berlin 2023 preview", id: "87" },
+  { date: "September 25, 2023", title: "Aiwa Iran's State-of-the-Art After-Sales Service Centres & Specialized Central Inventory Warehouse Facility", image: "assets/news/news-iran-service.jpeg", alt: "Aiwa Iran service centre preview", id: "86" },
+  { date: "September 18, 2023", title: "Aiwa Iran HQ Spreads Love Through Charity Event", image: "assets/news/news-india-marketing.jpeg", alt: "Aiwa Iran charity event preview", id: "85" },
+  { date: "September 05, 2023", title: "Celebrating Aiwa India's Remarkable Newspaper Advertising Campaign Efforts", image: "assets/news/news-india-marketing.jpeg", alt: "Aiwa India newspaper campaign preview", id: "84" },
+  { date: "July 26, 2023", title: "AIWA: TWS Earbuds Mini Facelift", image: "assets/news/news-m-series-monitor.jpeg", alt: "AIWA TWS earbuds mini facelift preview", id: "83" },
+  { date: "July 03, 2023", title: "Aiwa India 2023: MI-X440 Enigma Beta Coverage on Times of India", image: "assets/news/news-m-series-monitor.jpeg", alt: "Aiwa India MI-X440 Enigma Beta coverage preview", id: "82" },
+  { date: "July 03, 2023", title: "New Product Range Release: Aiwa M-Series Monitors", image: "assets/news/news-m-series-monitor.jpeg", alt: "Aiwa M-Series Monitors preview", id: "81" }
+];
+
+const newsPageGrid = document.querySelector("[data-news-page-grid]");
+if (newsPageGrid) {
+  newsPageGrid.innerHTML = newsData.map((news) => `
+    <a class="news-card" href="https://www.int-aiwa.com/news_detail.php?id=${news.id}" target="_blank" rel="noreferrer">
+      <img src="${news.image}" alt="${news.alt}">
+      <span>${news.date}</span>
+      <h3>${news.title}</h3>
+    </a>
+  `).join("");
+}
+
 const downloadFilters = document.querySelectorAll("[data-download-filter]");
 const downloadItems = document.querySelectorAll("[data-download-item]");
 const downloadSearch = document.querySelector("[data-download-search]");
@@ -699,54 +751,136 @@ downloadFilters.forEach((filter) => {
 downloadSearch?.addEventListener("input", updateDownloadLibrary);
 updateDownloadLibrary();
 
-const countries = [
-  ["Japan Founding Legal HQ", "日本創始法定總部", "30", "2020_06_19_1531401.png", "Founding Market"],
-  ["EU Regional HQ", "歐洲區域總部", "174", "2021_07_05_0933371.png", "Regional Headquarters"],
-  ["India Regional HQ", "印度區域總部", "27", "2020_06_19_1530171.png", "Regional Headquarters"],
-  ["UAE Regional HQ", "阿聯酋區域總部", "62", "2020_06_19_1614471.png", "Regional Headquarters"],
-  ["Thailand Regional HQ", "泰國區域總部", "4", "2020_06_19_1554131.png", "Regional Headquarters"],
-  ["Africa HQ", "非洲總部", "179", "2023_08_08_0937561.png", "Regional Headquarters"],
-  ["Australia Regional HQ", "澳洲區域總部", "109", "2020_06_19_1619251.png", "Regional Headquarters"],
-  ["China Regional HQ", "中國區域總部", "8", "2020_06_19_1519161.png", "Regional Headquarters"],
-  ["Austria", "奧地利", "74", "2020_06_19_1513011.png", "Country Link"],
-  ["Belgium", "比利時", "9", "2020_06_19_1514221.png", "Country Link"],
-  ["Cambodia", "柬埔寨", "22", "2020_06_19_1527181.png", "Country Link"],
-  ["Denmark", "丹麥", "77", "2020_06_19_1527431.png", "Country Link"],
-  ["France", "法國", "80", "2020_06_19_1528171.png", "Country Link"],
-  ["Germany", "德國", "176", "2022_04_26_1529391.png", "Country Link"],
-  ["Greece", "希臘", "11", "2020_06_19_1529401.png", "Country Link"],
-  ["Hong Kong", "香港", "110", "2020_06_22_0849171.png", "Country Link"],
-  ["Iran", "伊朗", "28", "2020_06_19_1531151.png", "Country Link"],
-  ["Italy", "義大利", "85", "2020_06_19_1530521.png", "Country Link"],
-  ["Korea", "韓國", "34", "2020_06_19_1531511.png", "Country Link"],
-  ["Malaysia", "馬來西亞", "5", "2020_06_19_1538221.png", "Country Link"],
-  ["Netherlands", "荷蘭", "95", "2020_06_19_1541161.png", "Country Link"],
-  ["Philippines", "菲律賓", "7", "2020_06_19_1543241.png", "Country Link"],
-  ["Singapore", "新加坡", "1", "2020_06_19_1554021.png", "Country Link"],
-  ["Taiwan", "台灣", "57", "2020_06_19_1613431.png", "Headquarters Market"],
-  ["United Kingdom", "英國", "106", "2020_06_19_1614331.png", "Country Link"],
-  ["USA", "美國", "14", "2020_06_19_1614021.png", "Country Link"],
-  ["Vietnam", "越南", "65", "2020_06_19_1615431.png", "Country Link"]
+const countryRegions = [
+  {
+    key: "asia",
+    name: "Asia",
+    zhName: "亞洲",
+    markets: [
+      ["China", "中國", "8"],
+      ["Cambodia", "柬埔寨", "22"],
+      ["Hong Kong", "香港", "110"],
+      ["India", "印度", "27"],
+      ["Korea", "韓國", "34"],
+      ["Malaysia", "馬來西亞", "5"],
+      ["Philippines", "菲律賓", "7"],
+      ["Singapore", "新加坡", "1"],
+      ["Taiwan", "台灣", "57"],
+      ["Thailand", "泰國", "4"],
+      ["Vietnam", "越南", "65"]
+    ]
+  },
+  {
+    key: "europe",
+    name: "Europe",
+    zhName: "歐洲",
+    markets: [
+      ["Austria", "奧地利", "74"],
+      ["Belgium", "比利時", "9"],
+      ["Denmark", "丹麥", "77"],
+      ["France", "法國", "80"],
+      ["Germany", "德國", "176"],
+      ["Greece", "希臘", "11"],
+      ["Italy", "義大利", "85"],
+      ["Netherlands", "荷蘭", "95"],
+      ["United Kingdom", "英國", "106"]
+    ]
+  },
+  {
+    key: "middle-east-africa",
+    name: "Middle East & Africa",
+    zhName: "中東與非洲",
+    markets: [
+      ["Iran", "伊朗", "28"],
+      ["UAE", "阿聯酋", "62"],
+      ["Africa", "非洲市場", "179"]
+    ]
+  },
+  {
+    key: "americas",
+    name: "Americas",
+    zhName: "美洲",
+    markets: [
+      ["USA", "美國", "14"]
+    ]
+  },
+  {
+    key: "oceania",
+    name: "Oceania",
+    zhName: "大洋洲",
+    markets: [
+      ["Australia", "澳洲", "109"]
+    ]
+  }
 ];
+
+const countries = countryRegions.flatMap((region) => region.markets.map(([name, zhName, id]) => ({
+  name,
+  zhName,
+  id,
+  region: region.name,
+  zhRegion: region.zhName
+})));
 
 const countryGrid = document.querySelector("[data-country-grid]");
 const countrySearch = document.querySelector("[data-country-search]");
 const countrySearchClear = document.querySelector("[data-country-search-clear]");
 const countrySearchStatus = document.querySelector("[data-country-search-status]");
+const countrySuggestions = document.querySelector("[data-country-suggestions]");
 
 if (countryGrid) {
-  countryGrid.innerHTML = countries.map(([name, zhName, id, image], index) => `
-    <a class="country-card${index === 1 ? " is-active" : ""}" href="https://www.int-aiwa.com/global_deatil.php?id=${id}" target="_blank" rel="noreferrer" data-country-index="${index}" data-country-search="${name} ${zhName}">
-      <img src="https://www.int-aiwa.com/upload/${image}" alt="${name}">
-      <span>${name}</span>
-    </a>
+  countryGrid.innerHTML = countryRegions.map((region, regionIndex) => `
+    <section class="country-region" data-region-key="${region.key}">
+      <div class="country-region-heading">
+        <div class="country-region-title">
+          <span class="country-region-index">${String(regionIndex + 1).padStart(2, "0")}</span>
+          <div>
+            <span class="region-name-en">${region.name}</span>
+            <span class="region-name-zh">${region.zhName}</span>
+          </div>
+        </div>
+        <span class="country-region-count">
+          <span class="region-count-en">${region.markets.length} markets</span>
+          <span class="region-count-zh">${region.markets.length} 個市場</span>
+        </span>
+      </div>
+      <div class="country-card-grid">
+        ${region.markets.map(([name, zhName, id]) => `
+          <a class="country-card" href="https://www.int-aiwa.com/global_deatil.php?id=${id}" target="_blank" rel="noreferrer" data-country-key="${name}" data-country-search="${name} ${zhName} ${region.name} ${region.zhName}">
+            <span class="country-name-en">${name}</span>
+            <span class="country-name-zh">${zhName}</span>
+          </a>
+        `).join("")}
+      </div>
+    </section>
   `).join("");
+}
+
+function findCountry(key) {
+  return countries.find((country) => country.name === key);
+}
+
+function renderCountrySuggestions(matches) {
+  if (!countrySuggestions) return;
+  countrySuggestions.innerHTML = matches.slice(0, 7).map((country) => `
+    <button type="button" class="country-suggestion" role="option" data-country-suggestion="${country.name}">
+      <span>
+        <strong class="country-name-en">${country.name}</strong>
+        <strong class="country-name-zh">${country.zhName}</strong>
+        <small><span class="region-name-en">${country.region}</span><span class="region-name-zh">${country.zhRegion}</span></small>
+      </span>
+      <span class="country-suggestion-arrow" aria-hidden="true">↗</span>
+    </button>
+  `).join("");
+  countrySuggestions.hidden = matches.length === 0;
 }
 
 function updateCountrySearch() {
   if (!countryGrid) return;
   const query = (countrySearch?.value || "").trim().toLocaleLowerCase();
   const cards = [...countryGrid.querySelectorAll(".country-card")];
+  const regionSections = [...countryGrid.querySelectorAll(".country-region")];
+  const matches = countries.filter((country) => `${country.name} ${country.zhName} ${country.region} ${country.zhRegion}`.toLocaleLowerCase().includes(query));
   let visibleCount = 0;
 
   cards.forEach((card) => {
@@ -757,7 +891,12 @@ function updateCountrySearch() {
     if (isVisible) visibleCount += 1;
   });
 
+  regionSections.forEach((region) => {
+    region.hidden = !region.querySelector(".country-card:not([hidden])");
+  });
+
   if (countrySearchClear) countrySearchClear.hidden = !query;
+  renderCountrySuggestions(query ? matches : []);
   if (countrySearchStatus) {
     countrySearchStatus.textContent = query
       ? (activeLanguage === "zh-TW" ? `顯示 ${visibleCount} 個市場` : `${visibleCount} markets found`)
@@ -766,11 +905,30 @@ function updateCountrySearch() {
 }
 
 countrySearch?.addEventListener("input", updateCountrySearch);
+countrySuggestions?.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-country-suggestion]");
+  if (!button || !countrySearch) return;
+  const country = findCountry(button.dataset.countrySuggestion);
+  if (!country) return;
+  countrySearch.value = activeLanguage === "zh-TW" ? country.zhName : country.name;
+  updateCountrySearch();
+  countrySuggestions.hidden = true;
+  const card = countryGrid?.querySelector(`[data-country-key="${country.name}"]`);
+  card?.scrollIntoView({ behavior: "smooth", block: "center" });
+  card?.focus({ preventScroll: true });
+});
 countrySearchClear?.addEventListener("click", () => {
   if (!countrySearch) return;
   countrySearch.value = "";
   updateCountrySearch();
+  if (countrySuggestions) countrySuggestions.hidden = true;
   countrySearch.focus();
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".global-directory-search") && countrySuggestions) {
+    countrySuggestions.hidden = true;
+  }
 });
 
 applyLanguage(activeLanguage);

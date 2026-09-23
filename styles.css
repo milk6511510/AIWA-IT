@@ -1486,12 +1486,13 @@ h3 {
 
 .global-directory-tools {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin: 0 0 clamp(20px, 3vw, 32px);
 }
 
 .global-directory-search {
-  width: min(520px, 100%);
+  position: relative;
+  width: min(600px, 100%);
   padding: 18px 20px 16px;
   border: 1px solid var(--white-line);
   border-radius: 24px;
@@ -1583,6 +1584,71 @@ h3 {
   line-height: 1.5;
 }
 
+.country-search-suggestions {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 8px);
+  right: 0;
+  left: 0;
+  display: grid;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--white-line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(22px) saturate(155%);
+  -webkit-backdrop-filter: blur(22px) saturate(155%);
+}
+
+.country-search-suggestions[hidden] {
+  display: none;
+}
+
+.country-suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  padding: 11px 13px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.country-suggestion:hover,
+.country-suggestion:focus-visible {
+  background: var(--warm-gradient-soft);
+  color: #9b1c2b;
+  transform: translateX(2px);
+  outline: none;
+}
+
+.country-suggestion > span:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+.country-suggestion strong {
+  font-size: 14px;
+}
+
+.country-suggestion small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.country-suggestion-arrow {
+  color: #b13a32;
+  font-size: 18px;
+}
+
 .country-card[hidden] {
   display: none !important;
 }
@@ -1605,6 +1671,212 @@ h3 {
     radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.86), transparent 30%),
     rgba(255, 255, 255, 0.58);
   box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.global-region-grid {
+  display: grid;
+  gap: clamp(16px, 2.2vw, 24px);
+  margin-top: clamp(28px, 4vw, 44px);
+}
+
+.country-region {
+  padding: clamp(20px, 2.6vw, 30px);
+  border: 1px solid var(--white-line);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(255, 255, 255, 0.9), transparent 34%),
+    rgba(255, 255, 255, 0.58);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.country-region[hidden] {
+  display: none;
+}
+
+.country-region-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+
+.country-region-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.country-region-index {
+  color: #b13a32;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.country-region-title > div {
+  display: grid;
+  gap: 2px;
+}
+
+.region-name-en,
+.region-name-zh {
+  display: block;
+}
+
+.region-name-en {
+  color: var(--ink);
+  font-size: clamp(19px, 2vw, 25px);
+  font-weight: 850;
+  letter-spacing: -.01em;
+}
+
+.region-name-zh,
+.country-name-zh {
+  display: none;
+}
+
+.country-region-count {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.region-count-zh {
+  display: none;
+}
+
+.country-card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.country-card {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px 18px;
+  border-radius: 18px;
+  text-align: left;
+}
+
+.country-card::after {
+  content: "↗";
+  right: 14px;
+  top: 50%;
+  bottom: auto;
+  color: rgba(163, 59, 49, 0.62);
+  font-size: 16px;
+  opacity: .55;
+  transform: translateY(-50%);
+}
+
+.country-card:hover::after,
+.country-card.is-active::after {
+  transform: translateY(-50%);
+}
+
+.country-card span {
+  max-width: calc(100% - 18px);
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.country-name-en,
+.country-name-zh {
+  display: block;
+}
+
+body[data-language="zh-TW"] .region-name-en,
+body[data-language="zh-TW"] .country-name-en,
+body[data-language="zh-TW"] .region-count-en {
+  display: none;
+}
+
+body[data-language="zh-TW"] .region-name-zh,
+body[data-language="zh-TW"] .country-name-zh,
+body[data-language="zh-TW"] .region-count-zh {
+  display: block;
+}
+
+.news-page-hero,
+.news-page-section {
+  width: min(1240px, calc(100% - clamp(32px, 7vw, 96px)));
+  margin: clamp(18px, 3vw, 38px) auto;
+  padding: clamp(46px, 6vw, 82px) clamp(20px, 5vw, 64px);
+  border: 1px solid var(--white-line);
+  border-radius: clamp(28px, 5vw, 58px);
+  box-shadow: var(--shadow-soft);
+}
+
+.news-page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, .34fr);
+  gap: clamp(30px, 7vw, 90px);
+  align-items: end;
+  margin-top: 118px;
+  background:
+    radial-gradient(circle at 82% 10%, rgba(255, 255, 255, 0.94), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(246, 237, 237, 0.74));
+}
+
+.news-page-hero h1 {
+  max-width: 860px;
+  margin-bottom: 18px;
+  font-size: clamp(34px, 5.2vw, 68px);
+  line-height: 1.02;
+}
+
+.news-page-hero .hero-lead {
+  max-width: 720px;
+}
+
+.news-page-marker {
+  display: grid;
+  align-content: end;
+  min-height: 180px;
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 20% 16%, rgba(255, 255, 255, 0.3), transparent 30%),
+    var(--warm-gradient);
+  color: #fff;
+  box-shadow: 0 22px 50px rgba(151, 18, 35, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.news-page-marker span,
+.news-page-marker small {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.news-page-marker strong {
+  margin: 8px 0 16px;
+  font-size: clamp(28px, 4vw, 46px);
+  letter-spacing: .08em;
+}
+
+.news-page-section {
+  background: #fff;
+}
+
+.news-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.news-page-grid .news-card {
+  min-width: 0;
 }
 
 .global-directory-heading {
@@ -2970,6 +3242,8 @@ body[data-language="zh-TW"] .footer-contact a {
   .products-section,
   .story-section,
   .news-section,
+  .news-page-hero,
+  .news-page-section,
   .history-hero,
   .timeline-section,
   .credo-section,
@@ -2998,6 +3272,14 @@ body[data-language="zh-TW"] .footer-contact a {
 
   .news-list {
     grid-auto-columns: minmax(240px, calc((100% - 16px) / 2));
+  }
+
+  .news-page-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .country-card-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .global-feature,
@@ -3206,6 +3488,23 @@ body[data-language="zh-TW"] .footer-contact a {
     border-radius: 22px;
   }
 
+  .news-page-hero,
+  .news-page-section {
+    width: min(100% - 24px, 1240px);
+    padding: 36px 18px;
+    border-radius: 30px;
+  }
+
+  .news-page-hero {
+    margin-top: 102px;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .news-page-marker {
+    min-height: 138px;
+  }
+
   .global-search-field input {
     min-height: 46px;
     font-size: 14px;
@@ -3240,9 +3539,13 @@ body[data-language="zh-TW"] .footer-contact a {
   }
 
   .country-card {
-    min-height: 150px;
-    padding: 26px 18px;
+    min-height: 84px;
+    padding: 15px 14px;
     min-width: 0;
+  }
+
+  .country-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .country-card img {
@@ -3278,6 +3581,10 @@ body[data-language="zh-TW"] .footer-contact a {
     padding-inline: 0;
   }
 
+  .news-page-grid {
+    grid-template-columns: 1fr;
+  }
+
   .news-control {
     display: none;
   }
@@ -3296,7 +3603,15 @@ body[data-language="zh-TW"] .footer-contact a {
   }
 
   .country-card {
-    min-height: 142px;
+    min-height: 84px;
+  }
+
+  .country-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .country-region-heading {
+    align-items: start;
   }
 
   .green-hero-card {
