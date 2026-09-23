@@ -736,6 +736,33 @@ h3 {
   -webkit-backdrop-filter: blur(18px);
 }
 
+.role-advantage {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(22, 24, 29, 0.1);
+}
+
+.role-advantage div {
+  display: grid;
+  gap: 7px;
+  align-content: start;
+}
+
+.role-advantage strong {
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.role-advantage span {
+  color: var(--soft-ink);
+  font-size: 13px;
+  line-height: 1.58;
+}
+
 .section-label {
   color: #a33b31;
   font-weight: 800;
@@ -3242,5 +3269,78 @@ body[data-language="zh-TW"] .footer-contact a {
 
   .footer-contact div {
     min-height: 0;
+  }
+}
+
+/* First compact hero pass: reduce the opening visual by roughly 20% while keeping its controls and image treatment. */
+.hero {
+  min-height: 80svh;
+  padding-top: 100px;
+  padding-bottom: 24px;
+}
+
+.hero-content {
+  width: min(576px, 100%);
+  padding: clamp(24px, 4vw, 48px);
+  margin-top: clamp(24px, 5vw, 72px);
+}
+
+.hero-content h1 {
+  font-size: clamp(30px, 4.25vw, 50px);
+}
+
+.hero-lead {
+  max-width: 560px;
+  font-size: clamp(14px, 1.25vw, 16px);
+  line-height: 1.58;
+}
+
+.hero-actions {
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.hero-slider-controls {
+  margin-top: 20px;
+}
+
+@media (max-width: 680px) {
+  .hero {
+    min-height: auto;
+    padding-top: 96px;
+    padding-bottom: 20px;
+  }
+
+  .hero-media::before {
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero-content {
+    padding: 21px;
+    border-radius: 26px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(27px, 7.2vw, 35px);
+  }
+
+  .hero-lead {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .hero-slider-controls {
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .role-advantage {
+    grid-template-columns: 1fr;
   }
 }
