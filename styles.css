@@ -2133,9 +2133,7 @@ h3 {
   aspect-ratio: 1.22 / 1;
   object-fit: contain;
   padding: 22px;
-  background:
-    radial-gradient(circle at 50% 16%, #ffffff, #eef2f7 68%),
-    #f7f8fb;
+  background: transparent;
 }
 
 .product-card div {

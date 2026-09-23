@@ -580,66 +580,66 @@ const productData = {
   "TV": {
     series: ["Mini Led Series", "Quantum Series", "Z Series", "A Series", "I Series"],
     products: [
-      { type: "Mini Led Series", name: "ZM-GN9U65UHD", image: "assets/products/tv-zm-gn9u65uhd.jpeg" }
+      { type: "Mini Led Series", name: "ZM-GN9U65UHD", image: "assets/products/tv-zm-gn9u65uhd-nobg.png" }
     ]
   },
   "Monitor": {
     series: ["AW-M Series"],
     products: [
-      { type: "AW-M Series", name: "AW-M3214R", image: "assets/products/monitor-aw-m3214r.jpeg" },
-      { type: "AW-M Series", name: "AW-MQ270L-Y", image: "assets/products/monitor-aw-mq270l-y.jpeg" },
-      { type: "AW-M Series", name: "AW-MQ2705", image: "assets/products/monitor-aw-mq2705.jpeg" }
+      { type: "AW-M Series", name: "AW-M3214R", image: "assets/products/monitor-aw-m3214r-nobg.png" },
+      { type: "AW-M Series", name: "AW-MQ270L-Y", image: "assets/products/monitor-aw-mq270l-y-nobg.png" },
+      { type: "AW-M Series", name: "AW-MQ2705", image: "assets/products/monitor-aw-mq2705-nobg.png" }
     ]
   },
   "Earphone": {
     series: ["True Wireless Earbuds"],
     products: [
-      { type: "True Wireless Earbuds", name: "AT-X80C", image: "assets/products/earphone-at-x80c.jpeg" },
-      { type: "True Wireless Earbuds", name: "AT-X80PANC", image: "assets/products/earphone-at-x80panc.jpeg" }
+      { type: "True Wireless Earbuds", name: "AT-X80C", image: "assets/products/earphone-at-x80c-nobg.png" },
+      { type: "True Wireless Earbuds", name: "AT-X80PANC", image: "assets/products/earphone-at-x80panc-nobg.png" }
     ]
   },
   "Life audiophile": {
     series: ["Turntable", "Amplifier"],
     products: [
-      { type: "Premium Belt-Drive Turntable", name: "APX-680BT/WT", image: "assets/products/audiophile-apx-680bt-wt.jpeg" },
-      { type: "All-in-one Stereo Turntable", name: "GBTUR-120BK/WD", image: "assets/products/audiophile-gbtur-120bk-wd.jpeg" }
+      { type: "Premium Belt-Drive Turntable", name: "APX-680BT/WT", image: "assets/products/audiophile-apx-680bt-wt-nobg.png" },
+      { type: "All-in-one Stereo Turntable", name: "GBTUR-120BK/WD", image: "assets/products/audiophile-gbtur-120bk-wd-nobg.png" }
     ]
   },
   "Active Speaker": {
     series: ["MI-X Series", "RS-X Series", "SB-X Series", "CP-X Series", "BST Series", "Party Series", "AW Series", "Soundbar Series"],
     products: [
-      { type: "B.T. Speaker", name: "MI-X800 Enigma Alpha", image: "assets/products/speaker-mix800.jpeg" },
-      { type: "B.T. Speaker", name: "MI-X450 Pro ENIGMA", image: "assets/products/speaker-mix450.jpeg" },
-      { type: "B.T. Speaker", name: "MI-X440 Enigma Beta II", image: "assets/products/speaker-mix440-beta-ii.jpeg" },
-      { type: "B.T. Speaker", name: "MI-X430 Essentials Lite", image: "assets/products/speaker-mix430.jpeg" }
+      { type: "B.T. Speaker", name: "MI-X800 Enigma Alpha", image: "assets/products/speaker-mix800-nobg.png" },
+      { type: "B.T. Speaker", name: "MI-X450 Pro ENIGMA", image: "assets/products/speaker-mix450-nobg.png" },
+      { type: "B.T. Speaker", name: "MI-X440 Enigma Beta II", image: "assets/products/speaker-mix440-beta-ii-nobg.png" },
+      { type: "B.T. Speaker", name: "MI-X430 Essentials Lite", image: "assets/products/speaker-mix430-nobg.png" }
     ]
   },
   "Radio": {
     series: ["Radio"],
     products: [
-      { type: "Radio", name: "AR-MD20", image: "assets/products/radio-ar-md20.jpeg" },
-      { type: "Radio", name: "AR-MDS25", image: "assets/products/radio-ar-mds25.jpeg" }
+      { type: "Radio", name: "AR-MD20", image: "assets/products/radio-ar-md20-nobg.png" },
+      { type: "Radio", name: "AR-MDS25", image: "assets/products/radio-ar-mds25-nobg.png" }
     ]
   },
   "Life-Mate": {
     series: ["Kitchen", "Living Hall"],
     products: [
-      { type: "1.0L Gooseneck Spout Kettle", name: "AA-K21GC", image: "assets/products/lifemate-aa-k21gc.jpeg" },
-      { type: "0.8L Gooseneck Spout Kettle", name: "AA-K21G", image: "assets/products/lifemate-aa-k21g.jpeg" }
+      { type: "1.0L Gooseneck Spout Kettle", name: "AA-K21GC", image: "assets/products/lifemate-aa-k21gc-nobg.png" },
+      { type: "0.8L Gooseneck Spout Kettle", name: "AA-K21G", image: "assets/products/lifemate-aa-k21g-nobg.png" }
     ]
   },
   "Home Appliances": {
     series: ["Air Conditioner", "Heat Pump", "Refrigerator", "Washing Machine", "Dishwasher"],
     products: [
-      { type: "AIA Series (Inverter Air Conditioner)", name: "AIA-18SDC", image: "assets/products/home-aia-18sdc.jpeg" },
-      { type: "AIA Series (Inverter Air Conditioner)", name: "AIA-24SDC", image: "assets/products/home-aia-24sdc.jpeg" }
+      { type: "AIA Series (Inverter Air Conditioner)", name: "AIA-18SDC", image: "assets/products/home-aia-18sdc-nobg.png" },
+      { type: "AIA Series (Inverter Air Conditioner)", name: "AIA-24SDC", image: "assets/products/home-aia-24sdc-nobg.png" }
     ]
   },
   "Connect": {
     series: ["Digital camera", "Video camera"],
     products: [
-      { type: "Digital camera", name: "AW-DC1628", image: "assets/products/connect-aw-dc1628.jpeg" },
-      { type: "Digital camera", name: "AW-DC5023", image: "assets/products/connect-aw-dc5023.jpeg" }
+      { type: "Digital camera", name: "AW-DC1628", image: "assets/products/connect-aw-dc1628-nobg.png" },
+      { type: "Digital camera", name: "AW-DC5023", image: "assets/products/connect-aw-dc5023-nobg.png" }
     ]
   }
 };
