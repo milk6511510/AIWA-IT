@@ -458,7 +458,7 @@ textarea {
 
 .eyebrow {
   margin: 0 0 16px;
-  color: #a33b31;
+  color: #df222d;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .08em;
@@ -796,7 +796,7 @@ h3 {
 }
 
 .section-label {
-  color: #a33b31;
+  color: #df222d;
   font-weight: 800;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -1210,6 +1210,38 @@ h3 {
 
 .service-panel-feature a {
   color: #fff;
+}
+
+.oem-section {
+  align-items: center;
+}
+
+.oem-section .category-matrix {
+  align-self: center;
+  gap: 12px;
+}
+
+.oem-section .category-matrix div {
+  min-height: 132px;
+  padding: 18px;
+  border-radius: 22px;
+}
+
+.oem-section .category-matrix .icon-badge.small {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 12px;
+  border-radius: 13px;
+}
+
+.oem-section .category-matrix strong {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.oem-section .category-matrix span {
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .service-flow {
@@ -1845,7 +1877,7 @@ body[data-language="zh-TW"] .region-count-zh {
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 42%, rgba(255, 255, 255, 0.38) 76%, rgba(255, 255, 255, 0.12) 100%),
     var(--contact-gradient-soft),
-    url("assets/news/news-ifa-berlin.jpeg") right center / cover no-repeat;
+    url("assets/services/service-oem-odm.png") right center / cover no-repeat;
 }
 
 .news-page-hero > div {
@@ -2078,6 +2110,11 @@ body[data-language="zh-TW"] .region-count-zh {
     linear-gradient(180deg, #ffffff 0%, #f1f8f3 48%, #edf3f0 100%);
 }
 
+.green-page .eyebrow,
+.green-page .section-label {
+  color: #168057;
+}
+
 .green-backdrop {
   background:
     radial-gradient(circle at 18% 18%, rgba(216, 244, 223, 0.62), transparent 28%),
@@ -2106,45 +2143,6 @@ body[data-language="zh-TW"] .region-count-zh {
 
 .green-hero-copy {
   max-width: 720px;
-}
-
-.green-brand-lockup {
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 22px;
-  padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.74);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.68);
-  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(18px) saturate(150%);
-  -webkit-backdrop-filter: blur(18px) saturate(150%);
-}
-
-.green-brand-lockup img {
-  width: 58px;
-  height: 58px;
-  border-radius: 999px;
-  object-fit: cover;
-  background: rgba(255, 255, 255, 0.86);
-}
-
-.green-brand-lockup div {
-  display: grid;
-  gap: 3px;
-}
-
-.green-brand-lockup strong {
-  color: #1f6f45;
-  font-size: 15px;
-  font-weight: 900;
-  letter-spacing: .18em;
-}
-
-.green-brand-lockup span {
-  color: rgba(31, 111, 69, 0.68);
-  font-size: 12px;
-  font-weight: 800;
 }
 
 .green-hero h1 {
@@ -2318,7 +2316,18 @@ body[data-language="zh-TW"] .region-count-zh {
 }
 
 .green-principles article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: clamp(26px, 3vw, 38px);
+}
+
+.green-principles article .icon-badge {
+  margin-bottom: 18px;
+}
+
+.green-principles article h3 {
+  margin-top: 0;
 }
 
 .green-principles h3 {
@@ -2332,6 +2341,16 @@ body[data-language="zh-TW"] .region-count-zh {
 
 .green-icon {
   background: linear-gradient(135deg, #1f8f62 0%, #8ccf78 100%);
+}
+
+.green-products .section-heading {
+  margin-bottom: clamp(24px, 3vw, 34px);
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(31, 111, 69, 0.16);
+}
+
+.green-products .section-heading h2 {
+  max-width: 680px;
 }
 
 .green-product-grid {
@@ -2408,6 +2427,28 @@ body[data-language="zh-TW"] .region-count-zh {
 .product-heading p {
   max-width: 520px;
   margin: 0;
+}
+
+.products-section .product-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(240px, .72fr);
+  align-items: end;
+  gap: clamp(24px, 5vw, 68px);
+  margin-bottom: 24px;
+  padding: 0 4px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.products-section .product-heading h2 {
+  max-width: 620px;
+  font-size: clamp(28px, 3.6vw, 48px);
+  line-height: 1.06;
+}
+
+.products-section .product-heading p {
+  max-width: 440px;
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 .catalog-layout {
@@ -3012,8 +3053,7 @@ body[data-language="zh-TW"] .eyebrow,
 body[data-language="zh-TW"] .section-label,
 body[data-language="zh-TW"] .footer-contact span,
 body[data-language="zh-TW"] .download-card-meta,
-body[data-language="zh-TW"] .news-card span,
-body[data-language="zh-TW"] .green-brand-lockup strong {
+body[data-language="zh-TW"] .news-card span {
   letter-spacing: 0;
 }
 
@@ -3426,6 +3466,12 @@ body[data-language="zh-TW"] .footer-contact a {
 
   .section-heading {
     display: grid;
+    align-items: start;
+  }
+
+  .products-section .product-heading {
+    grid-template-columns: 1fr;
+    gap: 18px;
     align-items: start;
   }
 
