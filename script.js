@@ -829,11 +829,10 @@ const countrySearchStatus = document.querySelector("[data-country-search-status]
 const countrySuggestions = document.querySelector("[data-country-suggestions]");
 
 if (countryGrid) {
-  countryGrid.innerHTML = countryRegions.map((region, regionIndex) => `
+  countryGrid.innerHTML = countryRegions.map((region) => `
     <section class="country-region" data-region-key="${region.key}">
       <div class="country-region-heading">
         <div class="country-region-title">
-          <span class="country-region-index">${String(regionIndex + 1).padStart(2, "0")}</span>
           <div>
             <span class="region-name-en">${region.name}</span>
             <span class="region-name-zh">${region.zhName}</span>
