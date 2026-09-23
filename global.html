@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=compact-hero-20260923">
+  <link rel="stylesheet" href="styles.css?v=global-search-v1">
 </head>
 <body>
   <div class="scroll-backdrop" aria-hidden="true">
@@ -68,6 +68,17 @@
     </section>
 
     <section class="global-directory section-shell reveal-on-scroll">
+      <div class="global-directory-tools">
+        <div class="global-directory-search">
+          <label for="country-search">Search country / 搜尋國家</label>
+          <div class="global-search-field">
+            <span class="global-search-icon" aria-hidden="true">⌕</span>
+            <input id="country-search" type="search" placeholder="Search in English or Traditional Chinese" autocomplete="off" data-country-search>
+            <button type="button" class="search-clear" data-country-search-clear aria-label="Clear country search" hidden>×</button>
+          </div>
+          <p class="global-search-status" data-country-search-status aria-live="polite"></p>
+        </div>
+      </div>
       <div class="country-grid premium-country-grid" data-country-grid aria-label="AIWA country selector"></div>
     </section>
   </main>
@@ -90,6 +101,6 @@
     </address>
   </footer>
 
-  <script src="script.js?v=factory-v3-20260923"></script>
+  <script src="script.js?v=global-search-v1"></script>
 </body>
 </html>

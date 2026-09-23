@@ -1403,11 +1403,11 @@ h3 {
 .global-hero-image {
   position: relative;
   width: min(1480px, calc(100% - clamp(28px, 5vw, 72px)));
-  min-height: clamp(620px, 78vh, 820px);
+  min-height: clamp(390px, 48vh, 540px);
   display: flex;
   align-items: center;
   margin: 0 auto clamp(34px, 5vw, 68px);
-  padding: clamp(120px, 14vw, 180px) clamp(24px, 7vw, 96px) clamp(58px, 7vw, 100px);
+  padding: clamp(72px, 8vw, 112px) clamp(24px, 7vw, 96px) clamp(42px, 5vw, 68px);
   overflow: hidden;
   border-radius: 0 0 clamp(34px, 6vw, 72px) clamp(34px, 6vw, 72px);
   background: #f7f9fb;
@@ -1416,8 +1416,8 @@ h3 {
 .global-hero-copy {
   position: relative;
   z-index: 1;
-  width: min(700px, 100%);
-  padding: clamp(34px, 5vw, 62px);
+  width: min(560px, 100%);
+  padding: clamp(24px, 3.2vw, 40px);
   border: 1px solid var(--white-line);
   border-radius: var(--radius-xl);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.34));
@@ -1427,8 +1427,8 @@ h3 {
 }
 
 .global-hero-image h1 {
-  font-size: clamp(42px, 6vw, 82px);
-  line-height: 1;
+  font-size: clamp(30px, 4vw, 54px);
+  line-height: 1.06;
 }
 
 .global-hero-media {
@@ -1452,6 +1452,109 @@ h3 {
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.78) 38%, rgba(255, 255, 255, 0.18) 74%),
     linear-gradient(0deg, rgba(245, 247, 251, 0.9) 0%, rgba(245, 247, 251, 0.28) 34%, rgba(255, 255, 255, 0.05) 100%);
+}
+
+.global-directory-tools {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 clamp(20px, 3vw, 32px);
+}
+
+.global-directory-search {
+  width: min(520px, 100%);
+  padding: 18px 20px 16px;
+  border: 1px solid var(--white-line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.66);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+}
+
+.global-directory-search label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--soft-ink);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.global-search-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.global-search-icon {
+  position: absolute;
+  left: 16px;
+  z-index: 1;
+  color: #b13a32;
+  font-size: 24px;
+  line-height: 1;
+  transform: translateY(-1px);
+  pointer-events: none;
+}
+
+.global-search-field input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 46px 12px 44px;
+  border: 1px solid rgba(42, 36, 33, 0.14);
+  border-radius: 17px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.global-search-field input::placeholder {
+  color: rgba(42, 36, 33, 0.52);
+}
+
+.global-search-field input:focus {
+  border-color: rgba(255, 59, 54, 0.6);
+  box-shadow: 0 0 0 4px rgba(255, 59, 54, 0.11);
+}
+
+.search-clear {
+  position: absolute;
+  right: 10px;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 59, 54, 0.1);
+  color: #a6322c;
+  font: inherit;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.search-clear:hover,
+.search-clear:focus-visible {
+  background: #ff3b36;
+  color: #fff;
+  transform: scale(1.06);
+}
+
+.global-search-status {
+  min-height: 18px;
+  margin: 8px 2px 0;
+  color: var(--soft-ink);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.country-card[hidden] {
+  display: none !important;
 }
 
 @media (min-width: 681px) {
@@ -3036,7 +3139,7 @@ body[data-language="zh-TW"] .footer-contact a {
   .global-hero-copy {
     width: calc(100% - 24px);
     margin: 0 auto;
-    padding: 24px;
+    padding: 22px;
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.78);
   }
@@ -3063,6 +3166,21 @@ body[data-language="zh-TW"] .footer-contact a {
   .global-hero-image .hero-lead {
     font-size: 15px;
     line-height: 1.68;
+  }
+
+  .global-directory-tools {
+    margin: 0 0 18px;
+  }
+
+  .global-directory-search {
+    width: 100%;
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .global-search-field input {
+    min-height: 46px;
+    font-size: 14px;
   }
 
   .global-hero-media {

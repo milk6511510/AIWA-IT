@@ -180,6 +180,9 @@ const translations = {
   "Built for the next stage of product review.": "為下一階段產品審查而設計。",
   "The final WordPress version can turn this area into a managed document library, with protected files, product categories, language versions, revision dates, and market-specific downloads controlled from the headquarters.": "正式 WordPress 版本可將此區域升級為可管理的文件資料庫，由總部控管受保護檔案、產品分類、語言版本、修訂日期與各市場專用下載內容。",
   "Global Network": "全球網絡",
+  "Search country / 搜尋國家": "搜尋國家 / Search country",
+  "Showing": "顯示",
+  "markets found": "個市場",
   "Regional touchpoints connected through one international brand system.": "透過一套國際品牌系統連結各地市場觸點。",
   "AIWA works with many international cooperation partners and authorized market representatives across regions. This directory provides a clean starting point for visitors to access country-level AIWA pages and understand the wider brand network.": "AIWA 與各地國際合作夥伴及授權市場代表建立合作。此目錄提供清楚的入口，讓訪客前往各國 AIWA 頁面，了解更完整的品牌網絡。",
   "Japan Founding Legal HQ": "日本創始法定總部",
@@ -273,6 +276,8 @@ const attributeTranslations = {
   "Previous news": "上一則消息",
   "Next news": "下一則消息",
   "AIWA country selector": "AIWA 國家選擇器",
+  "Clear country search": "清除國家搜尋",
+  "Search in English or Traditional Chinese": "可輸入英文或繁體中文",
   "Product category opportunities": "產品類別機會",
   "Product catalog categories": "產品目錄分類",
   "Product series": "產品系列",
@@ -448,6 +453,7 @@ function applyLanguage(language) {
   translateAttributes();
   syncCustomSelects();
   renderCountryCount(Number(countryCountDisplay?.dataset.countValue) || 0);
+  updateCountrySearch();
   languageButtons.forEach((button) => {
     const isActive = button.dataset.language === activeLanguage;
     button.classList.toggle("is-active", isActive);
@@ -723,45 +729,78 @@ downloadSearch?.addEventListener("input", updateDownloadLibrary);
 updateDownloadLibrary();
 
 const countries = [
-  ["Japan Founding Legal HQ", "30", "2020_06_19_1531401.png", "Founding Market"],
-  ["EU Regional HQ", "174", "2021_07_05_0933371.png", "Regional Headquarters"],
-  ["India Regional HQ", "27", "2020_06_19_1530171.png", "Regional Headquarters"],
-  ["UAE Regional HQ", "62", "2020_06_19_1614471.png", "Regional Headquarters"],
-  ["Thailand Regional HQ", "4", "2020_06_19_1554131.png", "Regional Headquarters"],
-  ["Africa HQ", "179", "2023_08_08_0937561.png", "Regional Headquarters"],
-  ["Australia Regional HQ", "109", "2020_06_19_1619251.png", "Regional Headquarters"],
-  ["China Regional HQ", "8", "2020_06_19_1519161.png", "Regional Headquarters"],
-  ["Austria", "74", "2020_06_19_1513011.png", "Country Link"],
-  ["Belgium", "9", "2020_06_19_1514221.png", "Country Link"],
-  ["Cambodia", "22", "2020_06_19_1527181.png", "Country Link"],
-  ["Denmark", "77", "2020_06_19_1527431.png", "Country Link"],
-  ["France", "80", "2020_06_19_1528171.png", "Country Link"],
-  ["Germany", "176", "2022_04_26_1529391.png", "Country Link"],
-  ["Greece", "11", "2020_06_19_1529401.png", "Country Link"],
-  ["Hong Kong", "110", "2020_06_22_0849171.png", "Country Link"],
-  ["Iran", "28", "2020_06_19_1531151.png", "Country Link"],
-  ["Italy", "85", "2020_06_19_1530521.png", "Country Link"],
-  ["Korea", "34", "2020_06_19_1531511.png", "Country Link"],
-  ["Malaysia", "5", "2020_06_19_1538221.png", "Country Link"],
-  ["Netherlands", "95", "2020_06_19_1541161.png", "Country Link"],
-  ["Philippines", "7", "2020_06_19_1543241.png", "Country Link"],
-  ["Singapore", "1", "2020_06_19_1554021.png", "Country Link"],
-  ["Taiwan", "57", "2020_06_19_1613431.png", "Headquarters Market"],
-  ["United Kingdom", "106", "2020_06_19_1614331.png", "Country Link"],
-  ["USA", "14", "2020_06_19_1614021.png", "Country Link"],
-  ["Vietnam", "65", "2020_06_19_1615431.png", "Country Link"]
+  ["Japan Founding Legal HQ", "日本創始法定總部", "30", "2020_06_19_1531401.png", "Founding Market"],
+  ["EU Regional HQ", "歐洲區域總部", "174", "2021_07_05_0933371.png", "Regional Headquarters"],
+  ["India Regional HQ", "印度區域總部", "27", "2020_06_19_1530171.png", "Regional Headquarters"],
+  ["UAE Regional HQ", "阿聯酋區域總部", "62", "2020_06_19_1614471.png", "Regional Headquarters"],
+  ["Thailand Regional HQ", "泰國區域總部", "4", "2020_06_19_1554131.png", "Regional Headquarters"],
+  ["Africa HQ", "非洲總部", "179", "2023_08_08_0937561.png", "Regional Headquarters"],
+  ["Australia Regional HQ", "澳洲區域總部", "109", "2020_06_19_1619251.png", "Regional Headquarters"],
+  ["China Regional HQ", "中國區域總部", "8", "2020_06_19_1519161.png", "Regional Headquarters"],
+  ["Austria", "奧地利", "74", "2020_06_19_1513011.png", "Country Link"],
+  ["Belgium", "比利時", "9", "2020_06_19_1514221.png", "Country Link"],
+  ["Cambodia", "柬埔寨", "22", "2020_06_19_1527181.png", "Country Link"],
+  ["Denmark", "丹麥", "77", "2020_06_19_1527431.png", "Country Link"],
+  ["France", "法國", "80", "2020_06_19_1528171.png", "Country Link"],
+  ["Germany", "德國", "176", "2022_04_26_1529391.png", "Country Link"],
+  ["Greece", "希臘", "11", "2020_06_19_1529401.png", "Country Link"],
+  ["Hong Kong", "香港", "110", "2020_06_22_0849171.png", "Country Link"],
+  ["Iran", "伊朗", "28", "2020_06_19_1531151.png", "Country Link"],
+  ["Italy", "義大利", "85", "2020_06_19_1530521.png", "Country Link"],
+  ["Korea", "韓國", "34", "2020_06_19_1531511.png", "Country Link"],
+  ["Malaysia", "馬來西亞", "5", "2020_06_19_1538221.png", "Country Link"],
+  ["Netherlands", "荷蘭", "95", "2020_06_19_1541161.png", "Country Link"],
+  ["Philippines", "菲律賓", "7", "2020_06_19_1543241.png", "Country Link"],
+  ["Singapore", "新加坡", "1", "2020_06_19_1554021.png", "Country Link"],
+  ["Taiwan", "台灣", "57", "2020_06_19_1613431.png", "Headquarters Market"],
+  ["United Kingdom", "英國", "106", "2020_06_19_1614331.png", "Country Link"],
+  ["USA", "美國", "14", "2020_06_19_1614021.png", "Country Link"],
+  ["Vietnam", "越南", "65", "2020_06_19_1615431.png", "Country Link"]
 ];
 
 const countryGrid = document.querySelector("[data-country-grid]");
+const countrySearch = document.querySelector("[data-country-search]");
+const countrySearchClear = document.querySelector("[data-country-search-clear]");
+const countrySearchStatus = document.querySelector("[data-country-search-status]");
 
 if (countryGrid) {
-  countryGrid.innerHTML = countries.map(([name, id, image], index) => `
-    <a class="country-card${index === 1 ? " is-active" : ""}" href="https://www.int-aiwa.com/global_deatil.php?id=${id}" target="_blank" rel="noreferrer" data-country-index="${index}">
+  countryGrid.innerHTML = countries.map(([name, zhName, id, image], index) => `
+    <a class="country-card${index === 1 ? " is-active" : ""}" href="https://www.int-aiwa.com/global_deatil.php?id=${id}" target="_blank" rel="noreferrer" data-country-index="${index}" data-country-search="${name} ${zhName}">
       <img src="https://www.int-aiwa.com/upload/${image}" alt="${name}">
       <span>${name}</span>
     </a>
   `).join("");
 }
+
+function updateCountrySearch() {
+  if (!countryGrid) return;
+  const query = (countrySearch?.value || "").trim().toLocaleLowerCase();
+  const cards = [...countryGrid.querySelectorAll(".country-card")];
+  let visibleCount = 0;
+
+  cards.forEach((card) => {
+    const searchableText = (card.dataset.countrySearch || "").toLocaleLowerCase();
+    const isVisible = !query || searchableText.includes(query);
+    card.hidden = !isVisible;
+    card.setAttribute("aria-hidden", String(!isVisible));
+    if (isVisible) visibleCount += 1;
+  });
+
+  if (countrySearchClear) countrySearchClear.hidden = !query;
+  if (countrySearchStatus) {
+    countrySearchStatus.textContent = query
+      ? (activeLanguage === "zh-TW" ? `顯示 ${visibleCount} 個市場` : `${visibleCount} markets found`)
+      : "";
+  }
+}
+
+countrySearch?.addEventListener("input", updateCountrySearch);
+countrySearchClear?.addEventListener("click", () => {
+  if (!countrySearch) return;
+  countrySearch.value = "";
+  updateCountrySearch();
+  countrySearch.focus();
+});
 
 applyLanguage(activeLanguage);
 
