@@ -830,7 +830,10 @@ h3 {
 
 .intro-strip .section-label,
 .company-services-heading .eyebrow,
-#licensing-model .eyebrow {
+#licensing-model .eyebrow,
+.oem-panel .eyebrow,
+.products-section .eyebrow,
+.news-section .eyebrow {
   display: inline-flex;
   align-items: center;
   min-height: 36px;
@@ -850,15 +853,12 @@ h3 {
   text-transform: uppercase;
 }
 
-.intro-strip h2 {
-  color: #a8142e;
-  background: linear-gradient(135deg, #a8142e 0%, #d62f3b 48%, #ff8f79 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#licensing-model .split-copy > h2 {
+.intro-strip h2,
+.company-services-heading h2,
+#licensing-model .split-copy > h2,
+.oem-panel h2,
+.products-section .product-heading h2,
+.news-section .product-heading h2 {
   color: #a8142e;
   background: linear-gradient(135deg, #a8142e 0%, #d62f3b 48%, #ff8f79 100%);
   -webkit-background-clip: text;
