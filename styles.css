@@ -835,6 +835,7 @@ h3 {
 .products-section .eyebrow,
 .news-section .eyebrow {
   justify-self: start;
+  align-self: start;
   display: inline-flex;
   align-items: center;
   width: fit-content;
@@ -3301,15 +3302,16 @@ body[data-language="zh-TW"] .footer-contact a {
 
 .scroll-flip {
   opacity: 0;
-  transform: perspective(640px) rotateX(-72deg) translateY(18px);
+  transform: rotateX(-12deg) translateY(18px) scale(.98);
   transform-origin: 50% 100%;
   transition: opacity 520ms ease, transform 720ms cubic-bezier(.2, .82, .2, 1);
   will-change: opacity, transform;
+  backface-visibility: hidden;
 }
 
 .scroll-flip.is-visible {
   opacity: 1;
-  transform: perspective(640px) rotateX(0) translateY(0);
+  transform: rotateX(0) translateY(0) scale(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3371,7 +3373,7 @@ body[data-language="zh-TW"] .footer-contact a {
 .footer-contact span {
   display: block;
   margin-bottom: 14px;
-  color: rgba(235, 162, 96, 0.95);
+  color: #fff;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .08em;
