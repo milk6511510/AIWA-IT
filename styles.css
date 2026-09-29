@@ -1638,8 +1638,8 @@ h3 {
 .global-hero-copy {
   position: relative;
   z-index: 1;
-  width: min(470px, 100%);
-  padding: clamp(20px, 2.4vw, 30px);
+  width: min(380px, 100%);
+  padding: clamp(16px, 1.9vw, 24px);
   border: 1px solid var(--white-line);
   border-radius: var(--radius-xl);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.34));
@@ -1650,14 +1650,14 @@ h3 {
 
 .global-hero-image h1 {
   max-width: 620px;
-  margin-bottom: 14px;
-  font-size: clamp(24px, 3vw, 40px);
+  margin-bottom: 12px;
+  font-size: clamp(20px, 2.4vw, 32px);
   line-height: 1.08;
 }
 
 .global-hero-image .hero-lead {
   max-width: 620px;
-  font-size: clamp(14px, 1.2vw, 17px);
+  font-size: clamp(13px, 1vw, 14px);
   line-height: 1.62;
 }
 
@@ -3748,13 +3748,13 @@ body[data-language="zh-TW"] .footer-contact a {
   .global-hero-copy {
     width: calc(100% - 24px);
     margin: 0 auto;
-    padding: 22px;
+    padding: 18px;
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.78);
   }
 
   .global-hero-image h1 {
-    font-size: clamp(26px, 8vw, 36px);
+    font-size: clamp(22px, 6.5vw, 30px);
     line-height: 1.04;
   }
 
@@ -3773,7 +3773,7 @@ body[data-language="zh-TW"] .footer-contact a {
   }
 
   .global-hero-image .hero-lead {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.68;
   }
 
