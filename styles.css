@@ -834,6 +834,7 @@ h3 {
 .oem-panel .eyebrow,
 .products-section .eyebrow,
 .news-section .eyebrow {
+  justify-self: start;
   display: inline-flex;
   align-items: center;
   min-height: 36px;
