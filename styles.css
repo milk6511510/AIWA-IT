@@ -837,6 +837,8 @@ h3 {
   justify-self: start;
   display: inline-flex;
   align-items: center;
+  width: fit-content;
+  max-width: 100%;
   min-height: 36px;
   margin: 0 0 18px;
   padding: 9px 16px;
@@ -851,6 +853,7 @@ h3 {
   font-weight: 800;
   letter-spacing: .08em;
   line-height: 1;
+  white-space: nowrap;
   text-transform: uppercase;
 }
 
