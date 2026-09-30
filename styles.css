@@ -829,6 +829,7 @@ h3 {
 }
 
 .intro-strip .section-label,
+.story-section .eyebrow,
 .company-services-heading .eyebrow,
 #licensing-model .eyebrow,
 .oem-panel .eyebrow,
@@ -2136,6 +2137,12 @@ body[data-language="zh-TW"] .region-count-zh {
   display: block;
 }
 
+body:not([data-language="zh-TW"]) .region-name-zh,
+body:not([data-language="zh-TW"]) .country-name-zh,
+body:not([data-language="zh-TW"]) .region-count-zh {
+  display: none;
+}
+
 .news-page-hero,
 .news-page-section {
   width: min(1240px, calc(100% - clamp(32px, 7vw, 96px)));
@@ -3383,6 +3390,53 @@ body[data-language="zh-TW"] .footer-contact a {
   line-height: 1.75;
 }
 
+body[data-language="th"] {
+  font-family: "Noto Sans Thai", Inter, system-ui, sans-serif;
+}
+
+body[data-language="th"] h1 {
+  line-height: 1.2;
+}
+
+body[data-language="th"] h2 {
+  line-height: 1.28;
+}
+
+body[data-language="th"] h3 {
+  line-height: 1.42;
+}
+
+body[data-language="th"] p {
+  line-height: 1.75;
+}
+
+body[data-language="th"] .eyebrow,
+body[data-language="th"] .section-label,
+body[data-language="th"] .footer-contact span,
+body[data-language="th"] .download-card-meta,
+body[data-language="th"] .news-card span,
+body[data-language="th"] .site-nav,
+body[data-language="th"] .nav-dropdown-trigger,
+body[data-language="th"] .button,
+body[data-language="th"] .language-button,
+body[data-language="th"] .inquiry-form label {
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+body[data-language="fr"] h2 {
+  line-height: 1.2;
+}
+
+body[data-language="fr"] p {
+  line-height: 1.68;
+}
+
+body[data-language="fr"] .site-nav,
+body[data-language="th"] .site-nav {
+  font-size: clamp(11px, .92vw, 13px);
+}
+
 .site-footer {
   position: relative;
   overflow: hidden;
@@ -3644,6 +3698,19 @@ body[data-language="zh-TW"] .footer-contact a {
   .header-language .language-button {
     min-width: 36px;
     padding: 0 7px;
+  }
+
+  .header-language .language-switcher {
+    gap: 1px;
+    padding: 2px;
+  }
+
+  .header-language .language-button {
+    min-width: 29px;
+    min-height: 32px;
+    padding: 0 5px;
+    font-size: 10px;
+    letter-spacing: 0;
   }
 
   .menu-button {

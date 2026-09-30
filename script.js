@@ -302,6 +302,367 @@ const translations = {
   "AIWA AT-H08 LINK User's Manual": "AIWA AT-H08 LINK 使用手冊"
 };
 
+const thaiTranslations = {
+  "Taiwan-led global operations": "การดำเนินงานระดับโลกที่บริหารจากไต้หวัน",
+  "Brand Story": "เรื่องราวของแบรนด์",
+  "Our Role": "บทบาทของเรา",
+  "Our advantages": "จุดแข็งของเรา",
+  "Company Service": "บริการสำหรับคู่ค้า",
+  "Company Services": "บริการสำหรับคู่ค้า",
+  "Licensing Model": "รูปแบบการอนุญาตใช้แบรนด์",
+  "Quality Governance": "การกำกับดูแลคุณภาพ",
+  "Factory Partnership": "ความร่วมมือด้านโรงงาน",
+  "Factory Coordination": "การประสานงานด้านโรงงาน",
+  "Products": "ผลิตภัณฑ์",
+  "News": "ข่าวสาร",
+  "Latest News": "ข่าวสารล่าสุด",
+  "Green AIWA": "Green AIWA",
+  "Global": "เครือข่ายทั่วโลก",
+  "Download": "ดาวน์โหลด",
+  "Contact Us": "ติดต่อเรา",
+  "Global licensing and market operations headquarters": "สำนักงานใหญ่ด้านการอนุญาตใช้แบรนด์และการดำเนินงานตลาดระหว่างประเทศ",
+  "One brand standard. Multiple markets. Operated from Taiwan.": "มาตรฐานแบรนด์เดียว ดูแลหลายตลาด จากไต้หวัน",
+  "AIWA Electronics International Co., Ltd. manages brand licensing, partner cooperation, coordinated factory resources, and product approval for AIWA markets outside Japan and Korea.": "AIWA Electronics International Co., Ltd. ดูแลการอนุญาตใช้แบรนด์ ความร่วมมือกับคู่ค้า การประสานทรัพยากรการผลิต และการอนุมัติผลิตภัณฑ์สำหรับตลาด AIWA นอกญี่ปุ่นและเกาหลี",
+  "Partner with AIWA": "ร่วมเป็นพันธมิตรกับ AIWA",
+  "View cooperation model": "ดูรูปแบบความร่วมมือ",
+  "Global HQ": "สำนักงานใหญ่ระดับโลก",
+  "Designed as a headquarters website, not a retail product catalog.": "เว็บไซต์นี้ออกแบบเพื่อสื่อสารบทบาทของสำนักงานใหญ่ ไม่ใช่เพียงแคตตาล็อกขายปลีก",
+  "A Taiwan-based headquarters that makes international cooperation easier.": "สำนักงานใหญ่ในไต้หวันที่ช่วยให้ความร่วมมือระหว่างประเทศเกิดขึ้นได้อย่างคล่องตัว",
+  "AIWA Electronics International Co., Ltd. gives partners a structured route from market opportunity to product proposal. Local partners retain their market insight and commercial role, while the Taiwan headquarters coordinates brand authorization, factory collaboration, product direction, and ESG expectations under one operating framework. This creates a practical competitive advantage: a single coordination point, access to qualified manufacturing resources, clearer approval milestones, and consistent international brand governance without limiting local market flexibility.": "AIWA Electronics International Co., Ltd. ช่วยให้คู่ค้าเปลี่ยนโอกาสทางการตลาดเป็นข้อเสนอผลิตภัณฑ์อย่างเป็นระบบ คู่ค้าในแต่ละประเทศยังคงใช้ความเข้าใจตลาดและบทบาททางธุรกิจของตน ขณะที่สำนักงานใหญ่ในไต้หวันประสานการอนุญาตใช้แบรนด์ ความร่วมมือกับโรงงาน ทิศทางผลิตภัณฑ์ และความคาดหวังด้าน ESG ภายใต้กรอบการดำเนินงานเดียวกัน จุดแข็งเชิงปฏิบัติคือมีผู้ประสานงานหลักเพียงจุดเดียว เชื่อมต่อทรัพยากรการผลิตที่เหมาะสม กำหนดขั้นตอนอนุมัติได้ชัดเจน และรักษามาตรฐานการกำกับดูแลแบรนด์ในระดับสากล โดยยังคงความยืดหยุ่นของตลาดท้องถิ่น",
+  "Partner-led execution": "คู่ค้าเป็นผู้นำการดำเนินงานในตลาด",
+  "Local teams bring market knowledge and lead the commercial conversation.": "ทีมท้องถิ่นนำความเข้าใจตลาดและเป็นผู้นำการเจรจาทางธุรกิจ",
+  "One headquarters standard": "มาตรฐานเดียวจากสำนักงานใหญ่",
+  "Brand scope, product direction, and review expectations stay clear across markets.": "ขอบเขตแบรนด์ ทิศทางผลิตภัณฑ์ และเกณฑ์การตรวจสอบมีความชัดเจนในทุกตลาด",
+  "Flexible cooperation paths": "รูปแบบความร่วมมือที่ยืดหยุ่น",
+  "Factory proposals and qualified manufacturing resources can be discussed case by case.": "สามารถพิจารณาข้อเสนอจากโรงงานและทรัพยากรการผลิตที่ผ่านการคัดเลือกเป็นรายกรณี",
+  "Brand Licensing": "การอนุญาตใช้แบรนด์",
+  "Authorized use of the AIWA brand by territory, product category, and cooperation role.": "อนุมัติการใช้แบรนด์ AIWA ตามพื้นที่ ประเภทผลิตภัณฑ์ และบทบาทความร่วมมือ",
+  "Market Operations": "การดำเนินงานตลาด",
+  "Taiwan HQ coordinates international partner onboarding, licensing direction, and category discussions.": "สำนักงานใหญ่ในไต้หวันประสานการเริ่มต้นความร่วมมือ ทิศทางการอนุญาตใช้แบรนด์ และการหารือด้านผลิตภัณฑ์",
+  "Partners may propose a qualified factory. AIWA Electronics International Co., Ltd. coordinates capability discussions, sample development, and the route toward partner-approved production.": "คู่ค้าสามารถเสนอโรงงานที่มีคุณสมบัติเหมาะสมได้ โดย AIWA Electronics International Co., Ltd. จะประสานการประเมินศักยภาพ การพัฒนาตัวอย่าง และขั้นตอนสู่การผลิตที่คู่ค้าอนุมัติ",
+  "ESG & Sustainability": "ESG และความยั่งยืน",
+  "Sustainability-led product programs consider responsible materials, energy efficiency, water stewardship, and supplier dialogue to support long-term market readiness.": "แนวทางผลิตภัณฑ์ที่ขับเคลื่อนด้วยความยั่งยืนจะพิจารณาวัสดุอย่างรับผิดชอบ ประสิทธิภาพพลังงาน การบริหารจัดการน้ำ และการทำงานร่วมกับซัพพลายเออร์ เพื่อรองรับการเข้าสู่ตลาดในระยะยาว",
+  "Developing consumer electronics since 1951 in Japan.": "พัฒนาเครื่องใช้ไฟฟ้าอุปโภคบริโภคในญี่ปุ่นมาตั้งแต่ปี 1951",
+  "AIWA has been developing products to meet the growing demands from consumers since 1951 in Japan. The commitment to designing and manufacturing cost effective, high-quality consumer electronics accompanied with world class after-sales service connects the brand with dedicated consumers throughout the regions.": "AIWA พัฒนาผลิตภัณฑ์ในญี่ปุ่นมาตั้งแต่ปี 1951 เพื่อตอบสนองความต้องการของผู้บริโภคที่เพิ่มขึ้น เรามุ่งมั่นออกแบบและผลิตเครื่องใช้ไฟฟ้าอุปโภคบริโภคที่มีคุณภาพและคุ้มค่า พร้อมบริการหลังการขายตามมาตรฐานสากล เพื่อเชื่อมโยงแบรนด์กับผู้บริโภคในแต่ละภูมิภาค",
+  "View brand history": "ดูประวัติแบรนด์",
+  "100+ countries worldwide": "มากกว่า 100 ประเทศทั่วโลก",
+  "Business partnerships, distribution, marketing, and retail departments adapting to cultural and market differences.": "ความร่วมมือทางธุรกิจ การจัดจำหน่าย การตลาด และช่องทางค้าปลีกที่ปรับให้เหมาะกับวัฒนธรรมและเงื่อนไขของแต่ละตลาด",
+  "Partner-led markets, headquarters-led standards.": "คู่ค้านำตลาด สำนักงานใหญ่ดูแลมาตรฐาน",
+  "Local partners understand their sales channels and market needs. AIWA Electronics International Co., Ltd. provides the brand authorization framework, manufacturing coordination options, and final standard control.": "คู่ค้าในพื้นที่เข้าใจช่องทางจำหน่ายและความต้องการของตลาด ขณะที่ AIWA Electronics International Co., Ltd. จัดทำกรอบการอนุญาตใช้แบรนด์ ทางเลือกด้านการประสานงานการผลิต และการควบคุมมาตรฐานขั้นสุดท้าย",
+  "Territory": "พื้นที่ตลาด",
+  "Regional rights are reviewed by target market and business capability.": "สิทธิ์ตามพื้นที่จะพิจารณาจากตลาดเป้าหมายและศักยภาพทางธุรกิจ",
+  "Category": "ประเภทผลิตภัณฑ์",
+  "Audio, display, home electronics, and market-specific proposals.": "เครื่องเสียง จอภาพ เครื่องใช้ไฟฟ้าภายในบ้าน และข้อเสนอที่เหมาะกับแต่ละตลาด",
+  "One cooperation framework, from brand authorization to factory coordination.": "กรอบความร่วมมือเดียว ตั้งแต่การอนุญาตใช้แบรนด์จนถึงการประสานงานด้านโรงงาน",
+  "AIWA Electronics International Co., Ltd. gives partners a clear route to develop market opportunities while keeping brand standards, product direction, and review expectations aligned from the first discussion to the final proposal.": "AIWA Electronics International Co., Ltd. มอบเส้นทางการพัฒนาโอกาสทางการตลาดที่ชัดเจนให้คู่ค้า พร้อมจัดแนวทางมาตรฐานแบรนด์ ทิศทางผลิตภัณฑ์ และเกณฑ์การตรวจสอบให้สอดคล้องกันตั้งแต่การหารือครั้งแรกจนถึงข้อเสนอฉบับสมบูรณ์",
+  "Flexible factory cooperation, aligned with AIWA brand standards.": "ความร่วมมือกับโรงงานที่ยืดหยุ่น ภายใต้มาตรฐานแบรนด์ AIWA",
+  "Authorized partners may introduce suitable factories or explore qualified manufacturing resources coordinated through AIWA Electronics International Co., Ltd. Each route is reviewed according to capability, product fit, documentation, samples, and final brand approval.": "คู่ค้าที่ได้รับอนุญาตสามารถเสนอโรงงานที่เหมาะสม หรือพิจารณาทรัพยากรการผลิตที่มีคุณสมบัติซึ่งประสานผ่าน AIWA Electronics International Co., Ltd. ทุกแนวทางจะได้รับการตรวจสอบตามศักยภาพ ความเหมาะสมของผลิตภัณฑ์ เอกสาร ตัวอย่าง และการอนุมัติแบรนด์ขั้นสุดท้าย",
+  "Product category opportunities": "โอกาสในแต่ละประเภทผลิตภัณฑ์",
+  "Audio": "เครื่องเสียง",
+  "Speakers, headphones, soundbars, portable audio.": "ลำโพง หูฟัง ซาวด์บาร์ และเครื่องเสียงแบบพกพา",
+  "Display": "จอภาพ",
+  "TV, monitor, visual entertainment products.": "โทรทัศน์ จอภาพ และผลิตภัณฑ์ความบันเทิงด้านภาพ",
+  "Home Electronics": "เครื่องใช้ไฟฟ้าภายในบ้าน",
+  "Market-specific appliance and lifestyle electronics.": "เครื่องใช้ไฟฟ้าและอุปกรณ์อิเล็กทรอนิกส์สำหรับการใช้ชีวิตที่ออกแบบตามตลาด",
+  "New Proposals": "ข้อเสนอใหม่",
+  "Evaluated by territory, factory ability, and quality fit.": "ประเมินจากพื้นที่ตลาด ศักยภาพโรงงาน และความเหมาะสมด้านคุณภาพ",
+  "Product Portfolio": "กลุ่มผลิตภัณฑ์",
+  "AIWA International Product Catalog": "แคตตาล็อกผลิตภัณฑ์ AIWA ระหว่างประเทศ",
+  "Catalog structure copied into a licensing-ready presentation.": "จัดโครงสร้างแคตตาล็อกให้พร้อมสำหรับการหารือด้านการอนุญาตใช้แบรนด์",
+  "Product categories are shown as potential market programs, with selected product examples brought from the current AIWA international catalog.": "นำเสนอประเภทผลิตภัณฑ์ในฐานะโครงการที่มีศักยภาพในตลาด พร้อมตัวอย่างจากแคตตาล็อก AIWA ระหว่างประเทศปัจจุบัน",
+  "TV": "โทรทัศน์",
+  "Monitor": "จอภาพ",
+  "Earphone": "หูฟัง",
+  "Life audiophile": "เครื่องเสียงระดับพรีเมียม",
+  "Active Speaker": "ลำโพงแอคทีฟ",
+  "Radio": "วิทยุ",
+  "Life-Mate": "เครื่องใช้ไฟฟ้าไลฟ์เมท",
+  "Home Appliances": "เครื่องใช้ไฟฟ้าภายในบ้าน",
+  "Connect": "อุปกรณ์เชื่อมต่อ",
+  "Market activity and product updates from AIWA international channels.": "กิจกรรมทางการตลาดและความเคลื่อนไหวด้านผลิตภัณฑ์จากช่องทาง AIWA ระหว่างประเทศ",
+  "A high-end B2B site should guide visitors into a structured inquiry, collecting the information needed before a licensing discussion begins.": "เว็บไซต์ B2B ระดับมืออาชีพควรนำผู้สนใจเข้าสู่การสอบถามอย่างเป็นระบบ พร้อมเก็บข้อมูลที่จำเป็นก่อนเริ่มการหารือด้านการอนุญาตใช้แบรนด์",
+  "Built to attract serious licensing conversations.": "ออกแบบมาเพื่อการหารือด้านการอนุญาตใช้แบรนด์อย่างจริงจัง",
+  "Target Market": "ตลาดเป้าหมาย",
+  "Product Category": "ประเภทผลิตภัณฑ์",
+  "Manufacturing Route": "แนวทางการผลิต",
+  "Company Background": "ข้อมูลบริษัท",
+  "Submit Inquiry": "ส่งคำถามความร่วมมือ",
+  "Global Network": "เครือข่ายทั่วโลก",
+  "Regional touchpoints connected through one international brand system.": "เชื่อมต่อความร่วมมือในแต่ละภูมิภาคด้วยระบบแบรนด์ระดับสากลเดียวกัน",
+  "AIWA works with many international cooperation partners and authorized market representatives across regions. This directory provides a clean starting point for visitors to access country-level AIWA pages and understand the wider brand network.": "AIWA ทำงานร่วมกับคู่ค้าระหว่างประเทศและตัวแทนตลาดที่ได้รับอนุญาตในหลายภูมิภาค ไดเรกทอรีนี้เป็นจุดเริ่มต้นที่ชัดเจนสำหรับการเข้าถึงหน้า AIWA ของแต่ละประเทศและทำความเข้าใจเครือข่ายแบรนด์ในภาพรวม",
+  "Asia": "เอเชีย",
+  "Europe": "ยุโรป",
+  "Middle East & Africa": "ตะวันออกกลางและแอฟริกา",
+  "Americas": "ทวีปอเมริกา",
+  "Oceania": "โอเชียเนีย",
+  "China": "จีน",
+  "Cambodia": "กัมพูชา",
+  "Hong Kong": "ฮ่องกง",
+  "India": "อินเดีย",
+  "Korea": "เกาหลีใต้",
+  "Malaysia": "มาเลเซีย",
+  "Philippines": "ฟิลิปปินส์",
+  "Singapore": "สิงคโปร์",
+  "Taiwan": "ไต้หวัน",
+  "Thailand": "ไทย",
+  "Vietnam": "เวียดนาม",
+  "Austria": "ออสเตรีย",
+  "Belgium": "เบลเยียม",
+  "Denmark": "เดนมาร์ก",
+  "France": "ฝรั่งเศส",
+  "Germany": "เยอรมนี",
+  "Greece": "กรีซ",
+  "Italy": "อิตาลี",
+  "Netherlands": "เนเธอร์แลนด์",
+  "United Kingdom": "สหราชอาณาจักร",
+  "Iran": "อิหร่าน",
+  "UAE": "สหรัฐอาหรับเอมิเรตส์",
+  "Africa": "แอฟริกา",
+  "USA": "สหรัฐอเมริกา",
+  "Australia": "ออสเตรเลีย",
+  "markets found": "ตลาดที่พบ",
+  "Cleaner air, smarter energy, and better water.": "อากาศที่สะอาดขึ้น พลังงานที่ชาญฉลาดขึ้น และการใช้น้ำที่ดียิ่งขึ้น",
+  "Green AIWA is a preliminary ESG+ business zone for partners exploring AIWA-branded home electronics with practical sustainability value. The focus is not a slogan, but a category framework that can be reviewed through efficiency, responsible materials, certification needs, and long-term product support.": "Green AIWA เป็นพื้นที่ธุรกิจ ESG+ เบื้องต้นสำหรับคู่ค้าที่สนใจเครื่องใช้ไฟฟ้าภายในบ้านภายใต้แบรนด์ AIWA ซึ่งมีคุณค่าด้านความยั่งยืนที่นำไปใช้ได้จริง เราไม่ได้มุ่งสร้างเพียงคำขวัญ แต่พัฒนากรอบประเภทผลิตภัณฑ์ที่สามารถพิจารณาจากประสิทธิภาพ วัสดุอย่างรับผิดชอบ ความต้องการด้านการรับรอง และการสนับสนุนผลิตภัณฑ์ในระยะยาว",
+  "View green products": "ดูผลิตภัณฑ์สีเขียว",
+  "ESG+ cooperation model": "รูปแบบความร่วมมือ ESG+",
+  "Concept Image": "ภาพแนวคิด",
+  "A brighter product environment for ESG+ discussions.": "สภาพแวดล้อมผลิตภัณฑ์ที่ชัดเจนและสว่างขึ้นสำหรับการหารือด้าน ESG+",
+  "Category fit": "ความเหมาะสมของประเภทผลิตภัณฑ์",
+  "Air care, refrigeration, water wellness, and other home electronics with clear daily-use value.": "ผลิตภัณฑ์ดูแลอากาศ เครื่องทำความเย็น สุขภาวะด้านน้ำ และเครื่องใช้ไฟฟ้าภายในบ้านที่ตอบโจทย์การใช้งานจริงในชีวิตประจำวัน",
+  "Market claims": "ข้อกล่าวอ้างทางการตลาด",
+  "Energy saving, filtration, materials, and packaging claims must be reviewed before promotion.": "ข้อกล่าวอ้างด้านการประหยัดพลังงาน การกรอง วัสดุ และบรรจุภัณฑ์ต้องผ่านการตรวจสอบก่อนการสื่อสารทางการตลาด",
+  "Approval route": "ขั้นตอนการอนุมัติ",
+  "Samples, specifications, certification documents, and visual identity remain centrally checked.": "ตัวอย่างสินค้า ข้อมูลจำเพาะ เอกสารรับรอง และอัตลักษณ์ทางภาพจะได้รับการตรวจสอบจากส่วนกลาง",
+  "Green Cooperation": "ความร่วมมือสีเขียว",
+  "From product idea to responsible market proposal.": "จากแนวคิดผลิตภัณฑ์สู่ข้อเสนอทางการตลาดที่รับผิดชอบ",
+  "Lower Consumption": "ลดการใช้ทรัพยากร",
+  "Traceable Approval": "การอนุมัติที่ตรวจสอบย้อนกลับได้",
+  "Factory Fit": "ความเหมาะสมกับโรงงาน",
+  "Green Product Zone": "โซนผลิตภัณฑ์สีเขียว",
+  "Initial ESG+ product directions.": "แนวทางผลิตภัณฑ์ ESG+ เบื้องต้น",
+  "Energy Care": "การดูแลพลังงาน",
+  "Efficient Refrigerator": "ตู้เย็นประสิทธิภาพสูง",
+  "Air Care": "การดูแลอากาศ",
+  "Low-Energy Dehumidifier": "เครื่องลดความชื้นประหยัดพลังงาน",
+  "Climate Care": "การดูแลสภาพอากาศ",
+  "Portable Air Conditioner": "เครื่องปรับอากาศเคลื่อนที่",
+  "Water Care": "การดูแลน้ำ",
+  "Water Purifier": "เครื่องกรองน้ำ",
+  "Brand History": "ประวัติแบรนด์",
+  "From Japanese consumer electronics heritage to Taiwan-led international operations.": "จากรากฐานเครื่องใช้ไฟฟ้าอุปโภคบริโภคของญี่ปุ่น สู่การดำเนินงานระหว่างประเทศที่บริหารจากไต้หวัน",
+  "Founded in Japan": "ก่อตั้งในญี่ปุ่น",
+  "Consumer electronics era": "ยุคเครื่องใช้ไฟฟ้าอุปโภคบริโภค",
+  "Product development and regional reach": "การพัฒนาผลิตภัณฑ์และการขยายสู่ภูมิภาค",
+  "International network": "เครือข่ายระหว่างประเทศ",
+  "Business partnerships across 100+ countries": "ความร่วมมือทางธุรกิจในกว่า 100 ประเทศ",
+  "Today": "ปัจจุบัน",
+  "Taiwan-led operations": "การดำเนินงานที่บริหารจากไต้หวัน",
+  "Timeline": "เส้นเวลา",
+  "The AIWA story in key milestones": "เรื่องราวของ AIWA ผ่านเหตุการณ์สำคัญ",
+  "Founded & Independent": "ก่อตั้งและเติบโตอย่างอิสระ",
+  "Acquired by Sony Corporation": "เข้าร่วมกับ Sony Corporation",
+  "Brand Discontinued": "ยุติการดำเนินงานของแบรนด์",
+  "AIWA Re-launch & Taiwan Office Established": "AIWA เปิดตัวอีกครั้งและจัดตั้งสำนักงานไต้หวัน",
+  "Global Business Network Formation": "การก่อตัวของเครือข่ายธุรกิจระดับโลก",
+  "Download Center": "ศูนย์ดาวน์โหลด",
+  "Product documentation, ready to share.": "เอกสารผลิตภัณฑ์พร้อมสำหรับการแบ่งปัน",
+  "Browse manuals": "ดูคู่มือผลิตภัณฑ์",
+  "Product documentation": "เอกสารผลิตภัณฑ์",
+  "Download Library": "คลังดาวน์โหลด",
+  "All Files": "ไฟล์ทั้งหมด",
+  "Owner's Manual": "คู่มือผู้ใช้",
+  "Catalog": "แคตตาล็อก",
+  "Download PDF": "ดาวน์โหลด PDF",
+  "View Catalog": "ดูแคตตาล็อก",
+  "No matching files found.": "ไม่พบไฟล์ที่ตรงกับการค้นหา",
+  "Address": "ที่อยู่",
+  "Contact": "ติดต่อ"
+};
+
+const frenchTranslations = {
+  "Taiwan-led global operations": "Opérations internationales pilotées depuis Taïwan",
+  "Brand Story": "Histoire de la marque",
+  "Our Role": "Notre rôle",
+  "Our advantages": "Nos atouts",
+  "Company Service": "Services aux partenaires",
+  "Company Services": "Services aux partenaires",
+  "Licensing Model": "Modèle de licence de marque",
+  "Quality Governance": "Gouvernance de la qualité",
+  "Factory Partnership": "Partenariat industriel",
+  "Factory Coordination": "Coordination industrielle",
+  "Products": "Produits",
+  "News": "Actualités",
+  "Latest News": "Dernières actualités",
+  "Green AIWA": "Green AIWA",
+  "Global": "Réseau international",
+  "Download": "Téléchargements",
+  "Contact Us": "Nous contacter",
+  "Global licensing and market operations headquarters": "Siège de la gestion des licences et des opérations de marché internationales",
+  "One brand standard. Multiple markets. Operated from Taiwan.": "Une marque, un standard. Plusieurs marchés. Pilotés depuis Taïwan.",
+  "AIWA Electronics International Co., Ltd. manages brand licensing, partner cooperation, coordinated factory resources, and product approval for AIWA markets outside Japan and Korea.": "AIWA Electronics International Co., Ltd. pilote les licences de marque, les partenariats, la coordination des ressources industrielles et l’approbation des produits pour les marchés AIWA hors du Japon et de la Corée.",
+  "Partner with AIWA": "Devenir partenaire d’AIWA",
+  "View cooperation model": "Découvrir notre modèle de coopération",
+  "Global HQ": "Siège international",
+  "Designed as a headquarters website, not a retail product catalog.": "Un site conçu pour présenter le rôle du siège, et non comme un simple catalogue de vente au détail.",
+  "A Taiwan-based headquarters that makes international cooperation easier.": "Un siège basé à Taïwan qui facilite les coopérations internationales",
+  "AIWA Electronics International Co., Ltd. gives partners a structured route from market opportunity to product proposal. Local partners retain their market insight and commercial role, while the Taiwan headquarters coordinates brand authorization, factory collaboration, product direction, and ESG expectations under one operating framework. This creates a practical competitive advantage: a single coordination point, access to qualified manufacturing resources, clearer approval milestones, and consistent international brand governance without limiting local market flexibility.": "AIWA Electronics International Co., Ltd. accompagne ses partenaires selon un parcours structuré, de l’opportunité de marché à la proposition produit. Les partenaires locaux conservent leur connaissance du marché et leur rôle commercial, tandis que le siège de Taïwan coordonne l’autorisation de marque, la coopération industrielle, l’orientation produit et les attentes ESG dans un même cadre opérationnel. Cette approche offre un avantage concret : un interlocuteur de coordination unique, l’accès à des ressources industrielles qualifiées, des étapes d’approbation plus lisibles et une gouvernance internationale cohérente, sans limiter l’agilité locale.",
+  "Partner-led execution": "Une exécution portée par les partenaires",
+  "Local teams bring market knowledge and lead the commercial conversation.": "Les équipes locales apportent leur connaissance du marché et conduisent les échanges commerciaux.",
+  "One headquarters standard": "Un standard commun du siège",
+  "Brand scope, product direction, and review expectations stay clear across markets.": "Le périmètre de marque, l’orientation produit et les exigences de revue restent clairs sur tous les marchés.",
+  "Flexible cooperation paths": "Des modalités de coopération flexibles",
+  "Factory proposals and qualified manufacturing resources can be discussed case by case.": "Les propositions d’usines et les ressources industrielles qualifiées sont étudiées au cas par cas.",
+  "Brand Licensing": "Licence de marque",
+  "Authorized use of the AIWA brand by territory, product category, and cooperation role.": "Autoriser l’usage de la marque AIWA selon le territoire, la catégorie de produit et le rôle du partenaire.",
+  "Market Operations": "Opérations de marché",
+  "Taiwan HQ coordinates international partner onboarding, licensing direction, and category discussions.": "Le siège de Taïwan coordonne l’intégration des partenaires, l’orientation des licences et les échanges par catégorie.",
+  "Partners may propose a qualified factory. AIWA Electronics International Co., Ltd. coordinates capability discussions, sample development, and the route toward partner-approved production.": "Les partenaires peuvent proposer une usine qualifiée. AIWA Electronics International Co., Ltd. coordonne l’évaluation des capacités, le développement des échantillons et le parcours vers une production validée par le partenaire.",
+  "ESG & Sustainability": "ESG et développement durable",
+  "Sustainability-led product programs consider responsible materials, energy efficiency, water stewardship, and supplier dialogue to support long-term market readiness.": "Les programmes produits orientés développement durable prennent en compte les matériaux responsables, l’efficacité énergétique, la gestion de l’eau et le dialogue avec les fournisseurs afin de soutenir une préparation durable des marchés.",
+  "Developing consumer electronics since 1951 in Japan.": "Développer l’électronique grand public au Japon depuis 1951",
+  "AIWA has been developing products to meet the growing demands from consumers since 1951 in Japan. The commitment to designing and manufacturing cost effective, high-quality consumer electronics accompanied with world class after-sales service connects the brand with dedicated consumers throughout the regions.": "Depuis 1951 au Japon, AIWA développe des produits pour répondre à l’évolution des attentes des consommateurs. Notre engagement en faveur d’une électronique grand public fiable, accessible et de qualité, soutenue par un service après-vente de niveau international, fait vivre la marque auprès de ses utilisateurs dans chaque région.",
+  "View brand history": "Voir l’histoire de la marque",
+  "100+ countries worldwide": "Plus de 100 pays dans le monde",
+  "Business partnerships, distribution, marketing, and retail departments adapting to cultural and market differences.": "Des partenariats commerciaux, réseaux de distribution, équipes marketing et canaux de vente adaptés aux réalités culturelles et économiques de chaque marché.",
+  "Partner-led markets, headquarters-led standards.": "Des marchés portés par les partenaires, des standards pilotés par le siège.",
+  "Local partners understand their sales channels and market needs. AIWA Electronics International Co., Ltd. provides the brand authorization framework, manufacturing coordination options, and final standard control.": "Les partenaires locaux connaissent leurs canaux de vente et les besoins de leur marché. AIWA Electronics International Co., Ltd. fournit le cadre d’autorisation de marque, les options de coordination industrielle et le contrôle final des standards.",
+  "Territory": "Territoire",
+  "Regional rights are reviewed by target market and business capability.": "Les droits territoriaux sont étudiés selon le marché cible et les capacités opérationnelles.",
+  "Category": "Catégorie",
+  "Audio, display, home electronics, and market-specific proposals.": "Audio, affichage, électronique domestique et propositions adaptées à chaque marché.",
+  "One cooperation framework, from brand authorization to factory coordination.": "Un cadre de coopération unique, de l’autorisation de marque à la coordination industrielle.",
+  "AIWA Electronics International Co., Ltd. gives partners a clear route to develop market opportunities while keeping brand standards, product direction, and review expectations aligned from the first discussion to the final proposal.": "AIWA Electronics International Co., Ltd. propose aux partenaires un parcours lisible pour développer les opportunités de marché, tout en alignant les standards de marque, l’orientation produit et les exigences de revue, du premier échange à la proposition finale.",
+  "Flexible factory cooperation, aligned with AIWA brand standards.": "Une coopération industrielle flexible, alignée sur les standards AIWA.",
+  "Authorized partners may introduce suitable factories or explore qualified manufacturing resources coordinated through AIWA Electronics International Co., Ltd. Each route is reviewed according to capability, product fit, documentation, samples, and final brand approval.": "Les partenaires autorisés peuvent présenter des usines adaptées ou étudier des ressources industrielles qualifiées coordonnées par AIWA Electronics International Co., Ltd. Chaque parcours est évalué selon les capacités, l’adéquation produit, la documentation, les échantillons et l’approbation finale de la marque.",
+  "Product category opportunities": "Opportunités par catégorie de produits",
+  "Audio": "Audio",
+  "Speakers, headphones, soundbars, portable audio.": "Enceintes, casques, barres de son et audio nomade.",
+  "Display": "Affichage",
+  "TV, monitor, visual entertainment products.": "Téléviseurs, moniteurs et produits de divertissement visuel.",
+  "Home Electronics": "Électronique domestique",
+  "Market-specific appliance and lifestyle electronics.": "Équipements domestiques et électronique du quotidien adaptés à chaque marché.",
+  "New Proposals": "Nouvelles propositions",
+  "Evaluated by territory, factory ability, and quality fit.": "Évaluées selon le territoire, les capacités industrielles et l’adéquation qualité.",
+  "Product Portfolio": "Portefeuille produits",
+  "AIWA International Product Catalog": "Catalogue international des produits AIWA",
+  "Catalog structure copied into a licensing-ready presentation.": "Une structure catalogue préparée pour les échanges de licence.",
+  "Product categories are shown as potential market programs, with selected product examples brought from the current AIWA international catalog.": "Les catégories sont présentées comme des programmes de marché potentiels, avec une sélection d’exemples issus du catalogue international AIWA actuel.",
+  "TV": "Téléviseur",
+  "Monitor": "Moniteur",
+  "Earphone": "Écouteurs",
+  "Life audiophile": "Audio haute fidélité",
+  "Active Speaker": "Enceinte active",
+  "Radio": "Radio",
+  "Life-Mate": "Équipement domestique",
+  "Home Appliances": "Électroménager",
+  "Connect": "Produits connectés",
+  "Market activity and product updates from AIWA international channels.": "Activités de marché et actualités produits issues des canaux internationaux AIWA",
+  "Built to attract serious licensing conversations.": "Conçu pour engager des échanges de licence structurés",
+  "A high-end B2B site should guide visitors into a structured inquiry, collecting the information needed before a licensing discussion begins.": "Un site B2B haut de gamme doit orienter les visiteurs vers une demande structurée et recueillir les informations nécessaires avant toute discussion de licence.",
+  "Target Market": "Marché cible",
+  "Product Category": "Catégorie de produit",
+  "Manufacturing Route": "Parcours industriel",
+  "Company Background": "Présentation de l’entreprise",
+  "Submit Inquiry": "Envoyer la demande",
+  "Global Network": "Réseau international",
+  "Regional touchpoints connected through one international brand system.": "Des relais régionaux reliés par un même système de marque international",
+  "AIWA works with many international cooperation partners and authorized market representatives across regions. This directory provides a clean starting point for visitors to access country-level AIWA pages and understand the wider brand network.": "AIWA collabore avec de nombreux partenaires internationaux et représentants de marché agréés dans différentes régions. Cet annuaire offre un accès clair aux pages AIWA par pays et permet de mieux comprendre l’étendue du réseau de la marque.",
+  "Asia": "Asie",
+  "Europe": "Europe",
+  "Middle East & Africa": "Moyen-Orient et Afrique",
+  "Americas": "Amériques",
+  "Oceania": "Océanie",
+  "China": "Chine",
+  "Cambodia": "Cambodge",
+  "Hong Kong": "Hong Kong",
+  "India": "Inde",
+  "Korea": "Corée",
+  "Malaysia": "Malaisie",
+  "Philippines": "Philippines",
+  "Singapore": "Singapour",
+  "Taiwan": "Taïwan",
+  "Thailand": "Thaïlande",
+  "Vietnam": "Vietnam",
+  "Austria": "Autriche",
+  "Belgium": "Belgique",
+  "Denmark": "Danemark",
+  "France": "France",
+  "Germany": "Allemagne",
+  "Greece": "Grèce",
+  "Italy": "Italie",
+  "Netherlands": "Pays-Bas",
+  "United Kingdom": "Royaume-Uni",
+  "Iran": "Iran",
+  "UAE": "Émirats arabes unis",
+  "Africa": "Afrique",
+  "USA": "États-Unis",
+  "Australia": "Australie",
+  "markets found": "marchés trouvés",
+  "Cleaner air, smarter energy, and better water.": "Un air plus sain, une énergie mieux maîtrisée et une eau de meilleure qualité.",
+  "Green AIWA is a preliminary ESG+ business zone for partners exploring AIWA-branded home electronics with practical sustainability value. The focus is not a slogan, but a category framework that can be reviewed through efficiency, responsible materials, certification needs, and long-term product support.": "Green AIWA est un espace commercial ESG+ préliminaire destiné aux partenaires qui étudient des produits domestiques AIWA à valeur durable concrète. L’objectif n’est pas de créer un slogan, mais un cadre de catégories évaluable selon l’efficacité, les matériaux responsables, les certifications et le support produit à long terme.",
+  "View green products": "Voir les produits responsables",
+  "ESG+ cooperation model": "Modèle de coopération ESG+",
+  "Concept Image": "Image conceptuelle",
+  "A brighter product environment for ESG+ discussions.": "Un environnement produit plus clair pour les échanges ESG+",
+  "Category fit": "Adéquation de la catégorie",
+  "Air care, refrigeration, water wellness, and other home electronics with clear daily-use value.": "Traitement de l’air, réfrigération, qualité de l’eau et autres équipements domestiques à valeur d’usage quotidienne clairement identifiée.",
+  "Market claims": "Allégations de marché",
+  "Energy saving, filtration, materials, and packaging claims must be reviewed before promotion.": "Les allégations liées à l’énergie, à la filtration, aux matériaux et à l’emballage doivent être vérifiées avant toute communication.",
+  "Approval route": "Parcours d’approbation",
+  "Samples, specifications, certification documents, and visual identity remain centrally checked.": "Les échantillons, spécifications, documents de certification et éléments d’identité visuelle restent vérifiés au niveau central.",
+  "Green Cooperation": "Coopération responsable",
+  "From product idea to responsible market proposal.": "De l’idée produit à une proposition de marché responsable.",
+  "Lower Consumption": "Réduire la consommation",
+  "Traceable Approval": "Approbation traçable",
+  "Factory Fit": "Adéquation industrielle",
+  "Green Product Zone": "Espace produits responsables",
+  "Initial ESG+ product directions.": "Premières orientations produits ESG+",
+  "Energy Care": "Maîtrise de l’énergie",
+  "Efficient Refrigerator": "Réfrigérateur à haute efficacité",
+  "Air Care": "Qualité de l’air",
+  "Low-Energy Dehumidifier": "Déshumidificateur basse consommation",
+  "Climate Care": "Confort climatique",
+  "Portable Air Conditioner": "Climatiseur mobile",
+  "Water Care": "Qualité de l’eau",
+  "Water Purifier": "Purificateur d’eau",
+  "Brand History": "Histoire de la marque",
+  "From Japanese consumer electronics heritage to Taiwan-led international operations.": "D’un héritage japonais dans l’électronique grand public à des opérations internationales pilotées depuis Taïwan",
+  "Founded in Japan": "Fondée au Japon",
+  "Consumer electronics era": "L’ère de l’électronique grand public",
+  "Product development and regional reach": "Développement produit et rayonnement régional",
+  "International network": "Réseau international",
+  "Business partnerships across 100+ countries": "Partenariats commerciaux dans plus de 100 pays",
+  "Today": "Aujourd’hui",
+  "Taiwan-led operations": "Opérations pilotées depuis Taïwan",
+  "Timeline": "Chronologie",
+  "The AIWA story in key milestones": "L’histoire d’AIWA en quelques étapes clés",
+  "Founded & Independent": "Fondation et développement indépendant",
+  "Acquired by Sony Corporation": "Acquisition par Sony Corporation",
+  "Brand Discontinued": "Interruption des activités de la marque",
+  "AIWA Re-launch & Taiwan Office Established": "Relance d’AIWA et création du bureau de Taïwan",
+  "Global Business Network Formation": "Formation du réseau commercial international",
+  "Download Center": "Centre de téléchargement",
+  "Product documentation, ready to share.": "Des documents produits prêts à être partagés",
+  "Browse manuals": "Consulter les manuels",
+  "Product documentation": "Documentation produit",
+  "Download Library": "Bibliothèque de téléchargements",
+  "All Files": "Tous les fichiers",
+  "Owner's Manual": "Manuel utilisateur",
+  "Catalog": "Catalogue",
+  "Download PDF": "Télécharger le PDF",
+  "View Catalog": "Voir le catalogue",
+  "No matching files found.": "Aucun fichier correspondant",
+  "Address": "Adresse",
+  "Contact": "Contact"
+};
+
+const localeTranslations = {
+  en: {},
+  "zh-TW": translations,
+  th: thaiTranslations,
+  fr: frenchTranslations
+};
+
 const attributeTranslations = {
   Language: "語言",
   "AIWA Electronics International Co., Ltd. home": "AIWA Electronics International Co., Ltd. 首頁",
@@ -326,6 +687,55 @@ const attributeTranslations = {
   "Download categories": "下載分類"
 };
 
+const thaiAttributeTranslations = {
+  Language: "ภาษา",
+  "AIWA Electronics International Co., Ltd. home": "หน้าแรกของ AIWA Electronics International Co., Ltd.",
+  "Previous hero image": "ภาพหลักก่อนหน้า",
+  "Next hero image": "ภาพหลักถัดไป",
+  "AIWA latest news carousel": "ข่าวสารล่าสุดจาก AIWA",
+  "Previous news": "ข่าวก่อนหน้า",
+  "Next news": "ข่าวถัดไป",
+  "AIWA country selector": "ตัวเลือกประเทศของ AIWA",
+  "Country suggestions": "คำแนะนำประเทศ",
+  "Clear country search": "ล้างการค้นหาประเทศ",
+  "AIWA news archive": "คลังข่าว AIWA",
+  "Search in English or Traditional Chinese": "ค้นหาเป็นภาษาอังกฤษหรือจีนตัวเต็ม",
+  "Product category opportunities": "โอกาสในแต่ละประเภทผลิตภัณฑ์",
+  "Product catalog categories": "หมวดหมู่แคตตาล็อกผลิตภัณฑ์",
+  "Product series": "ซีรีส์ผลิตภัณฑ์",
+  "e.g. Thailand, UAE, Mexico": "เช่น ไทย สหรัฐอาหรับเอมิเรตส์ เม็กซิโก",
+  "Search product name or category": "ค้นหาชื่อผลิตภัณฑ์หรือหมวดหมู่",
+  "Download categories": "หมวดหมู่ดาวน์โหลด"
+};
+
+const frenchAttributeTranslations = {
+  Language: "Langue",
+  "AIWA Electronics International Co., Ltd. home": "Accueil AIWA Electronics International Co., Ltd.",
+  "Previous hero image": "Visuel principal précédent",
+  "Next hero image": "Visuel principal suivant",
+  "AIWA latest news carousel": "Actualités AIWA",
+  "Previous news": "Actualité précédente",
+  "Next news": "Actualité suivante",
+  "AIWA country selector": "Sélecteur de pays AIWA",
+  "Country suggestions": "Suggestions de pays",
+  "Clear country search": "Effacer la recherche pays",
+  "AIWA news archive": "Archives des actualités AIWA",
+  "Search in English or Traditional Chinese": "Rechercher en anglais ou en chinois traditionnel",
+  "Product category opportunities": "Opportunités par catégorie de produits",
+  "Product catalog categories": "Catégories du catalogue produits",
+  "Product series": "Séries de produits",
+  "e.g. Thailand, UAE, Mexico": "ex. Thaïlande, Émirats arabes unis, Mexique",
+  "Search product name or category": "Rechercher un produit ou une catégorie",
+  "Download categories": "Catégories de téléchargement"
+};
+
+const localeAttributeTranslations = {
+  en: {},
+  "zh-TW": attributeTranslations,
+  th: thaiAttributeTranslations,
+  fr: frenchAttributeTranslations
+};
+
 const pageTitles = {
   "index.html": "AIWA Electronics International Co., Ltd.｜全球品牌授權與市場營運",
   "global.html": "全球網絡｜AIWA Electronics International Co., Ltd.",
@@ -337,7 +747,8 @@ const pageTitles = {
 
 let activeLanguage = "en";
 try {
-  activeLanguage = localStorage.getItem("aiwa-language") === "zh-TW" ? "zh-TW" : "en";
+  const storedLanguage = localStorage.getItem("aiwa-language");
+  activeLanguage = ["en", "zh-TW", "th", "fr"].includes(storedLanguage) ? storedLanguage : "en";
 } catch (error) {
   activeLanguage = "en";
 }
@@ -353,7 +764,12 @@ function renderCountryCount(value) {
   const numericValue = Math.max(0, Math.min(Number(value) || 0, Number(countryCountDisplay.dataset.countTarget) || 100));
   countryCountDisplay.dataset.countValue = String(numericValue);
   number.textContent = String(numericValue);
-  label.textContent = activeLanguage === "zh-TW" ? "個國家遍布全球" : "countries worldwide";
+  label.textContent = {
+    en: "countries worldwide",
+    "zh-TW": "個國家遍布全球",
+    th: "ประเทศทั่วโลก",
+    fr: "pays dans le monde"
+  }[activeLanguage] || "countries worldwide";
 }
 
 function animateCountryCount() {
@@ -373,6 +789,16 @@ function animateCountryCount() {
   requestAnimationFrame(tick);
 }
 
+function getLocalizedText(key) {
+  const dictionary = localeTranslations[activeLanguage] || {};
+  return dictionary[key] ?? key;
+}
+
+function getLocalizedAttribute(key) {
+  const dictionary = localeAttributeTranslations[activeLanguage] || {};
+  return dictionary[key] ?? key;
+}
+
 function translateTextNodes() {
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
     acceptNode(node) {
@@ -389,10 +815,10 @@ function translateTextNodes() {
     if (!originalTextNodes.has(node)) originalTextNodes.set(node, node.nodeValue);
     const original = originalTextNodes.get(node);
     const key = normalizeText(original);
-    if (key && translations[key]) {
+    if (key && (translations[key] || getLocalizedText(key) !== key)) {
       const leading = original.match(/^\s*/)?.[0] || "";
       const trailing = original.match(/\s*$/)?.[0] || "";
-      const localized = activeLanguage === "zh-TW" ? translations[key] : key;
+      const localized = getLocalizedText(key);
       node.nodeValue = `${leading}${localized}${trailing}`;
     }
     node = walker.nextNode();
@@ -407,8 +833,8 @@ function translateAttributes() {
       const value = element.getAttribute(attribute);
       if (value && originals[attribute] === undefined) originals[attribute] = value;
       const original = originals[attribute];
-      if (!original || !attributeTranslations[original]) return;
-      element.setAttribute(attribute, activeLanguage === "zh-TW" ? attributeTranslations[original] : original);
+      if (!original || (!attributeTranslations[original] && getLocalizedAttribute(original) === original)) return;
+      element.setAttribute(attribute, getLocalizedAttribute(original));
     });
   });
 }
@@ -481,8 +907,13 @@ document.addEventListener("click", (event) => {
 });
 
 function applyLanguage(language) {
-  activeLanguage = language === "zh-TW" ? "zh-TW" : "en";
-  document.documentElement.lang = activeLanguage === "zh-TW" ? "zh-Hant" : "en";
+  activeLanguage = ["en", "zh-TW", "th", "fr"].includes(language) ? language : "en";
+  document.documentElement.lang = {
+    en: "en",
+    "zh-TW": "zh-Hant",
+    th: "th",
+    fr: "fr"
+  }[activeLanguage];
   document.body.dataset.language = activeLanguage;
   try {
     localStorage.setItem("aiwa-language", activeLanguage);
@@ -502,21 +933,34 @@ function applyLanguage(language) {
   });
 
   const fileName = window.location.pathname.split("/").pop() || "index.html";
-  if (activeLanguage === "zh-TW" && pageTitles[fileName]) {
-    document.title = pageTitles[fileName];
-  } else if (fileName === "index.html" || !fileName) {
-    document.title = "AIWA Electronics International Co., Ltd. | Global Licensing & Market Operations";
-  } else if (fileName === "global.html") {
-    document.title = "Global Network | AIWA Electronics International Co., Ltd.";
-  } else if (fileName === "news.html") {
-    document.title = "Latest News | AIWA Electronics International Co., Ltd.";
-  } else if (fileName === "green.html") {
-    document.title = "Green AIWA | AIWA Electronics International Co., Ltd.";
-  } else if (fileName === "history.html") {
-    document.title = "Brand History | AIWA Electronics International Co., Ltd.";
-  } else if (fileName === "download.html") {
-    document.title = "Download Center | AIWA Electronics International Co., Ltd.";
-  }
+  const localizedTitles = {
+    en: {
+      "index.html": "AIWA Electronics International Co., Ltd. | Global Licensing & Market Operations",
+      "global.html": "Global Network | AIWA Electronics International Co., Ltd.",
+      "news.html": "Latest News | AIWA Electronics International Co., Ltd.",
+      "green.html": "Green AIWA | AIWA Electronics International Co., Ltd.",
+      "history.html": "Brand History | AIWA Electronics International Co., Ltd.",
+      "download.html": "Download Center | AIWA Electronics International Co., Ltd."
+    },
+    "zh-TW": pageTitles,
+    th: {
+      "index.html": "AIWA Electronics International Co., Ltd. | ใบอนุญาตแบรนด์และการดำเนินงานตลาดระหว่างประเทศ",
+      "global.html": "เครือข่ายทั่วโลก | AIWA Electronics International Co., Ltd.",
+      "news.html": "ข่าวสารล่าสุด | AIWA Electronics International Co., Ltd.",
+      "green.html": "Green AIWA | AIWA Electronics International Co., Ltd.",
+      "history.html": "ประวัติแบรนด์ | AIWA Electronics International Co., Ltd.",
+      "download.html": "ศูนย์ดาวน์โหลด | AIWA Electronics International Co., Ltd."
+    },
+    fr: {
+      "index.html": "AIWA Electronics International Co., Ltd. | Licences de marque et opérations internationales",
+      "global.html": "Réseau international | AIWA Electronics International Co., Ltd.",
+      "news.html": "Dernières actualités | AIWA Electronics International Co., Ltd.",
+      "green.html": "Green AIWA | AIWA Electronics International Co., Ltd.",
+      "history.html": "Histoire de la marque | AIWA Electronics International Co., Ltd.",
+      "download.html": "Centre de téléchargement | AIWA Electronics International Co., Ltd."
+    }
+  };
+  document.title = localizedTitles[activeLanguage]?.[fileName] || localizedTitles.en["index.html"];
 }
 
 languageButtons.forEach((button) => {
@@ -1237,9 +1681,9 @@ function renderCountrySuggestions(matches) {
   countrySuggestions.innerHTML = matches.slice(0, 7).map((country) => `
     <button type="button" class="country-suggestion" role="option" data-country-suggestion="${country.name}">
       <span>
-        <strong class="country-name-en">${country.name}</strong>
+        <strong class="country-name-en">${getLocalizedText(country.name)}</strong>
         <strong class="country-name-zh">${country.zhName}</strong>
-        <small><span class="region-name-en">${country.region}</span><span class="region-name-zh">${country.zhRegion}</span></small>
+        <small><span class="region-name-en">${getLocalizedText(country.region)}</span><span class="region-name-zh">${country.zhRegion}</span></small>
       </span>
       <span class="country-suggestion-arrow" aria-hidden="true">↗</span>
     </button>
@@ -1270,9 +1714,13 @@ function updateCountrySearch() {
   if (countrySearchClear) countrySearchClear.hidden = !query;
   renderCountrySuggestions(query ? matches : []);
   if (countrySearchStatus) {
-    countrySearchStatus.textContent = query
-      ? (activeLanguage === "zh-TW" ? `顯示 ${visibleCount} 個市場` : `${visibleCount} markets found`)
-      : "";
+    const statusText = {
+      en: `${visibleCount} markets found`,
+      "zh-TW": `顯示 ${visibleCount} 個市場`,
+      th: `พบ ${visibleCount} ตลาด`,
+      fr: `${visibleCount} marchés trouvés`
+    }[activeLanguage] || `${visibleCount} markets found`;
+    countrySearchStatus.textContent = query ? statusText : "";
   }
 }
 
