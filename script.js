@@ -1321,6 +1321,20 @@ if (countryCountDisplay) {
   }
 }
 
+function revealItemsInViewport() {
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+  const topBoundary = viewportHeight * 0.96;
+  const bottomBoundary = viewportHeight * 0.04;
+
+  revealItems.forEach((item) => {
+    if (item.classList.contains("is-visible")) return;
+    const bounds = item.getBoundingClientRect();
+    if (bounds.top < topBoundary && bounds.bottom > bottomBoundary) {
+      item.classList.add("is-visible");
+    }
+  });
+}
+
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -1329,11 +1343,19 @@ if ("IntersectionObserver" in window) {
       revealObserver.unobserve(entry.target);
     });
   }, {
-    threshold: 0.12,
-    rootMargin: "0px 0px -8% 0px"
+    threshold: 0.08,
+    rootMargin: "0px 0px -2% 0px"
   });
 
   revealItems.forEach((item) => revealObserver.observe(item));
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
+
+// Keep scroll reveals reliable after deep-link loads and fast scrolling on hosted builds.
+window.addEventListener("scroll", revealItemsInViewport, { passive: true });
+window.addEventListener("resize", revealItemsInViewport, { passive: true });
+window.addEventListener("pageshow", revealItemsInViewport);
+requestAnimationFrame(revealItemsInViewport);
+window.setTimeout(revealItemsInViewport, 320);
+window.setTimeout(revealItemsInViewport, 1200);
