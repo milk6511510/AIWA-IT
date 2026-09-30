@@ -156,13 +156,13 @@ textarea {
 .brand-logo {
   display: grid;
   place-items: center;
-  width: 94px;
-  height: 36px;
+  width: 112px;
+  height: 44px;
 }
 
 .glass-logo {
   position: relative;
-  padding: 8px 12px;
+  padding: 9px 15px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.86);
   border-radius: 999px;
@@ -186,12 +186,12 @@ textarea {
 .glass-logo img {
   position: relative;
   z-index: 1;
-  width: 70px;
+  width: 84px;
   filter: drop-shadow(0 1px 4px rgba(197, 18, 34, 0.16));
 }
 
 .brand-text {
-  display: grid;
+  display: none;
   gap: 2px;
   min-width: 0;
 }
@@ -3804,11 +3804,16 @@ body[data-language="zh-TW"] .footer-contact a {
   }
 
   .brand-logo {
-    width: 82px;
+    width: 96px;
+    height: 40px;
+  }
+
+  .glass-logo {
+    padding: 8px 13px;
   }
 
   .glass-logo img {
-    width: 62px;
+    width: 76px;
   }
 
   .hero {
