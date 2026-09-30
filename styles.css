@@ -156,13 +156,13 @@ textarea {
 .brand-logo {
   display: grid;
   place-items: center;
-  width: 112px;
-  height: 44px;
+  width: 134px;
+  height: 52px;
 }
 
 .glass-logo {
   position: relative;
-  padding: 9px 15px;
+  padding: 10px 17px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.86);
   border-radius: 999px;
@@ -186,7 +186,7 @@ textarea {
 .glass-logo img {
   position: relative;
   z-index: 1;
-  width: 84px;
+  width: 101px;
   filter: drop-shadow(0 1px 4px rgba(197, 18, 34, 0.16));
 }
 
@@ -325,9 +325,10 @@ textarea {
 }
 
 .language-switcher {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  flex: 0 0 auto;
   padding: 3px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -339,32 +340,105 @@ textarea {
   flex-shrink: 0;
 }
 
-.language-button {
-  min-width: 38px;
+.language-current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 58px;
   min-height: 34px;
-  padding: 0 9px;
+  padding: 0 11px;
   border: 0;
   border-radius: 999px;
-  background: transparent;
-  color: var(--muted);
+  background: var(--warm-gradient);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(185, 24, 43, 0.18);
   font-family: inherit;
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.03em;
+  letter-spacing: .03em;
   cursor: pointer;
   transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
-.language-button:hover,
-.language-button:focus-visible {
+.language-chevron {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  transform: translateY(-1px);
+  transition: transform 180ms ease;
+}
+
+.language-switcher.is-open .language-chevron {
+  transform: rotate(180deg) translateY(1px);
+}
+
+.language-current:hover,
+.language-current:focus-visible {
+  background: var(--contact-gradient);
+  box-shadow: 0 10px 22px rgba(95, 8, 24, 0.2);
+}
+
+.language-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 35;
+  display: grid;
+  min-width: 184px;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 42px rgba(46, 58, 84, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+}
+
+.language-menu[hidden] {
+  display: none;
+}
+
+.language-button {
+  font-family: inherit;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--soft-ink);
+  font-size: 12px;
+  font-weight: 750;
+  text-align: left;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.language-option > span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .08em;
+}
+
+.language-option:hover,
+.language-option:focus-visible,
+.language-option.is-active {
   color: #9b1c2b;
   background: var(--warm-gradient-soft);
 }
 
-.language-button.is-active {
-  background: var(--warm-gradient);
-  color: #fff;
-  box-shadow: 0 6px 16px rgba(185, 24, 43, 0.18);
+.language-option.is-active > span {
+  color: #9b1c2b;
 }
 
 .green-page .nav-cta {
@@ -381,6 +455,14 @@ textarea {
   box-shadow: 0 12px 30px rgba(37, 105, 78, 0.24);
 }
 
+.green-page .language-current {
+  background: linear-gradient(135deg, #1f8f62 0%, #6fbe70 58%, #a9d779 100%);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(37, 105, 78, 0.2);
+}
+
+.green-page .language-current:hover,
+.green-page .language-current:focus-visible,
 .green-page .language-button:hover,
 .green-page .language-button:focus-visible {
   color: #116747;
@@ -1158,7 +1240,7 @@ h3 {
 }
 
 .story-section .eyebrow {
-  color: #df222d;
+  color: #fff;
 }
 
 .story-section h2 {
@@ -2786,6 +2868,7 @@ body:not([data-language="zh-TW"]) .region-count-zh {
 .catalog-tab:focus-visible,
 .button:focus-visible,
 .menu-button:focus-visible,
+.language-current:focus-visible,
 .language-button:focus-visible,
 .news-control:focus-visible,
 .hero-edge-control:focus-visible,
@@ -3695,9 +3778,11 @@ body[data-language="th"] .site-nav {
     min-width: 48px;
   }
 
-  .header-language .language-button {
-    min-width: 36px;
-    padding: 0 7px;
+  .header-language .language-current {
+    min-width: 54px;
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 10px;
   }
 
   .header-language .language-switcher {
@@ -3705,12 +3790,15 @@ body[data-language="th"] .site-nav {
     padding: 2px;
   }
 
-  .header-language .language-button {
-    min-width: 29px;
-    min-height: 32px;
-    padding: 0 5px;
-    font-size: 10px;
-    letter-spacing: 0;
+  .header-language .language-menu {
+    min-width: 176px;
+  }
+
+  .header-language .language-option {
+    min-height: 40px;
+    min-width: 0;
+    padding: 0 12px;
+    font-size: 12px;
   }
 
   .menu-button {
@@ -3871,16 +3959,16 @@ body[data-language="th"] .site-nav {
   }
 
   .brand-logo {
-    width: 96px;
-    height: 40px;
+    width: 115px;
+    height: 48px;
   }
 
   .glass-logo {
-    padding: 8px 13px;
+    padding: 9px 15px;
   }
 
   .glass-logo img {
-    width: 76px;
+    width: 91px;
   }
 
   .hero {

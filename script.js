@@ -2,6 +2,10 @@ const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector("[data-menu-button]");
 const nav = document.querySelector("[data-nav]");
 const languageButtons = document.querySelectorAll("[data-language]");
+const languageSwitcher = document.querySelector("[data-language-switcher]");
+const languageToggle = document.querySelector("[data-language-toggle]");
+const languageMenu = document.querySelector("[data-language-menu]");
+const languageCurrentCode = document.querySelector("[data-language-current-code]");
 const originalTextNodes = new WeakMap();
 const originalAttributes = new WeakMap();
 const countryCountDisplay = document.querySelector("[data-count-display]");
@@ -736,6 +740,20 @@ const localeAttributeTranslations = {
   fr: frenchAttributeTranslations
 };
 
+const languageTriggerLabels = {
+  en: "Select language",
+  "zh-TW": "選擇語言",
+  th: "เลือกภาษา",
+  fr: "Choisir la langue"
+};
+
+const languageCodes = {
+  en: "EN",
+  "zh-TW": "繁中",
+  th: "TH",
+  fr: "FR"
+};
+
 const pageTitles = {
   "index.html": "AIWA Electronics International Co., Ltd.｜全球品牌授權與市場營運",
   "global.html": "全球網絡｜AIWA Electronics International Co., Ltd.",
@@ -906,6 +924,40 @@ document.addEventListener("click", (event) => {
   if (!event.target.closest("[data-custom-select]")) closeCustomSelects();
 });
 
+function closeLanguageMenu(restoreFocus = false) {
+  if (!languageMenu || !languageToggle) return;
+  languageMenu.hidden = true;
+  languageSwitcher?.classList.remove("is-open");
+  languageToggle.setAttribute("aria-expanded", "false");
+  if (restoreFocus) languageToggle.focus();
+}
+
+function openLanguageMenu() {
+  if (!languageMenu || !languageToggle) return;
+  languageMenu.hidden = false;
+  languageSwitcher?.classList.add("is-open");
+  languageToggle.setAttribute("aria-expanded", "true");
+}
+
+languageToggle?.addEventListener("click", (event) => {
+  event.stopPropagation();
+  if (languageMenu?.hidden) openLanguageMenu();
+  else closeLanguageMenu();
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest("[data-language-switcher]")) closeLanguageMenu();
+});
+
+languageToggle?.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeLanguageMenu(true);
+  if (event.key === "ArrowDown" || event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    openLanguageMenu();
+    languageMenu?.querySelector("[data-language]")?.focus();
+  }
+});
+
 function applyLanguage(language) {
   activeLanguage = ["en", "zh-TW", "th", "fr"].includes(language) ? language : "en";
   document.documentElement.lang = {
@@ -929,8 +981,10 @@ function applyLanguage(language) {
   languageButtons.forEach((button) => {
     const isActive = button.dataset.language === activeLanguage;
     button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
+    button.setAttribute("aria-selected", String(isActive));
   });
+  if (languageCurrentCode) languageCurrentCode.textContent = languageCodes[activeLanguage] || "EN";
+  languageToggle?.setAttribute("aria-label", languageTriggerLabels[activeLanguage] || languageTriggerLabels.en);
 
   const fileName = window.location.pathname.split("/").pop() || "index.html";
   const localizedTitles = {
@@ -964,7 +1018,10 @@ function applyLanguage(language) {
 }
 
 languageButtons.forEach((button) => {
-  button.addEventListener("click", () => applyLanguage(button.dataset.language));
+  button.addEventListener("click", () => {
+    applyLanguage(button.dataset.language);
+    closeLanguageMenu(true);
+  });
 });
 
 function updateHeader() {
