@@ -126,9 +126,9 @@ textarea {
   position: fixed;
   inset: 16px clamp(14px, 3vw, 38px) auto;
   z-index: 20;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(42px, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
   padding: 12px 14px 12px 18px;
   border: 1px solid var(--white-line);
@@ -146,6 +146,8 @@ textarea {
 }
 
 .brand {
+  grid-column: 1;
+  justify-self: start;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -210,6 +212,9 @@ textarea {
 }
 
 .site-nav {
+  grid-column: 2;
+  justify-self: end;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -337,6 +342,8 @@ textarea {
 }
 
 .header-language {
+  grid-column: 3;
+  justify-self: end;
   flex-shrink: 0;
 }
 
@@ -345,7 +352,9 @@ textarea {
   align-items: center;
   justify-content: center;
   gap: 7px;
-  min-width: 58px;
+  box-sizing: border-box;
+  width: 60px;
+  min-width: 60px;
   min-height: 34px;
   padding: 0 11px;
   border: 0;
@@ -363,14 +372,17 @@ textarea {
 
 .language-chevron {
   display: inline-block;
-  font-size: 14px;
-  line-height: 1;
-  transform: translateY(-1px);
+  flex: 0 0 12px;
+  width: 12px;
+  height: 12px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg) scale(.72);
   transition: transform 180ms ease;
 }
 
 .language-switcher.is-open .language-chevron {
-  transform: rotate(180deg) translateY(1px);
+  transform: translateY(2px) rotate(225deg) scale(.72);
 }
 
 .language-current:hover,
@@ -537,6 +549,8 @@ textarea {
 }
 
 .menu-button {
+  grid-column: 2;
+  justify-self: center;
   display: none;
   width: 42px;
   height: 42px;
@@ -794,6 +808,14 @@ h3 {
   font-size: 12px;
   font-weight: 850;
   transition: color 160ms ease, background 160ms ease;
+}
+
+.hero-dots button span {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .hero-dots button.is-active {
@@ -3779,7 +3801,8 @@ body[data-language="th"] .site-nav {
   }
 
   .header-language .language-current {
-    min-width: 54px;
+    width: 56px;
+    min-width: 56px;
     min-height: 34px;
     padding: 0 10px;
     font-size: 10px;
@@ -4291,7 +4314,20 @@ body[data-language="th"] .site-nav {
 
   .hero-slider-controls {
     width: 100%;
+    box-sizing: border-box;
     justify-content: center;
+  }
+
+  .hero-dots {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 300px);
+    min-width: 0;
+  }
+
+  .hero-dots button {
+    min-width: 0;
+    padding: 0 10px;
   }
 
   .hero-edge-control {
