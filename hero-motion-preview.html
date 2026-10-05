@@ -22,6 +22,13 @@
     .section-head h2 { margin: 0; font-size: clamp(24px, 4vw, 38px); line-height: 1.08; letter-spacing: -.02em; }
     .section-head p { max-width: 430px; margin: 0; color: rgba(21,23,27,.6); line-height: 1.6; }
     .green-section { margin-top: 60px; padding-top: 42px; border-top: 1px solid rgba(57,125,76,.16); }
+    .ten-second-section { margin-top: 72px; padding-top: 42px; border-top: 1px solid rgba(168,20,46,.18); }
+    .variant-group { margin-top: 30px; }
+    .variant-group + .variant-group { margin-top: 46px; }
+    .variant-heading { display: flex; align-items: baseline; gap: 14px; margin: 0 8px 16px; }
+    .variant-heading .eyebrow { margin: 0; white-space: nowrap; }
+    .variant-heading h3 { margin: 0; color: #15171b; font-size: 18px; line-height: 1.25; }
+    .green-variant-group { padding-top: 34px; border-top: 1px solid rgba(57,125,76,.16); }
     .study-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
     article { min-width: 0; padding: 12px 12px 16px; border: 1px solid rgba(255,255,255,.92); border-radius: 26px; background: rgba(255,255,255,.82); box-shadow: 0 16px 40px rgba(33, 43, 54, .08); }
     article.green-card { background: rgba(248, 253, 248, .88); }
@@ -41,6 +48,10 @@
       .section-head p { margin-top: 10px; }
       .study-grid { grid-template-columns: 1fr; gap: 14px; }
       .green-section { margin-top: 44px; padding-top: 30px; }
+      .ten-second-section { margin-top: 52px; padding-top: 30px; }
+      .variant-heading { display: block; margin-bottom: 14px; }
+      .variant-heading h3 { margin-top: 8px; }
+      .green-variant-group { padding-top: 28px; }
     }
   </style>
 </head>
@@ -49,13 +60,14 @@
     <header class="hero">
       <div>
         <span class="eyebrow">AIWA Motion Studies</span>
-        <h1>Twenty visual directions, generated from the original hero images.</h1>
+        <h1>Twenty-six visual directions, generated from the original hero images.</h1>
       </div>
-      <p>These are fresh 5-second Magnific generations. The composition stays anchored to the AIWA artwork while light, reflections, network signals, greenery, air and water create the movement. Use the native video controls to compare each direction on mobile.</p>
+      <p>The original 5-second studies remain above for comparison. The new direction set below uses six slower 10-second Magnific generations, keeping the AIWA artwork anchored while motion stays calm, precise and suitable for a premium homepage hero.</p>
     </header>
     <nav class="jump-nav" aria-label="Motion study sections">
       <a href="#global">Global Network / 10 studies</a>
       <a class="green" href="#green">Green AIWA / 10 studies</a>
+      <a href="#ten-second">New 10-second directions</a>
     </nav>
     <section id="global" class="section" aria-labelledby="global-title">
       <div class="section-head">
@@ -70,6 +82,20 @@
         <p>Natural daylight, leaves, air, water and energy cues for a calm sustainability-led hero direction.</p>
       </div>
       <div id="green-grid" class="study-grid"></div>
+    </section>
+    <section id="ten-second" class="section ten-second-section" aria-labelledby="ten-second-title">
+      <div class="section-head">
+        <div><span class="eyebrow">New Motion Set</span><h2 id="ten-second-title">Six slower 10-second directions.</h2></div>
+        <p>Three Green AIWA studies introduce a natural fan rotation without wind graphics. Three Global studies use a slower center-outward network pulse for a more spacious brand presence.</p>
+      </div>
+      <div class="variant-group">
+        <div class="variant-heading"><span class="eyebrow">AIWA Global Network</span><h3>Measured center-outward activation.</h3></div>
+        <div id="slow-global-grid" class="study-grid"></div>
+      </div>
+      <div class="variant-group green-variant-group">
+        <div class="variant-heading"><span class="eyebrow green">Green AIWA</span><h3>Sunlit reflections with a quiet fan rhythm.</h3></div>
+        <div id="slow-green-grid" class="study-grid"></div>
+      </div>
     </section>
     <p class="footnote">Preview candidates only. The homepage has not been replaced. Select a direction after review and it can then be prepared as the production hero asset.</p>
   </main>
@@ -99,12 +125,26 @@
       ["10", "Canopy Light", "Sunlight filtered through existing greenery moves across the showroom with soft leaf shadows.", "https://pikaso.cdnpk.net/private/production/5644551646/64cbb76f-12ce-4948-b05d-0e9b1dca9457-0.mp4?token=exp=1791590400~hmac=012328222b3444e8e34576d59e56750f2ca1ffeccbb41e5ea21a3565a168af16"]
     ];
 
-    function renderStudies(target, studies, green) {
-      target.innerHTML = studies.map(([number, title, description, source]) => `<article class="${green ? "green-card" : ""}"><div class="card-meta"><span class="card-number">${number}</span><span class="card-type">5 sec / Magnific</span></div><h3>${title}</h3><p>${description}</p><video controls playsinline preload="metadata" src="${source}"></video></article>`).join("");
+    const slowGlobalStudies = [
+      ["G-01", "Slow Core Bloom", "A single central signal travels gently through the existing AIWA network and settles at the outer nodes.", "https://pikaso.cdnpk.net/private/production/5644771156/6fd66f74-d3b9-47dc-8551-bf2e9f9495f1-0.mp4?token=exp=1791590400~hmac=069e3ba7d08268b7eced356c181d05b54eb00811173eb92fa17adbabe89f3d11"],
+      ["G-02", "Measured Network Wave", "A spacious center-outward activation gives the global hero a slower, more deliberate rhythm.", "https://pikaso.cdnpk.net/private/production/5644774511/5d436460-f1d5-4c9a-a977-2bcb0a5e5a8e-0.mp4?token=exp=1791590400~hmac=b08b36fadc2febadc26cba97e4c1e1f3f39950617f0bddb24a2b4e5b3682c95e"],
+      ["G-03", "Quiet Hub Focus", "The central point breathes once through existing routes, then returns to a clean still state.", "https://pikaso.cdnpk.net/private/production/5644770253/99b1d990-4319-427d-89ed-5e091c0d076f-0.mp4?token=exp=1791590400~hmac=0755c95dbff6e618bd30f11e739f4ad8eab05ce5d962d28b0cb61ec646f75577"]
+    ];
+
+    const slowGreenStudies = [
+      ["G-01", "Sunlit Fan", "The existing fan blades rotate slowly while natural daylight shifts across the Green AIWA showroom.", "https://pikaso.cdnpk.net/private/production/5644766997/47579cfc-f24a-4fa7-8b37-598e29064017-0.mp4?token=exp=1791590400~hmac=3d37f722f59cc95851c689fae33f404ca97b4133c4440ca0652ed6ac9d222a62"],
+      ["G-02", "Fan and Floor Reflection", "A steady fan rotation is paired with a restrained daylight reflection on the polished surface.", "https://pikaso.cdnpk.net/private/production/5644771470/338f3d82-b6cf-4a37-a5d1-9ad2d9138b12-0.mp4?token=exp=1791590400~hmac=15e00578a88c92241b4bf806011e959a6ddfa0364af9b1db77223fe3db33d86f"],
+      ["G-03", "Quiet Appliance Rhythm", "Only the fan blades and a soft natural highlight move, keeping the sustainability scene calm and precise.", "https://pikaso.cdnpk.net/private/production/5644770765/bf3fd6ea-a5dc-4b97-b53f-c9642e81b3a9-0.mp4?token=exp=1791590400~hmac=5dc77edcb846be928bbafa53bf14e8ce710a978f203794d79f5416c9014992b4"]
+    ];
+
+    function renderStudies(target, studies, green, metaLabel = "5 sec / Magnific") {
+      target.innerHTML = studies.map(([number, title, description, source]) => `<article class="${green ? "green-card" : ""}"><div class="card-meta"><span class="card-number">${number}</span><span class="card-type">${metaLabel}</span></div><h3>${title}</h3><p>${description}</p><video controls playsinline preload="metadata" src="${source}"></video></article>`).join("");
     }
 
     renderStudies(document.querySelector("#global-grid"), globalStudies, false);
     renderStudies(document.querySelector("#green-grid"), greenStudies, true);
+    renderStudies(document.querySelector("#slow-global-grid"), slowGlobalStudies, false, "10 sec / Magnific");
+    renderStudies(document.querySelector("#slow-green-grid"), slowGreenStudies, true, "10 sec / Magnific");
   </script>
 </body>
 </html>
