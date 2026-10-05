@@ -5077,6 +5077,92 @@ body[data-language="fr"] .inquiry-select-option {
   }
 }
 
+/* Keep the product catalogue readable when translated labels become longer. */
+@media (max-width: 900px) {
+  .products-section .catalog-layout,
+  .products-section .catalog-menu,
+  .products-section .catalog-content,
+  .products-section .product-grid {
+    min-width: 0;
+  }
+
+  .products-section .catalog-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .products-section .catalog-tab {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: max-content;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .products-section .product-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .products-section .catalog-menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    overflow: visible;
+    padding: 8px;
+  }
+
+  .products-section .catalog-tab {
+    min-width: 0;
+    min-height: 46px;
+    padding: 10px 12px;
+    white-space: normal;
+    line-height: 1.25;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  body[data-language="fr"] .products-section .catalog-tab {
+    font-size: 13px;
+  }
+
+  .products-section .catalog-content {
+    padding: 16px;
+  }
+
+  .products-section .series-row {
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .products-section .series-row span {
+    max-width: 100%;
+    padding: 8px 10px;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .products-section .product-card img {
+    padding: 18px;
+  }
+
+  .products-section .product-card div {
+    padding: 16px;
+  }
+
+  .products-section .product-card h3 {
+    font-size: 18px;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+}
+
 /* Dedicated service pages use the same editorial opening rhythm as Brand Story. */
 .service-page-hero {
   display: grid;
