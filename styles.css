@@ -5253,6 +5253,113 @@ body[data-language="fr"] .inquiry-select-option {
   }
 }
 
+/* Align every independent page opening with the shared section-shell grid. */
+.service-page-hero,
+.service-page-summary {
+  width: min(1240px, calc(100% - clamp(32px, 7vw, 96px)));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-page-hero {
+  margin-top: 118px;
+  margin-bottom: clamp(18px, 3vw, 38px);
+}
+
+.service-page-summary {
+  margin-top: clamp(18px, 3vw, 38px);
+  margin-bottom: clamp(18px, 3vw, 38px);
+}
+
+@media (max-width: 680px) {
+  .service-page-hero,
+  .service-page-summary {
+    width: min(100% - 24px, 1240px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .service-page-hero {
+    margin-top: 102px;
+    margin-bottom: 22px;
+  }
+
+  .service-page-summary {
+    margin-top: 22px;
+    margin-bottom: 22px;
+  }
+}
+
+/* Make the opening and first content block read as one continuous page surface. */
+.service-page-hero,
+.service-page-summary,
+.service-page-hero + .company-services-section,
+.history-page .story-section,
+.history-page .timeline-section,
+.history-hero,
+.history-hero + .story-section {
+  background-color: rgba(255, 255, 255, .86);
+}
+
+.service-page-hero--our-role,
+.service-page-hero--company-service,
+.history-page .story-section,
+.history-hero {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.service-page-hero--our-role + .service-page-summary,
+.service-page-hero--company-service + .company-services-section,
+.history-page .story-section + .timeline-section,
+.history-hero + .story-section {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.service-page-hero--our-role + .service-page-summary,
+.service-page-hero--company-service + .company-services-section,
+.history-page .story-section + .timeline-section,
+.history-hero + .story-section {
+  padding-top: clamp(28px, 4vw, 54px);
+}
+
+.service-page-hero--company-service + .company-services-section {
+  padding-bottom: clamp(24px, 4vw, 54px);
+}
+
+/* Final shared container pass: keep every opening aligned with the sections below at tablet widths too. */
+.service-page-hero,
+.service-page-summary {
+  border-radius: clamp(28px, 5vw, 58px);
+  border: 1px solid var(--white-line);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 1080px) {
+  .service-page-hero,
+  .service-page-summary,
+  .history-page .story-section,
+  .history-page .timeline-section,
+  .history-hero,
+  .history-hero + .story-section {
+    width: min(100% - 28px, 1240px);
+  }
+}
+
+@media (max-width: 680px) {
+  .service-page-hero,
+  .service-page-summary,
+  .history-page .story-section,
+  .history-page .timeline-section,
+  .history-hero,
+  .history-hero + .story-section {
+    width: min(100% - 28px, 1240px);
+  }
+}
+
 /* Dedicated service pages use the same editorial opening rhythm as Brand Story. */
 .service-page-hero {
   display: grid;
@@ -5531,5 +5638,68 @@ body[data-language="fr"] .inquiry-select-option {
     order: 1;
     min-height: 0;
     aspect-ratio: 4 / 3;
+  }
+}
+
+/* Final page-shell alignment must come after the legacy responsive rules above. */
+.service-page-hero,
+.service-page-summary {
+  width: min(1240px, calc(100% - clamp(32px, 7vw, 96px)));
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: clamp(28px, 5vw, 58px);
+  border: 1px solid var(--white-line);
+  box-shadow: var(--shadow-soft);
+}
+
+.catalog-layout {
+  align-items: start;
+}
+
+.catalog-menu,
+.catalog-content {
+  align-self: start;
+}
+
+@media (max-width: 1080px) {
+  .service-page-hero,
+  .service-page-summary,
+  .history-page .story-section,
+  .history-page .timeline-section,
+  .history-hero,
+  .history-hero + .story-section {
+    width: min(100% - 28px, 1240px);
+  }
+}
+
+@media (max-width: 680px) {
+  .service-page-hero,
+  .service-page-summary,
+  .history-page .story-section,
+  .history-page .timeline-section,
+  .history-hero,
+  .history-hero + .story-section {
+    width: min(100% - 28px, 1240px);
+  }
+
+  .products-section .catalog-menu,
+  .products-section .catalog-content {
+    align-self: start;
+    box-shadow: none;
+  }
+
+  .products-section .catalog-menu {
+    background: rgba(255, 255, 255, .78);
+  }
+
+  .products-section .catalog-content {
+    background: rgba(255, 255, 255, .68);
+  }
+}
+
+@media (max-width: 1080px) {
+  .products-section .catalog-menu,
+  .products-section .catalog-content {
+    box-shadow: none;
   }
 }
