@@ -3634,7 +3634,7 @@ body:not([data-language="zh-TW"]) .region-count-zh {
   border: 0;
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 900px) {
   .download-heading {
     align-items: start;
   }
@@ -5078,7 +5078,7 @@ body[data-language="fr"] .inquiry-select-option {
 }
 
 /* Keep the product catalogue readable when translated labels become longer. */
-@media (max-width: 900px) {
+@media (max-width: 1360px) {
   .products-section .catalog-layout,
   .products-section .catalog-menu,
   .products-section .catalog-content,
@@ -5328,5 +5328,115 @@ body[data-language="fr"] .inquiry-select-option {
 
   .service-page-summary .company-service-hero-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Desktop openings use each page's image as a quiet editorial backdrop; mobile keeps the image tangible above the copy. */
+.history-page .story-section,
+.history-hero,
+.service-page-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.history-page .story-section {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, .82) 48%, rgba(255, 255, 255, .78) 100%),
+    url("assets/history/brand-story-heritage-bg-v1.png") center / cover no-repeat;
+}
+
+.history-hero {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, .82) 48%, rgba(255, 255, 255, .78) 100%),
+    url("assets/history/brand-story-heritage-bg-v1.png") center / cover no-repeat;
+}
+
+.service-page-hero {
+  display: flex;
+  min-height: clamp(520px, 54vw, 680px);
+  padding: clamp(56px, 7vw, 100px) clamp(24px, 6vw, 88px);
+  background-position: center;
+  background-size: cover;
+}
+
+.service-page-hero--our-role {
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, .91) 0%, rgba(255, 255, 255, .83) 46%, rgba(255, 255, 255, .76) 100%),
+    url("assets/services/page-our-role-hero-v1.png");
+}
+
+.service-page-hero--company-service {
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, .91) 0%, rgba(255, 255, 255, .83) 46%, rgba(255, 255, 255, .76) 100%),
+    url("assets/services/page-company-service-hero-v1.png");
+}
+
+.history-page-hero-media {
+  display: none;
+}
+
+.history-hero > :not(.history-page-hero-media),
+.history-page .story-section > :not(.history-page-hero-media),
+.service-page-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.service-page-hero-copy {
+  width: min(720px, 100%);
+}
+
+.service-page-hero-media {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .history-hero,
+  .history-page .story-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    background: rgba(255, 255, 255, .82);
+  }
+
+  .history-page-hero-media {
+    display: block;
+    order: -1;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border: 1px solid rgba(255, 255, 255, .82);
+    border-radius: 26px;
+    background: rgba(255, 255, 255, .74);
+    box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, .92);
+  }
+
+  .history-page-hero-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .service-page-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    background: rgba(255, 255, 255, .82);
+  }
+
+  .service-page-hero-copy {
+    order: 2;
+    width: 100%;
+  }
+
+  .service-page-hero-media {
+    display: block;
+    order: 1;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 }
