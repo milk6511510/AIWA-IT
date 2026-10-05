@@ -5108,34 +5108,43 @@ body[data-language="fr"] .inquiry-select-option {
 
 @media (max-width: 680px) {
   .products-section .catalog-menu {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    overflow: visible;
-    padding: 8px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 6px;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+  }
+
+  .products-section .catalog-menu::-webkit-scrollbar {
+    display: none;
   }
 
   .products-section .catalog-tab {
-    min-width: 0;
-    min-height: 46px;
-    padding: 10px 12px;
-    white-space: normal;
-    line-height: 1.25;
+    flex: 0 0 auto;
+    width: auto;
+    min-width: max-content;
+    min-height: 38px;
+    padding: 9px 12px;
+    white-space: nowrap;
+    line-height: 1.15;
     text-align: center;
-    overflow-wrap: anywhere;
+    scroll-snap-align: start;
   }
 
   body[data-language="fr"] .products-section .catalog-tab {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .products-section .catalog-content {
-    padding: 16px;
+    padding: 12px;
   }
 
   .products-section .series-row {
     gap: 8px;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
   }
 
   .products-section .series-row span {
@@ -5146,17 +5155,101 @@ body[data-language="fr"] .inquiry-select-option {
   }
 
   .products-section .product-card img {
-    padding: 18px;
+    padding: 12px;
+  }
+
+  .products-section .product-card {
+    display: grid;
+    grid-template-columns: minmax(118px, .42fr) minmax(0, .58fr);
+    align-items: center;
   }
 
   .products-section .product-card div {
-    padding: 16px;
+    padding: 14px 12px 14px 2px;
   }
 
   .products-section .product-card h3 {
-    font-size: 18px;
-    line-height: 1.2;
+    font-size: 16px;
+    line-height: 1.25;
     overflow-wrap: anywhere;
+  }
+
+  .products-section .product-card span {
+    margin-bottom: 4px;
+    font-size: 10px;
+    line-height: 1.3;
+  }
+}
+
+/* Keep the independent service pages visually continuous and their red labels aligned. */
+.service-page-hero + .company-services-section {
+  padding-top: 0;
+}
+
+.service-page-hero + .company-services-section #licensing-model {
+  margin-top: clamp(12px, 2vw, 24px);
+}
+
+.service-page-hero-copy .eyebrow,
+.service-page-summary > .section-label {
+  width: 164px;
+  min-width: 164px;
+  height: 36px;
+  min-height: 36px;
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 680px) {
+  .products-section {
+    padding: 32px 14px 36px;
+  }
+
+  .products-section .product-heading {
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 14px;
+  }
+
+  .products-section .product-heading h2 {
+    font-size: clamp(25px, 7.4vw, 32px);
+    line-height: 1.08;
+  }
+
+  .products-section .product-heading p {
+    font-size: 13px;
+    line-height: 1.58;
+  }
+
+  .service-page-hero-copy .eyebrow,
+  .service-page-summary > .section-label {
+    width: 164px;
+    min-width: 164px;
+  }
+
+  body[data-language="fr"] .service-page-hero-copy .eyebrow {
+    width: fit-content;
+    min-width: 0;
+    height: auto;
+    min-height: 36px;
+    max-width: 100%;
+    line-height: 1.3;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 430px) {
+  .products-section .product-card {
+    grid-template-columns: minmax(102px, .38fr) minmax(0, .62fr);
+  }
+
+  .products-section .product-card img {
+    padding: 8px;
+  }
+
+  .products-section .product-card div {
+    padding-right: 10px;
   }
 }
 
