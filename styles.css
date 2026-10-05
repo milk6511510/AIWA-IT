@@ -4884,7 +4884,7 @@ body[data-language="th"] .site-nav {
 /* Brand Story heritage backdrop: keep the image atmospheric and the copy readable. */
 .history-page .story-section {
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, .9) 56%, rgba(255, 255, 255, .76) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, .66) 56%, rgba(255, 255, 255, .28) 100%),
     url("assets/history/brand-story-heritage-bg-v1.png") center / cover no-repeat;
   background-blend-mode: normal;
 }
@@ -4892,7 +4892,7 @@ body[data-language="th"] .site-nav {
 @media (max-width: 680px) {
   .history-page .story-section {
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, .97) 0%, rgba(255, 255, 255, .9) 72%, rgba(255, 255, 255, .78) 100%),
-      url("assets/history/brand-story-heritage-bg-v1.png") 62% center / cover no-repeat;
+      linear-gradient(180deg, rgba(255, 255, 255, .93) 0%, rgba(255, 255, 255, .78) 62%, rgba(255, 255, 255, .36) 100%),
+      url("assets/history/brand-story-heritage-bg-v1.png") 70% center / cover no-repeat;
   }
 }
