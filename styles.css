@@ -4947,3 +4947,303 @@ body[data-language="th"] .site-nav {
       url("assets/history/brand-story-heritage-bg-v1.png") 70% center / cover no-repeat;
   }
 }
+
+/* French copy needs flexible labels and cards because its business terms are longer. */
+body[data-language="fr"] {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+body[data-language="fr"] :where(h1, h2, h3, p, span, strong, a, button, label) {
+  min-width: 0;
+}
+
+body[data-language="fr"] :where(h1, h2, h3, p, span, strong, a, button, label) {
+  overflow-wrap: anywhere;
+}
+
+body[data-language="fr"] .eyebrow,
+body[data-language="fr"] .section-label,
+body[data-language="fr"] .site-nav a,
+body[data-language="fr"] .nav-dropdown-trigger,
+body[data-language="fr"] .nav-dropdown-menu a,
+body[data-language="fr"] .button,
+body[data-language="fr"] .country-region-count,
+body[data-language="fr"] .download-card-meta {
+  white-space: normal;
+}
+
+body[data-language="fr"] .company-services-heading .eyebrow,
+body[data-language="fr"] .company-service-hero .eyebrow,
+body[data-language="fr"] #licensing-model .eyebrow {
+  width: fit-content;
+  min-width: 0;
+  height: auto;
+  min-height: 36px;
+  max-width: 100%;
+  line-height: 1.3;
+}
+
+body[data-language="fr"] .model-card,
+body[data-language="fr"] .category-matrix div,
+body[data-language="fr"] .service-panel,
+body[data-language="fr"] .process article,
+body[data-language="fr"] .download-card,
+body[data-language="fr"] .news-card,
+body[data-language="fr"] .country-card,
+body[data-language="fr"] .global-hero-copy,
+body[data-language="fr"] .green-image-copy,
+body[data-language="fr"] .oem-panel {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+body[data-language="fr"] .footer-contact strong,
+body[data-language="fr"] .footer-contact a,
+body[data-language="fr"] .inquiry-select-trigger,
+body[data-language="fr"] .inquiry-select-option {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1080px) {
+  body[data-language="fr"] .company-services-heading {
+    left: 0;
+  }
+}
+
+@media (max-width: 1360px) {
+  body[data-language="fr"] .site-nav a {
+    line-height: 1.35;
+  }
+
+  body[data-language="fr"] .site-nav .nav-cta {
+    line-height: 1.25;
+    text-align: center;
+  }
+}
+
+@media (max-width: 680px) {
+  body[data-language="fr"] h1 {
+    line-height: 1.08;
+  }
+
+  body[data-language="fr"] h2 {
+    line-height: 1.14;
+  }
+
+  body[data-language="fr"] .hero-content h1 {
+    font-size: clamp(26px, 7.2vw, 35px);
+    line-height: 1.1;
+  }
+
+  body[data-language="fr"] .hero-lead,
+  body[data-language="fr"] .intro-copy p,
+  body[data-language="fr"] .split-copy p,
+  body[data-language="fr"] .oem-panel p,
+  body[data-language="fr"] .inquiry-section p,
+  body[data-language="fr"] .product-heading p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  body[data-language="fr"] .button {
+    min-height: 48px;
+    padding-inline: 18px;
+    line-height: 1.25;
+  }
+
+  body[data-language="fr"] .hero-dots button {
+    height: auto;
+    min-height: 34px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  body[data-language="fr"] .hero-dots button span {
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  body[data-language="fr"] .homepage-route-copy h2,
+  body[data-language="fr"] .products-section .product-heading h2,
+  body[data-language="fr"] .news-section .product-heading h2,
+  body[data-language="fr"] .company-service-hero h1,
+  body[data-language="fr"] #licensing-model .split-copy h2 {
+    line-height: 1.12;
+  }
+
+  body[data-language="fr"] .download-card-meta {
+    align-items: flex-start;
+  }
+}
+
+/* Dedicated service pages use the same editorial opening rhythm as Brand Story. */
+.service-page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: stretch;
+  margin-top: 118px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .82), rgba(255, 255, 255, .42)),
+    radial-gradient(circle at 12% 16%, rgba(255, 143, 121, .13), transparent 32%);
+  border: 1px solid var(--white-line);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.service-page-hero-copy {
+  min-width: 0;
+  align-self: center;
+}
+
+.service-page-hero-copy .eyebrow,
+.service-page-summary > .section-label {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 36px;
+  margin: 0 0 18px;
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, .62);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ff9b90 0%, #ff5b53 52%, #a8142e 100%);
+  box-shadow: 0 12px 24px rgba(168, 20, 46, .18), inset 0 1px 0 rgba(255, 255, 255, .48);
+  color: #fff;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.service-page-hero-copy h1 {
+  max-width: 720px;
+  margin: 0 0 22px;
+  color: #a8142e;
+  background: linear-gradient(135deg, #a8142e 0%, #d62f3b 48%, #ff8f79 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: clamp(34px, 4.2vw, 58px);
+  line-height: 1.02;
+}
+
+.service-page-hero-copy .hero-lead {
+  max-width: 700px;
+  margin-bottom: 0;
+  line-height: 1.72;
+}
+
+.service-page-hero-media {
+  min-width: 0;
+  min-height: 360px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .78);
+  border-radius: 34px;
+  background: rgba(255, 255, 255, .7);
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, .96);
+}
+
+.service-page-hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 600ms ease, filter 600ms ease;
+}
+
+.service-page-hero:hover .service-page-hero-media img {
+  transform: scale(1.018);
+  filter: saturate(1.04) contrast(1.01);
+}
+
+.service-page-summary {
+  display: grid;
+  grid-template-columns: minmax(150px, .28fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: start;
+  padding-top: clamp(34px, 5vw, 62px);
+  padding-bottom: clamp(34px, 5vw, 62px);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .76), rgba(255, 255, 255, .42)),
+    radial-gradient(circle at 94% 12%, rgba(255, 143, 121, .1), transparent 30%);
+  border: 1px solid var(--white-line);
+  box-shadow: var(--shadow-soft);
+}
+
+.service-page-summary > .section-label {
+  margin-bottom: 0;
+}
+
+.service-page-summary .role-advantage,
+.service-page-summary .company-service-hero-grid {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 0;
+}
+
+.service-page-summary .role-advantage {
+  gap: clamp(16px, 2.4vw, 28px);
+}
+
+.service-page-summary .role-advantage div {
+  min-width: 0;
+}
+
+.service-page-summary .company-service-hero-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .service-page-summary {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .service-page-summary > .section-label {
+    margin-bottom: -4px;
+  }
+}
+
+@media (max-width: 680px) {
+  .service-page-hero {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(100% - 24px, 1240px);
+    gap: 22px;
+    margin-top: 102px;
+    padding: 30px 18px 34px;
+  }
+
+  .service-page-hero-copy h1,
+  body[data-language="fr"] .service-page-hero-copy h1 {
+    font-size: clamp(29px, 8.2vw, 42px);
+    line-height: 1.1;
+  }
+
+  .service-page-hero-copy .hero-lead,
+  body[data-language="fr"] .service-page-hero-copy .hero-lead {
+    font-size: 15px;
+    line-height: 1.72;
+  }
+
+  .service-page-hero-media {
+    min-height: 0;
+    border-radius: 26px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .service-page-hero-media img {
+    min-height: 0;
+  }
+
+  .service-page-summary {
+    width: min(100% - 24px, 1240px);
+    padding: 30px 18px 34px;
+  }
+
+  .service-page-summary .company-service-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
