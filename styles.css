@@ -3634,7 +3634,7 @@ body:not([data-language="zh-TW"]) .region-count-zh {
   border: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1360px) {
   .download-heading {
     align-items: start;
   }
@@ -5088,12 +5088,9 @@ body[data-language="fr"] .inquiry-select-option {
 
   .products-section .catalog-menu {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 8px;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+    overflow: visible;
   }
 
   .products-section .catalog-tab {
