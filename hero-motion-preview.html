@@ -23,6 +23,7 @@
     .section-head p { max-width: 430px; margin: 0; color: rgba(21,23,27,.6); line-height: 1.6; }
     .green-section { margin-top: 60px; padding-top: 42px; border-top: 1px solid rgba(57,125,76,.16); }
     .ten-second-section { margin-top: 72px; padding-top: 42px; border-top: 1px solid rgba(168,20,46,.18); }
+    .revision-section { border-top-color: rgba(168,20,46,.28); }
     .variant-group { margin-top: 30px; }
     .variant-group + .variant-group { margin-top: 46px; }
     .variant-heading { display: flex; align-items: baseline; gap: 14px; margin: 0 8px 16px; }
@@ -60,7 +61,7 @@
     <header class="hero">
       <div>
         <span class="eyebrow">AIWA Motion Studies</span>
-        <h1>Twenty-six visual directions, generated from the original hero images.</h1>
+        <h1>Thirty-two visual directions, generated from the original hero images.</h1>
       </div>
       <p>The original 5-second studies remain above for comparison. The new direction set below uses six slower 10-second Magnific generations, keeping the AIWA artwork anchored while motion stays calm, precise and suitable for a premium homepage hero.</p>
     </header>
@@ -68,6 +69,7 @@
       <a href="#global">Global Network / 10 studies</a>
       <a class="green" href="#green">Green AIWA / 10 studies</a>
       <a href="#ten-second">New 10-second directions</a>
+      <a href="#ten-second-v2">02 revision / 6 new directions</a>
     </nav>
     <section id="global" class="section" aria-labelledby="global-title">
       <div class="section-head">
@@ -95,6 +97,20 @@
       <div class="variant-group green-variant-group">
         <div class="variant-heading"><span class="eyebrow green">Green AIWA</span><h3>Sunlit reflections with a quiet fan rhythm.</h3></div>
         <div id="slow-green-grid" class="study-grid"></div>
+      </div>
+    </section>
+    <section id="ten-second-v2" class="section ten-second-section revision-section" aria-labelledby="ten-second-v2-title">
+      <div class="section-head">
+        <div><span class="eyebrow">02 Revision</span><h2 id="ten-second-v2-title">Six refined 10-second directions.</h2></div>
+        <p>These revisions follow the preferred 02 rhythm. Global routes now leave the center at different times and speeds; Green AIWA keeps the sunlight wave while changing the fan to a clean white series.</p>
+      </div>
+      <div class="variant-group">
+        <div class="variant-heading"><span class="eyebrow">AIWA Global Network</span><h3>Asynchronous route activation.</h3></div>
+        <div id="revision-global-grid" class="study-grid"></div>
+      </div>
+      <div class="variant-group green-variant-group">
+        <div class="variant-heading"><span class="eyebrow green">Green AIWA</span><h3>White fan, preserved sunlight rhythm.</h3></div>
+        <div id="revision-green-grid" class="study-grid"></div>
       </div>
     </section>
     <p class="footnote">Preview candidates only. The homepage has not been replaced. Select a direction after review and it can then be prepared as the production hero asset.</p>
@@ -137,6 +153,18 @@
       ["G-03", "Quiet Appliance Rhythm", "Only the fan blades and a soft natural highlight move, keeping the sustainability scene calm and precise.", "https://pikaso.cdnpk.net/private/production/5644770765/bf3fd6ea-a5dc-4b97-b53f-c9642e81b3a9-0.mp4?token=exp=1791590400~hmac=5dc77edcb846be928bbafa53bf14e8ce710a978f203794d79f5416c9014992b4"]
     ];
 
+    const revisionGlobalStudies = [
+      ["02-A", "Asynchronous Route Pulse", "Existing network routes leave the center in staggered timing, with different travel speeds and pauses.", "https://pikaso.cdnpk.net/private/production/5644831635/765dcfb9-3ae4-4d84-8889-639bfbd2f5d0-0.mp4?token=exp=1791590400~hmac=041171ca9e58613260a7e4c07d96b82f209c743792ff4f77a8886f437d3699b9"],
+      ["02-B", "Staggered Network Wave", "Three softly separated route groups create a measured center-outward rhythm without synchronized motion.", "https://pikaso.cdnpk.net/private/production/5644832024/2bc57463-1c08-4c38-8847-e9dac0e9dbc7-0.mp4?token=exp=1791590400~hmac=63e3b489d9a9acf6f37db556cbc5b4c8119d6815ae940c36b99e72b6ab473ca8"],
+      ["02-C", "Variable Route Cascade", "Near, middle and outer nodes resolve at different speeds for a slower, more organic network activation.", "https://pikaso.cdnpk.net/private/production/5644833430/fee121e4-633a-4c59-aaa5-067f6e8857fe-0.mp4?token=exp=1791590400~hmac=1a9909aa358328d68f0c772c3df7d2ae99bb2936208a03fec25dbbe1614f0b5c"]
+    ];
+
+    const revisionGreenStudies = [
+      ["02-A", "White Fan / Sunlight", "A white fan rotates slowly while the existing Green AIWA sunlight and reflection wave remains intact.", "https://pikaso.cdnpk.net/private/production/5644828236/c486d492-cf13-4135-ac68-7193533dcc14-0.mp4?token=exp=1791590400~hmac=ddd6e885a9c90df19ee94ea443bb4256c1418ee725a07283ca96cfc3bed5b985"],
+      ["02-B", "White Fan / High Key", "A premium white appliance finish keeps the fan light and clean while the daylight movement stays quiet.", "https://pikaso.cdnpk.net/private/production/5644832639/3cf1253c-33b1-48a9-8b35-86da358f78ef-0.mp4?token=exp=1791590400~hmac=cc6dac9da8e94bf92297c76ceda7ab633dc4ad61ce73cda220aef72f376ed9dd"],
+      ["02-C", "White Fan / Daylight Rhythm", "White blades, soft natural shadows and the original sunlight fluctuation form a calm Green AIWA study.", "https://pikaso.cdnpk.net/private/production/5644834137/334f4118-1851-49c8-97aa-89cabc5ae53f-0.mp4?token=exp=1791590400~hmac=508eb6ddba9de28a5c3e827b15123c2bf635b1cc7f1bcf13ff536bfdf6f3fd5e"]
+    ];
+
     function renderStudies(target, studies, green, metaLabel = "5 sec / Magnific") {
       target.innerHTML = studies.map(([number, title, description, source]) => `<article class="${green ? "green-card" : ""}"><div class="card-meta"><span class="card-number">${number}</span><span class="card-type">${metaLabel}</span></div><h3>${title}</h3><p>${description}</p><video controls playsinline preload="metadata" src="${source}"></video></article>`).join("");
     }
@@ -145,6 +173,8 @@
     renderStudies(document.querySelector("#green-grid"), greenStudies, true);
     renderStudies(document.querySelector("#slow-global-grid"), slowGlobalStudies, false, "10 sec / Magnific");
     renderStudies(document.querySelector("#slow-green-grid"), slowGreenStudies, true, "10 sec / Magnific");
+    renderStudies(document.querySelector("#revision-global-grid"), revisionGlobalStudies, false, "10 sec / Magnific");
+    renderStudies(document.querySelector("#revision-green-grid"), revisionGreenStudies, true, "10 sec / Magnific");
   </script>
 </body>
 </html>
