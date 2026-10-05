@@ -18,6 +18,10 @@ const translations = {
   "Our advantages": "我們的優勢",
   "Company Service": "合作服務",
   "Company Services": "合作服務",
+  "Brand direction": "品牌方向",
+  "Clear authorization, category, and market discussions from the first conversation.": "從初次洽談開始，釐清品牌授權、產品類別與市場方向。",
+  "Factory coordination": "工廠協調",
+  "Qualified production resources are discussed, reviewed, and aligned with AIWA standards.": "針對合格製造資源進行討論與審查，並對齊 AIWA 品牌標準。",
   "Licensing Model": "授權合作模式",
   "Quality Governance": "品質治理",
   "Factory Partnership": "工廠協作",
@@ -57,6 +61,9 @@ const translations = {
   "Developing consumer electronics since 1951 in Japan.": "1951 年起於日本發展消費電子產品。",
   "AIWA has been developing products to meet the growing demands from consumers since 1951 in Japan. The commitment to designing and manufacturing cost effective, high-quality consumer electronics accompanied with world class after-sales service connects the brand with dedicated consumers throughout the regions.": "AIWA 自 1951 年起在日本發展產品，回應消費者日益提升的需求。我們致力於設計與製造兼具成本效益及高品質的消費電子產品，並以世界級售後服務連結各地的品牌使用者。",
   "View brand history": "查看品牌歷史",
+  "Explore brand story": "探索品牌故事",
+  "Meet our role": "了解我們的職責",
+  "View company service": "查看合作服務",
   "100+ countries worldwide": "全球 100 多個國家",
   "Business partnerships, distribution, marketing, and retail departments adapting to cultural and market differences.": "透過商業夥伴、經銷、行銷與零售團隊，回應不同文化與市場需求。",
   "Partner-led markets, headquarters-led standards.": "由夥伴經營市場，由總部守護標準。",
@@ -261,6 +268,7 @@ const translations = {
   "Countertop water wellness program for clean daily hydration, filter governance, service replacement cycles, and market-specific certification review.": "桌上型飲水健康方案，聚焦每日潔淨飲水、濾芯治理、服務更換週期與各市場認證審查。",
   "Brand History": "品牌歷史",
   "From Japanese consumer electronics heritage to Taiwan-led international operations.": "從日本消費電子傳承，走向台灣主導的國際營運。",
+  "AIWA's story continues through a practical international cooperation model. The brand's heritage provides a recognizable foundation, while Taiwan coordinates the standards, partners, and market conversations needed for its next stage.": "AIWA 的品牌故事持續延伸至務實的國際合作模式。品牌歷史提供清晰且具辨識度的基礎，台灣則負責協調下一階段所需的標準、夥伴與市場交流。",
   "AIWA has been developing products to meet changing consumer demands since 1951 in Japan. Today, AIWA Electronics International Co., Ltd. presents the brand through international licensing, partner cooperation, and quality governance.": "AIWA 自 1951 年起在日本發展產品，以回應不斷變化的消費需求。今日，AIWA Electronics International Co., Ltd. 透過國際授權、夥伴合作與品質治理，持續呈現品牌價值。",
   "Founded in Japan": "創立於日本",
   "AIWA began developing products to meet the growing demands from consumers in Japan.": "AIWA 在日本開始發展產品，回應消費者日益提升的需求。",
@@ -313,6 +321,10 @@ const thaiTranslations = {
   "Our advantages": "จุดแข็งของเรา",
   "Company Service": "บริการสำหรับคู่ค้า",
   "Company Services": "บริการสำหรับคู่ค้า",
+  "Brand direction": "ทิศทางแบรนด์",
+  "Clear authorization, category, and market discussions from the first conversation.": "กำหนดกรอบการอนุญาตใช้แบรนด์ ประเภทผลิตภัณฑ์ และทิศทางตลาดให้ชัดเจนตั้งแต่การหารือครั้งแรก",
+  "Factory coordination": "การประสานงานโรงงาน",
+  "Qualified production resources are discussed, reviewed, and aligned with AIWA standards.": "หารือและตรวจสอบทรัพยากรการผลิตที่ผ่านการคัดเลือกให้สอดคล้องกับมาตรฐานแบรนด์ AIWA",
   "Licensing Model": "รูปแบบการอนุญาตใช้แบรนด์",
   "Quality Governance": "การกำกับดูแลคุณภาพ",
   "Factory Partnership": "ความร่วมมือด้านโรงงาน",
@@ -349,6 +361,9 @@ const thaiTranslations = {
   "Developing consumer electronics since 1951 in Japan.": "พัฒนาเครื่องใช้ไฟฟ้าอุปโภคบริโภคในญี่ปุ่นมาตั้งแต่ปี 1951",
   "AIWA has been developing products to meet the growing demands from consumers since 1951 in Japan. The commitment to designing and manufacturing cost effective, high-quality consumer electronics accompanied with world class after-sales service connects the brand with dedicated consumers throughout the regions.": "AIWA พัฒนาผลิตภัณฑ์ในญี่ปุ่นมาตั้งแต่ปี 1951 เพื่อตอบสนองความต้องการของผู้บริโภคที่เพิ่มขึ้น เรามุ่งมั่นออกแบบและผลิตเครื่องใช้ไฟฟ้าอุปโภคบริโภคที่มีคุณภาพและคุ้มค่า พร้อมบริการหลังการขายตามมาตรฐานสากล เพื่อเชื่อมโยงแบรนด์กับผู้บริโภคในแต่ละภูมิภาค",
   "View brand history": "ดูประวัติแบรนด์",
+  "Explore brand story": "ดูเรื่องราวของแบรนด์",
+  "Meet our role": "รู้จักบทบาทของเรา",
+  "View company service": "ดูบริการสำหรับคู่ค้า",
   "100+ countries worldwide": "มากกว่า 100 ประเทศทั่วโลก",
   "Business partnerships, distribution, marketing, and retail departments adapting to cultural and market differences.": "ความร่วมมือทางธุรกิจ การจัดจำหน่าย การตลาด และช่องทางค้าปลีกที่ปรับให้เหมาะกับวัฒนธรรมและเงื่อนไขของแต่ละตลาด",
   "Partner-led markets, headquarters-led standards.": "คู่ค้านำตลาด สำนักงานใหญ่ดูแลมาตรฐาน",
@@ -454,6 +469,7 @@ const thaiTranslations = {
   "Water Purifier": "เครื่องกรองน้ำ",
   "Brand History": "ประวัติแบรนด์",
   "From Japanese consumer electronics heritage to Taiwan-led international operations.": "จากรากฐานเครื่องใช้ไฟฟ้าอุปโภคบริโภคของญี่ปุ่น สู่การดำเนินงานระหว่างประเทศที่บริหารจากไต้หวัน",
+  "AIWA's story continues through a practical international cooperation model. The brand's heritage provides a recognizable foundation, while Taiwan coordinates the standards, partners, and market conversations needed for its next stage.": "เรื่องราวของ AIWA เดินหน้าต่อผ่านรูปแบบความร่วมมือระหว่างประเทศที่นำไปใช้ได้จริง มรดกของแบรนด์เป็นรากฐานที่ชัดเจนและเป็นที่จดจำ ขณะที่ไต้หวันทำหน้าที่ประสานมาตรฐาน คู่ค้า และการหารือด้านตลาดสำหรับระยะต่อไป",
   "Founded in Japan": "ก่อตั้งในญี่ปุ่น",
   "Consumer electronics era": "ยุคเครื่องใช้ไฟฟ้าอุปโภคบริโภค",
   "Product development and regional reach": "การพัฒนาผลิตภัณฑ์และการขยายสู่ภูมิภาค",
@@ -490,6 +506,10 @@ const frenchTranslations = {
   "Our advantages": "Nos atouts",
   "Company Service": "Services aux partenaires",
   "Company Services": "Services aux partenaires",
+  "Brand direction": "Orientation de marque",
+  "Clear authorization, category, and market discussions from the first conversation.": "Un cadre clair pour l’autorisation de marque, les catégories et les marchés dès le premier échange.",
+  "Factory coordination": "Coordination industrielle",
+  "Qualified production resources are discussed, reviewed, and aligned with AIWA standards.": "Les ressources industrielles qualifiées sont étudiées, évaluées et alignées sur les standards AIWA.",
   "Licensing Model": "Modèle de licence de marque",
   "Quality Governance": "Gouvernance de la qualité",
   "Factory Partnership": "Partenariat industriel",
@@ -526,6 +546,9 @@ const frenchTranslations = {
   "Developing consumer electronics since 1951 in Japan.": "Développer l’électronique grand public au Japon depuis 1951",
   "AIWA has been developing products to meet the growing demands from consumers since 1951 in Japan. The commitment to designing and manufacturing cost effective, high-quality consumer electronics accompanied with world class after-sales service connects the brand with dedicated consumers throughout the regions.": "Depuis 1951 au Japon, AIWA développe des produits pour répondre à l’évolution des attentes des consommateurs. Notre engagement en faveur d’une électronique grand public fiable, accessible et de qualité, soutenue par un service après-vente de niveau international, fait vivre la marque auprès de ses utilisateurs dans chaque région.",
   "View brand history": "Voir l’histoire de la marque",
+  "Explore brand story": "Découvrir l’histoire de la marque",
+  "Meet our role": "Découvrir notre rôle",
+  "View company service": "Voir les services aux partenaires",
   "100+ countries worldwide": "Plus de 100 pays dans le monde",
   "Business partnerships, distribution, marketing, and retail departments adapting to cultural and market differences.": "Des partenariats commerciaux, réseaux de distribution, équipes marketing et canaux de vente adaptés aux réalités culturelles et économiques de chaque marché.",
   "Partner-led markets, headquarters-led standards.": "Des marchés portés par les partenaires, des standards pilotés par le siège.",
@@ -631,6 +654,7 @@ const frenchTranslations = {
   "Water Purifier": "Purificateur d’eau",
   "Brand History": "Histoire de la marque",
   "From Japanese consumer electronics heritage to Taiwan-led international operations.": "D’un héritage japonais dans l’électronique grand public à des opérations internationales pilotées depuis Taïwan",
+  "AIWA's story continues through a practical international cooperation model. The brand's heritage provides a recognizable foundation, while Taiwan coordinates the standards, partners, and market conversations needed for its next stage.": "L’histoire d’AIWA se poursuit à travers un modèle de coopération internationale concret. L’héritage de la marque constitue une base claire et identifiable, tandis que Taïwan coordonne les standards, les partenaires et les échanges de marché nécessaires à la prochaine étape.",
   "Founded in Japan": "Fondée au Japon",
   "Consumer electronics era": "L’ère de l’électronique grand public",
   "Product development and regional reach": "Développement produit et rayonnement régional",
@@ -759,8 +783,11 @@ const pageTitles = {
   "global.html": "全球網絡｜AIWA Electronics International Co., Ltd.",
   "news.html": "最新消息｜AIWA Electronics International Co., Ltd.",
   "green.html": "綠色 AIWA｜AIWA Electronics International Co., Ltd.",
-  "history.html": "品牌歷史｜AIWA Electronics International Co., Ltd.",
-  "download.html": "下載中心｜AIWA Electronics International Co., Ltd."
+  "history.html": "品牌故事｜AIWA Electronics International Co., Ltd.",
+  "download.html": "下載中心｜AIWA Electronics International Co., Ltd.",
+  "brand-story.html": "品牌故事｜AIWA Electronics International Co., Ltd.",
+  "our-role.html": "我們的職責｜AIWA Electronics International Co., Ltd.",
+  "company-service.html": "合作服務｜AIWA Electronics International Co., Ltd."
 };
 
 let activeLanguage = "en";
@@ -993,8 +1020,11 @@ function applyLanguage(language) {
       "global.html": "Global Network | AIWA Electronics International Co., Ltd.",
       "news.html": "Latest News | AIWA Electronics International Co., Ltd.",
       "green.html": "Green AIWA | AIWA Electronics International Co., Ltd.",
-      "history.html": "Brand History | AIWA Electronics International Co., Ltd.",
-      "download.html": "Download Center | AIWA Electronics International Co., Ltd."
+      "history.html": "Brand Story | AIWA Electronics International Co., Ltd.",
+      "download.html": "Download Center | AIWA Electronics International Co., Ltd.",
+      "brand-story.html": "Brand Story | AIWA Electronics International Co., Ltd.",
+      "our-role.html": "Our Role | AIWA Electronics International Co., Ltd.",
+      "company-service.html": "Company Service | AIWA Electronics International Co., Ltd."
     },
     "zh-TW": pageTitles,
     th: {
@@ -1002,8 +1032,11 @@ function applyLanguage(language) {
       "global.html": "เครือข่ายทั่วโลก | AIWA Electronics International Co., Ltd.",
       "news.html": "ข่าวสารล่าสุด | AIWA Electronics International Co., Ltd.",
       "green.html": "Green AIWA | AIWA Electronics International Co., Ltd.",
-      "history.html": "ประวัติแบรนด์ | AIWA Electronics International Co., Ltd.",
-      "download.html": "ศูนย์ดาวน์โหลด | AIWA Electronics International Co., Ltd."
+      "history.html": "เรื่องราวของแบรนด์ | AIWA Electronics International Co., Ltd.",
+      "download.html": "ศูนย์ดาวน์โหลด | AIWA Electronics International Co., Ltd.",
+      "brand-story.html": "เรื่องราวของแบรนด์ | AIWA Electronics International Co., Ltd.",
+      "our-role.html": "บทบาทของเรา | AIWA Electronics International Co., Ltd.",
+      "company-service.html": "บริการสำหรับคู่ค้า | AIWA Electronics International Co., Ltd."
     },
     fr: {
       "index.html": "AIWA Electronics International Co., Ltd. | Licences de marque et opérations internationales",
@@ -1011,7 +1044,10 @@ function applyLanguage(language) {
       "news.html": "Dernières actualités | AIWA Electronics International Co., Ltd.",
       "green.html": "Green AIWA | AIWA Electronics International Co., Ltd.",
       "history.html": "Histoire de la marque | AIWA Electronics International Co., Ltd.",
-      "download.html": "Centre de téléchargement | AIWA Electronics International Co., Ltd."
+      "download.html": "Centre de téléchargement | AIWA Electronics International Co., Ltd.",
+      "brand-story.html": "Histoire de la marque | AIWA Electronics International Co., Ltd.",
+      "our-role.html": "Notre rôle | AIWA Electronics International Co., Ltd.",
+      "company-service.html": "Services de coopération | AIWA Electronics International Co., Ltd."
     }
   };
   document.title = localizedTitles[activeLanguage]?.[fileName] || localizedTitles.en["index.html"];
