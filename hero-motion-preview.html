@@ -9,8 +9,8 @@
     body { margin: 0; padding: 28px; background: linear-gradient(180deg, #fff, #f1f4f8); }
     main { width: min(1180px, 100%); margin: 0 auto; }
     h1 { margin: 0 0 8px; font-size: clamp(26px, 4vw, 42px); color: #a8142e; }
-    .intro { max-width: 740px; margin: 0 0 24px; color: rgba(22, 24, 29, .66); line-height: 1.65; }
-    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+    .intro { max-width: 780px; margin: 0 0 24px; color: rgba(22, 24, 29, .66); line-height: 1.65; }
+    .actions, .study-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
     button, a { border: 1px solid rgba(255, 255, 255, .8); border-radius: 999px; padding: 11px 16px; font: inherit; font-weight: 800; text-decoration: none; cursor: pointer; }
     button { color: #fff; background: linear-gradient(155deg, #ff8f79, #ff5b53 52%, #a8142e); box-shadow: 0 10px 24px rgba(168, 20, 46, .16); }
     button:disabled { opacity: .5; cursor: wait; }
@@ -20,23 +20,49 @@
     .group-heading p { max-width: 440px; margin: 0; }
     .eyebrow { color: #a8142e; font-size: 11px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
     .eyebrow.green { color: #397d4c; }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .grid, .study-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
     article { padding: 12px 12px 18px; border: 1px solid rgba(255,255,255,.9); border-radius: 28px; background: rgba(255,255,255,.76); box-shadow: 0 16px 36px rgba(35,45,70,.1); }
-    h2 { margin: 4px 8px 8px; font-size: 20px; }
+    h2, h3 { margin: 4px 8px 8px; font-size: 20px; }
     p { margin: 0 8px 14px; color: rgba(22,24,29,.62); line-height: 1.5; }
     canvas, video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; background: #e8edf3; object-fit: cover; }
+    video[hidden], a[hidden] { display: none; }
     video { margin-top: 12px; }
     .download { display: inline-flex; margin: 12px 8px 0; color: #a8142e; background: #fff; border-color: rgba(168, 20, 46, .16); }
     .status { min-height: 24px; margin-top: 12px; color: rgba(22,24,29,.62); font-size: 13px; }
-    @media (max-width: 720px) { body { padding: 16px; } .grid { grid-template-columns: 1fr; } .group-heading { display: block; } .group-heading p { margin-top: 6px; } }
+    .study-section { margin-top: 54px; padding-top: 34px; border-top: 1px solid rgba(168, 20, 46, .14); }
+    .study-section .group-heading { margin-bottom: 20px; }
+    .study-section .group-heading h2 { max-width: 620px; }
+    .study-toolbar { justify-content: space-between; margin: 0 8px 14px; }
+    .study-toolbar p { margin: 0; font-size: 13px; }
+    .study-group { margin-top: 24px; }
+    .study-group-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin: 0 8px 10px; }
+    .study-group-heading strong { color: rgba(22,24,29,.54); font-size: 13px; }
+    .study-card { padding-bottom: 14px; }
+    .study-card h3 { font-size: 18px; }
+    .study-card p { min-height: 45px; font-size: 14px; }
+    .study-card canvas { border: 1px solid rgba(255,255,255,.92); }
+    .study-card video { margin-top: 10px; }
+    .study-card .render-study { margin: 12px 8px 0; padding: 9px 13px; color: #a8142e; background: rgba(255,255,255,.88); border-color: rgba(168,20,46,.18); box-shadow: none; }
+    .study-card .render-study.is-ready { color: #397d4c; border-color: rgba(57,125,76,.25); }
+    .study-card .download { margin-top: 12px; padding: 9px 13px; }
+    .green-studies .study-card .render-study { color: #397d4c; border-color: rgba(57,125,76,.2); }
+    .green-studies .study-card .download { color: #397d4c; border-color: rgba(57,125,76,.2); }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .grid, .study-grid { grid-template-columns: 1fr; }
+      .group-heading, .study-toolbar, .study-group-heading { display: block; }
+      .group-heading p, .study-toolbar p { margin-top: 6px; }
+      .study-toolbar button { margin-top: 12px; }
+      .study-card p { min-height: 0; }
+    }
   </style>
 </head>
 <body>
   <main>
     <h1>AIWA Homepage Hero Motion</h1>
-    <p class="intro">Four five-second motion directions using the current Global Network and Green AIWA hero images. The movement is intentionally restrained so the headline and partner CTA can remain readable when a selected version is later connected to the homepage.</p>
+    <p class="intro">Five new motion studies for each hero image. These versions animate the visual elements inside the still image rather than relying on a simple camera move: lights wake up, network points connect, product focus shifts, greenery breathes, and sustainable signals travel through the scene.</p>
     <div class="actions">
-      <button type="button" id="render">Render all four 5-second versions</button>
+      <button type="button" id="render">Render the first four camera versions</button>
     </div>
     <section class="preview-group" aria-labelledby="global-heading">
       <div class="group-heading">
@@ -82,6 +108,26 @@
         </article>
       </div>
     </section>
+
+    <section class="study-section" aria-labelledby="study-heading">
+      <div class="group-heading">
+        <div><span class="eyebrow">Actual Element Motion</span><h2 id="study-heading">Ten directions where the image itself comes alive.</h2></div>
+        <p>Each canvas below loops a five-second study immediately. Render a selected direction when you want a WebM comparison file.</p>
+      </div>
+      <div class="study-toolbar">
+        <p>Five Global Network studies plus five Green AIWA studies.</p>
+        <button type="button" id="render-studies">Render all 10 motion studies</button>
+      </div>
+      <div class="study-group">
+        <div class="study-group-heading"><span class="eyebrow">Global Network / Element Motion</span><strong>Lights, routes, nodes, city and products</strong></div>
+        <div id="global-studies" class="study-grid"></div>
+      </div>
+      <div class="study-group green-studies">
+        <div class="study-group-heading"><span class="eyebrow green">Green AIWA / Element Motion</span><strong>Sunlight, leaves, energy, water and air</strong></div>
+        <div id="green-studies" class="study-grid"></div>
+      </div>
+      <div class="status" id="study-status">Loading the ten actual-motion studies...</div>
+    </section>
     <div class="status" id="status">Loading the Global Network and Green AIWA hero images...</div>
   </main>
   <script>
@@ -94,8 +140,12 @@
     const duration = 5000;
     const fps = 30;
     const status = document.querySelector("#status");
+    const studyStatus = document.querySelector("#study-status");
     const renderButton = document.querySelector("#render");
+    const renderStudiesButton = document.querySelector("#render-studies");
     let imagesReady = false;
+    let studiesReady = false;
+    let motionStudies = [];
 
     Promise.all(imageUrls.map(([asset, url]) => new Promise((resolve, reject) => {
       asset.addEventListener("load", resolve, { once: true });
@@ -107,10 +157,16 @@
       drawFrame(document.getElementById("canvas-c"), 0, "drift", imageGreen, true);
       drawFrame(document.getElementById("canvas-d"), 0, "pulse", imageGreen, true);
       imagesReady = true;
-      status.textContent = "Ready. Choose Render all four 5-second versions to create the previews.";
+      setupMotionStudies();
+      status.textContent = "Ready. The ten actual-motion studies are now looping below.";
     }).catch(() => {
-      status.textContent = "The hero images could not be loaded. Check the local preview server and try again.";
+      status.textContent = "The hero images could not be loaded. Check the preview URL and try again.";
+      studyStatus.textContent = "The motion studies could not start because the hero images failed to load.";
     });
+
+    function clamp(value, min = 0, max = 1) {
+      return Math.max(min, Math.min(max, value));
+    }
 
     function easeInOut(value) {
       return value < .5 ? 2 * value * value : 1 - Math.pow(-2 * value + 2, 2) / 2;
@@ -157,13 +213,245 @@
       }
     }
 
-    function recorderFor(canvas) {
-      const stream = canvas.captureStream(fps);
-      const mime = MediaRecorder.isTypeSupported("video/webm;codecs=vp9") ? "video/webm;codecs=vp9" : "video/webm";
-      const recorder = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 8000000 });
-      const chunks = [];
-      recorder.addEventListener("dataavailable", event => event.data.size && chunks.push(event.data));
-      return { recorder, chunks };
+    function drawStaticCover(ctx, canvas, source) {
+      const sourceRatio = source.width / source.height;
+      const canvasRatio = canvas.width / canvas.height;
+      const baseScale = sourceRatio > canvasRatio ? canvas.height / source.height : canvas.width / source.width;
+      const scale = baseScale * 1.012;
+      const width = source.width * scale;
+      const height = source.height * scale;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(source, (canvas.width - width) / 2, (canvas.height - height) / 2, width, height);
+    }
+
+    function drawGlow(ctx, x, y, radius, color, alpha) {
+      const glow = ctx.createRadialGradient(x, y, 1, x, y, radius);
+      glow.addColorStop(0, color.replace("ALPHA", alpha));
+      glow.addColorStop(.35, color.replace("ALPHA", alpha * .28));
+      glow.addColorStop(1, color.replace("ALPHA", 0));
+      ctx.fillStyle = glow;
+      ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+    }
+
+    function drawNode(ctx, x, y, amount, color = "255, 143, 121") {
+      if (amount <= 0) return;
+      const ring = 5 + amount * 15;
+      drawGlow(ctx, x, y, 46 + amount * 12, `rgba(${color}, ALPHA)`, .24 * amount);
+      ctx.save();
+      ctx.globalAlpha = amount;
+      ctx.strokeStyle = `rgba(${color}, .85)`;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(x, y, ring, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = `rgba(${color}, .95)`;
+      ctx.beginPath();
+      ctx.arc(x, y, 4 + amount * 2, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawRoute(ctx, from, to, amount, color = "255, 143, 121", offset = 0) {
+      if (amount <= 0) return;
+      const x = from[0] + (to[0] - from[0]) * amount;
+      const y = from[1] + (to[1] - from[1]) * amount;
+      ctx.save();
+      ctx.globalAlpha = .28;
+      ctx.strokeStyle = `rgba(${color}, .8)`;
+      ctx.lineWidth = 2;
+      ctx.setLineDash([14, 13]);
+      ctx.lineDashOffset = -offset;
+      ctx.beginPath();
+      ctx.moveTo(from[0], from[1]);
+      ctx.quadraticCurveTo((from[0] + to[0]) / 2, Math.min(from[1], to[1]) - 50, x, y);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      drawGlow(ctx, x, y, 28, `rgba(${color}, ALPHA)`, .2);
+      ctx.fillStyle = `rgba(${color}, .95)`;
+      ctx.beginPath();
+      ctx.arc(x, y, 3.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawWindow(ctx, x, y, w, h, amount, warm = "255, 183, 120") {
+      ctx.save();
+      ctx.fillStyle = `rgba(65, 74, 79, ${.42 * (1 - amount)})`;
+      ctx.fillRect(x, y, w, h);
+      ctx.fillStyle = `rgba(${warm}, ${.82 * amount})`;
+      ctx.fillRect(x + 1, y + 1, w - 2, h - 2);
+      if (amount > .2) drawGlow(ctx, x + w / 2, y + h / 2, Math.max(w, h) * 2.4, `rgba(${warm}, ALPHA)`, .055 * amount);
+      ctx.restore();
+    }
+
+    function drawLeaf(ctx, x, y, size, angle, amount, color = "75, 137, 82") {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(angle);
+      ctx.globalAlpha = amount;
+      ctx.fillStyle = `rgba(${color}, .25)`;
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.bezierCurveTo(size * .55, -size * .8, size * 1.05, -size * .6, size * 1.15, 0);
+      ctx.bezierCurveTo(size * .55, size * .42, size * .2, size * .35, 0, 0);
+      ctx.fill();
+      ctx.strokeStyle = "rgba(255, 255, 255, .7)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(size * .95, -size * .15);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawWave(ctx, x, y, width, amount, color = "97, 174, 163") {
+      ctx.save();
+      ctx.globalAlpha = .38;
+      ctx.strokeStyle = `rgba(${color}, .9)`;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.bezierCurveTo(x + width * .24, y - 16 - amount * 4, x + width * .48, y + 16, x + width, y - amount * 3);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawArc(ctx, x, y, radiusX, radiusY, start, end, amount, color = "94, 172, 113") {
+      ctx.save();
+      ctx.globalAlpha = .26 * amount;
+      ctx.strokeStyle = `rgba(${color}, .9)`;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.ellipse(x, y, radiusX, radiusY, 0, start, end);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawMotionStudy(canvas, progress, mode, source, green) {
+      const ctx = canvas.getContext("2d");
+      drawStaticCover(ctx, canvas, source);
+      const w = canvas.width;
+      const h = canvas.height;
+      const p = easeInOut(progress);
+      const globalNodes = [[.62, .29], [.71, .32], [.79, .26], [.86, .36], [.91, .47], [.76, .50]].map(([x, y]) => [w * x, h * y]);
+
+      if (!green && mode === "global-light-rise") {
+        const light = easeInOut(clamp(progress * 1.25));
+        drawGlow(ctx, w * .78, h * .36, w * .22, "rgba(255, 148, 94, ALPHA)", .18 * light);
+        globalNodes.forEach(([x, y], index) => drawNode(ctx, x, y, clamp((light - index * .12) * 2.1)));
+        [[.12,.48],[.16,.53],[.20,.46],[.24,.57],[.29,.51],[.34,.61]].forEach(([x, y], index) => drawWindow(ctx, w * x, h * y, 13, 19, clamp((light - index * .07) * 1.7)));
+      }
+
+      if (!green && mode === "global-node-cascade") {
+        globalNodes.slice(0, -1).forEach((node, index) => {
+          const next = globalNodes[index + 1];
+          const amount = clamp(progress * (globalNodes.length - 1) - index);
+          drawRoute(ctx, node, next, amount, "255, 143, 121", progress * 70);
+        });
+        globalNodes.forEach(([x, y], index) => drawNode(ctx, x, y, clamp(progress * globalNodes.length - index)));
+      }
+
+      if (!green && mode === "global-city-windows") {
+        const windows = [[.09,.52],[.12,.57],[.16,.51],[.19,.59],[.23,.54],[.27,.60],[.31,.55],[.35,.62],[.39,.57],[.43,.63]];
+        windows.forEach(([x, y], index) => drawWindow(ctx, w * x, h * y, 16, 22, clamp((progress - index * .06) * 1.8)));
+        drawGlow(ctx, w * (.18 + p * .18), h * .56, w * .15, "rgba(255, 189, 122, ALPHA)", .09);
+      }
+
+      if (!green && mode === "global-route-sweep") {
+        const paths = [[globalNodes[0], globalNodes[3]], [globalNodes[1], globalNodes[4]], [globalNodes[2], globalNodes[5]]];
+        paths.forEach(([from, to], index) => drawRoute(ctx, from, to, clamp(progress * 1.35 - index * .14), "255, 126, 102", progress * 90));
+        drawGlow(ctx, w * (.62 + p * .27), h * (.3 + Math.sin(progress * Math.PI) * .08), 58, "rgba(255, 125, 98, ALPHA)", .2);
+      }
+
+      if (!green && mode === "global-product-focus") {
+        const x = w * (.43 + p * .35);
+        const y = h * (.68 - Math.sin(progress * Math.PI) * .055);
+        drawGlow(ctx, x, y, w * .18, "rgba(255, 151, 108, ALPHA)", .15);
+        ctx.save();
+        ctx.globalAlpha = .65 + Math.sin(progress * Math.PI * 2) * .2;
+        ctx.strokeStyle = "rgba(255, 182, 130, .75)";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(x, y, 22 + Math.sin(progress * Math.PI * 2) * 5, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      if (green && mode === "green-sunrise") {
+        const x = -w * .25 + p * w * 1.5;
+        const beam = ctx.createLinearGradient(x, 0, x + w * .32, h);
+        beam.addColorStop(0, "rgba(255, 255, 233, 0)");
+        beam.addColorStop(.5, "rgba(199, 236, 168, .17)");
+        beam.addColorStop(1, "rgba(97, 174, 113, 0)");
+        ctx.fillStyle = beam;
+        ctx.fillRect(0, 0, w, h);
+        drawGlow(ctx, w * (.22 + p * .42), h * .25, w * .18, "rgba(218, 244, 176, ALPHA)", .12);
+        drawLeaf(ctx, w * .78, h * .12, 32, -.35 + Math.sin(progress * Math.PI * 2) * .06, .72);
+      }
+
+      if (green && mode === "green-leaf-breathe") {
+        const sway = Math.sin(progress * Math.PI * 2) * .08;
+        [[.76,.10,28,-.4],[.83,.15,24,.25],[.68,.15,21,-.7],[.21,.16,26,.55]].forEach(([x,y,size,angle], index) => drawLeaf(ctx, w * x, h * y, size, angle + sway * (index % 2 ? -1 : 1), .62));
+        drawGlow(ctx, w * .72, h * .22, w * .16, "rgba(110, 184, 110, ALPHA)", .08 + Math.sin(progress * Math.PI * 2) * .03);
+      }
+
+      if (green && mode === "green-energy-orbit") {
+        const x = w * .66;
+        const y = h * .61;
+        const pulse = .62 + Math.sin(progress * Math.PI * 2) * .16;
+        drawGlow(ctx, x, y, w * .19, "rgba(104, 182, 103, ALPHA)", .16 * pulse);
+        ctx.save();
+        ctx.globalAlpha = .72;
+        ctx.strokeStyle = "rgba(72, 145, 85, .72)";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.ellipse(x, y, w * .13, h * .18, progress * Math.PI * 2, 0, Math.PI * 2);
+        ctx.stroke();
+        const orbitX = x + Math.cos(progress * Math.PI * 2) * w * .13;
+        const orbitY = y + Math.sin(progress * Math.PI * 2) * h * .18;
+        ctx.fillStyle = "rgba(81, 160, 92, .95)";
+        ctx.beginPath();
+        ctx.arc(orbitX, orbitY, 7, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      if (green && mode === "green-water-flow") {
+        const offset = Math.sin(progress * Math.PI * 2) * 9;
+        drawWave(ctx, w * .52, h * .69 + offset, w * .3, progress, "92, 168, 155");
+        drawWave(ctx, w * .55, h * .75 - offset, w * .25, progress, "118, 190, 155");
+        [0, 1, 2].forEach(index => {
+          const drop = (progress + index * .27) % 1;
+          const x = w * (.72 + index * .045);
+          const y = h * (.39 + drop * .29);
+          drawGlow(ctx, x, y, 25, "rgba(110, 187, 177, ALPHA)", .11);
+          ctx.fillStyle = "rgba(97, 174, 163, .74)";
+          ctx.beginPath();
+          ctx.arc(x, y, 4.5, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      }
+
+      if (green && mode === "green-air-cycle") {
+        const x = w * .47;
+        const y = h * .58;
+        drawArc(ctx, x, y, w * .22, h * .14, Math.PI * (1.1 + progress * .25), Math.PI * (1.7 + progress * .25), 1);
+        drawArc(ctx, x, y, w * .28, h * .19, Math.PI * (1.05 + progress * .25), Math.PI * (1.72 + progress * .25), .8);
+        [0,1,2].forEach(index => {
+          const travel = (progress + index / 3) % 1;
+          const px = w * (.18 + travel * .58);
+          const py = h * (.55 + Math.sin(travel * Math.PI * 2) * .08);
+          drawGlow(ctx, px, py, 30, "rgba(112, 190, 128, ALPHA)", .12);
+          ctx.fillStyle = "rgba(91, 164, 105, .8)";
+          ctx.beginPath();
+          ctx.arc(px, py, 4, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      }
+    }
+
+    function drawMotionFrame(canvas, progress, mode, source, green) {
+      drawMotionStudy(canvas, progress, mode, source, green);
     }
 
     function renderVersion(canvas, video, link, mode, source, green) {
@@ -194,10 +482,19 @@
       drawCover(canvas.getContext("2d"), canvas, progress, mode, source, green);
     }
 
+    function recorderFor(canvas) {
+      const stream = canvas.captureStream(fps);
+      const mime = MediaRecorder.isTypeSupported("video/webm;codecs=vp9") ? "video/webm;codecs=vp9" : "video/webm";
+      const recorder = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 8000000 });
+      const chunks = [];
+      recorder.addEventListener("dataavailable", event => event.data.size && chunks.push(event.data));
+      return { recorder, chunks };
+    }
+
     renderButton.addEventListener("click", async () => {
       if (!imagesReady) return;
       renderButton.disabled = true;
-      status.textContent = "Rendering four 5-second previews...";
+      status.textContent = "Rendering the first four 5-second camera versions...";
       const [sizeA, sizeB, sizeC, sizeD] = await Promise.all([
         renderVersion(document.querySelector("#canvas-a"), document.querySelector("#video-a"), document.querySelector("#download-a"), "drift", imageGlobal, false),
         renderVersion(document.querySelector("#canvas-b"), document.querySelector("#video-b"), document.querySelector("#download-b"), "pulse", imageGlobal, false),
@@ -205,7 +502,111 @@
         renderVersion(document.querySelector("#canvas-d"), document.querySelector("#video-d"), document.querySelector("#download-d"), "pulse", imageGreen, true)
       ]);
       renderButton.disabled = false;
-      status.textContent = `Ready. Global 01 ${(sizeA / 1048576).toFixed(1)} MB · Global 02 ${(sizeB / 1048576).toFixed(1)} MB · Green 03 ${(sizeC / 1048576).toFixed(1)} MB · Green 04 ${(sizeD / 1048576).toFixed(1)} MB · each is 5 seconds.`;
+      status.textContent = `Ready. Camera 01 ${(sizeA / 1048576).toFixed(1)} MB · Camera 02 ${(sizeB / 1048576).toFixed(1)} MB · Green 03 ${(sizeC / 1048576).toFixed(1)} MB · Green 04 ${(sizeD / 1048576).toFixed(1)} MB · each is 5 seconds.`;
+    });
+
+    const globalMotionDefinitions = [
+      ["global-light-rise", "G1 / Light Rise", "Exhibition and map lighting wakes from a quiet state into a connected international scene.", "aiwa-global-light-rise-5s.webm"],
+      ["global-node-cascade", "G2 / Node Cascade", "Coral connection points appear in sequence, then settle into one clear network.", "aiwa-global-node-cascade-5s.webm"],
+      ["global-city-windows", "G3 / City Windows", "The skyline moves from calm to active as warm windows gradually come alive.", "aiwa-global-city-windows-5s.webm"],
+      ["global-route-sweep", "G4 / Route Sweep", "A travelling signal moves through the map routes to suggest partner coordination.", "aiwa-global-route-sweep-5s.webm"],
+      ["global-product-focus", "G5 / Product Focus", "A soft exhibition light passes across the product stage and lands on the portfolio.", "aiwa-global-product-focus-5s.webm"]
+    ];
+    const greenMotionDefinitions = [
+      ["green-sunrise", "G1 / Green Sunrise", "A clean daylight sweep moves through the showroom and reveals the sustainable product world.", "aiwa-green-sunrise-5s.webm"],
+      ["green-leaf-breathe", "G2 / Leaf Breathe", "Light movement around the living greenery makes the still showroom feel quietly alive.", "aiwa-green-leaf-breathe-5s.webm"],
+      ["green-energy-orbit", "G3 / Energy Orbit", "A restrained green energy ring forms around the product system and completes one cycle.", "aiwa-green-energy-orbit-5s.webm"],
+      ["green-water-flow", "G4 / Water Flow", "Water signals travel through the scene with a measured rhythm for the water-care story.", "aiwa-green-water-flow-5s.webm"],
+      ["green-air-cycle", "G5 / Air Cycle", "Soft air paths and moving particles communicate cleaner air without covering the products.", "aiwa-green-air-cycle-5s.webm"]
+    ];
+
+    function setupMotionStudies() {
+      if (studiesReady) return;
+      studiesReady = true;
+      motionStudies = [
+        ...createMotionCards(globalMotionDefinitions, document.querySelector("#global-studies"), imageGlobal, false),
+        ...createMotionCards(greenMotionDefinitions, document.querySelector("#green-studies"), imageGreen, true)
+      ];
+      studyStatus.textContent = "Ready. All ten actual-motion previews are looping now. Select Render 5s on any card to create its WebM file.";
+    }
+
+    function createMotionCards(definitions, container, source, green) {
+      return definitions.map(([mode, title, description, filename]) => {
+        const card = document.createElement("article");
+        card.className = "study-card";
+        const safeId = mode.replace(/[^a-z0-9-]/gi, "-");
+        card.innerHTML = `<h3>${title}</h3><p>${description}</p><canvas id="${safeId}-canvas" width="1280" height="720"></canvas><video id="${safeId}-video" controls muted loop playsinline hidden></video><button class="render-study" type="button">Render 5s</button><a class="download" download="${filename}" hidden>Download WebM</a>`;
+        container.append(card);
+        const canvas = card.querySelector("canvas");
+        const video = card.querySelector("video");
+        const renderStudyButton = card.querySelector(".render-study");
+        const link = card.querySelector(".download");
+        const study = { mode, title, canvas, video, renderStudyButton, link, source, green, filename };
+        renderStudyButton.addEventListener("click", async () => {
+          renderStudyButton.disabled = true;
+          renderStudyButton.textContent = "Rendering...";
+          studyStatus.textContent = `${title} is rendering a five-second WebM...`;
+          const size = await renderMotionVersion(study);
+          renderStudyButton.disabled = false;
+          renderStudyButton.textContent = "Render again";
+          renderStudyButton.classList.add("is-ready");
+          studyStatus.textContent = `${title} ready: ${(size / 1048576).toFixed(1)} MB, five seconds. You can play it or download it below.`;
+        });
+        startMotionLoop(study);
+        return study;
+      });
+    }
+
+    function startMotionLoop(study) {
+      const started = performance.now();
+      const tick = now => {
+        const progress = ((now - started) % duration) / duration;
+        drawMotionFrame(study.canvas, progress, study.mode, study.source, study.green);
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+
+    function renderMotionVersion(study) {
+      return new Promise(resolve => {
+        const { recorder, chunks } = recorderFor(study.canvas);
+        const started = performance.now();
+        recorder.addEventListener("stop", () => {
+          const blob = new Blob(chunks, { type: "video/webm" });
+          const url = URL.createObjectURL(blob);
+          study.video.src = url;
+          study.video.hidden = false;
+          study.link.href = url;
+          study.link.hidden = false;
+          resolve(blob.size);
+        }, { once: true });
+        recorder.start();
+        const paint = now => {
+          const progress = Math.min(1, (now - started) / duration);
+          drawMotionFrame(study.canvas, progress, study.mode, study.source, study.green);
+          if (progress < 1) requestAnimationFrame(paint);
+          else setTimeout(() => recorder.stop(), 100);
+        };
+        requestAnimationFrame(paint);
+      });
+    }
+
+    renderStudiesButton.addEventListener("click", async () => {
+      if (!imagesReady || !motionStudies.length) return;
+      renderStudiesButton.disabled = true;
+      const sizes = [];
+      for (const study of motionStudies) {
+        study.renderStudyButton.disabled = true;
+        study.renderStudyButton.textContent = "Rendering...";
+        studyStatus.textContent = `${study.title} is rendering (${sizes.length + 1} of ${motionStudies.length})...`;
+        sizes.push(await renderMotionVersion(study));
+        study.renderStudyButton.disabled = false;
+        study.renderStudyButton.textContent = "Render again";
+        study.renderStudyButton.classList.add("is-ready");
+      }
+      renderStudiesButton.disabled = false;
+      const total = sizes.reduce((sum, size) => sum + size, 0) / 1048576;
+      studyStatus.textContent = `All ten motion studies are ready: ${total.toFixed(1)} MB total, each five seconds. Play or download any card below.`;
     });
   </script>
 </body>
