@@ -5811,6 +5811,7 @@ body[data-language="fr"] .inquiry-select-option {
 .site-header .site-nav .nav-cta:hover,
 .site-header .site-nav .nav-cta:focus-visible {
   color: #9b1c2b;
+  background: var(--warm-gradient-soft);
 }
 
 /* Green AIWA keeps the full header in the same quiet green language as the page. */
@@ -5848,6 +5849,7 @@ body[data-language="fr"] .inquiry-select-option {
 .green-page .site-header .site-nav .nav-cta:focus-visible {
   color: #187b54;
   -webkit-text-fill-color: #187b54;
+  background: rgba(44, 160, 111, 0.1);
 }
 
 /* Keep the homepage video inside the rounded Hero while its scroll transform is active. */
