@@ -5707,6 +5707,24 @@ body[data-language="fr"] .inquiry-select-option {
   }
 }
 
+/* Keep the Our Role advantages inside the opening frame instead of a detached summary panel. */
+.service-page-hero--our-role {
+  margin-bottom: clamp(24px, 3vw, 38px);
+  border-bottom-left-radius: clamp(28px, 5vw, 58px);
+  border-bottom-right-radius: clamp(28px, 5vw, 58px);
+}
+
+.service-page-hero--our-role .role-advantage {
+  width: 100%;
+  margin-top: clamp(28px, 3.2vw, 40px);
+  padding-top: clamp(20px, 2.2vw, 28px);
+  border-top: 1px solid rgba(22, 24, 29, .12);
+}
+
+.service-page-hero--our-role .role-advantage div {
+  min-width: 0;
+}
+
 /* Brand Story uses the same calm editorial opening as Company Service. */
 .history-page .service-page-hero--brand-story {
   background-image:
