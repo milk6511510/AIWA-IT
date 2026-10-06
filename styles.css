@@ -5937,14 +5937,14 @@ body[data-language="fr"] .inquiry-select-option {
 .inquiry-form textarea,
 .inquiry-form .inquiry-select-trigger {
   border-color: rgba(255, 91, 83, 0.44);
-  background: #fff1ec;
+  background: #fff;
   color: #2e2527;
   box-shadow: inset 0 1px 3px rgba(155, 55, 45, 0.035);
 }
 
 .inquiry-form .target-market-input {
   border-color: rgba(255, 91, 83, 0.48);
-  background: #fff1ec;
+  background: #fff;
   color: #2e2527;
 }
 
