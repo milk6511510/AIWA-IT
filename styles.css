@@ -5913,8 +5913,9 @@ body[data-language="fr"] .inquiry-select-option {
   content: "";
   position: absolute;
   inset: 8px;
-  border: 1px solid rgba(255, 143, 121, 0.64);
+  border: 2px solid rgba(255, 158, 137, 0.82);
   border-radius: clamp(20px, calc(5vw - 8px), 50px);
+  box-shadow: 0 0 12px rgba(255, 143, 121, 0.28);
   pointer-events: none;
 }
 
