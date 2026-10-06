@@ -41,6 +41,7 @@
     article p { min-height: 44px; margin: 0 8px 13px; color: rgba(21,23,27,.61); font-size: 14px; line-height: 1.5; }
     .video-shell { position: relative; overflow: hidden; border-radius: 19px; background: #e3e8ec; }
     .clean-logo-shell::after { content: ""; position: absolute; z-index: 1; top: 14%; left: 0; width: 34%; height: 58%; pointer-events: none; background: radial-gradient(ellipse at 18% 50%, rgba(248,252,248,.98) 0%, rgba(248,252,248,.9) 42%, rgba(248,252,248,.44) 72%, rgba(248,252,248,0) 100%); }
+    #green-corrected-grid .clean-logo-shell::after { top: 0; left: 0; width: 100%; height: 46%; background: linear-gradient(180deg, rgba(248,252,248,.98) 0%, rgba(248,252,248,.9) 54%, rgba(248,252,248,0) 100%); }
     .soft-light-shell video { filter: brightness(.8); }
     video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 19px; background: #e3e8ec; object-fit: cover; }
     .footnote { margin: 24px 8px 0; color: rgba(21,23,27,.48); font-size: 12px; line-height: 1.6; }
@@ -74,7 +75,7 @@
       <a href="#ten-second">New 10-second directions</a>
       <a href="#ten-second-v2">02 revision / 6 new directions</a>
       <a href="#ten-second-v3">Corrected AIWA line motion</a>
-      <a class="green" href="#green-corrected">Green AIWA 01 / logo-free preview</a>
+      <a class="green" href="#green-corrected">Green AIWA 02-A / logo-free preview</a>
     </nav>
     <section id="global" class="section" aria-labelledby="global-title">
       <div class="section-head">
@@ -130,11 +131,11 @@
     </section>
     <section id="green-corrected" class="section ten-second-section green-section" aria-labelledby="green-corrected-title">
       <div class="section-head">
-        <div><span class="eyebrow green">Green AIWA / 01</span><h2 id="green-corrected-title">Logo-free background preview.</h2></div>
-        <p>The original Green AIWA 01 motion is shown on its own. The soft mask removes the background logo and text while keeping the fan, sunlight and product composition visible.</p>
+        <div><span class="eyebrow green">Green AIWA / 02-A</span><h2 id="green-corrected-title">Logo-free wall preview.</h2></div>
+        <p>The original 10-second White Fan / Sunlight motion is shown on its own. The soft mask removes the wall logo and text while keeping the fan, sunlight and product composition visible.</p>
       </div>
       <div class="variant-group green-variant-group">
-        <div class="variant-heading"><span class="eyebrow green">Green AIWA</span><h3>Clean background, preserved natural movement.</h3></div>
+        <div class="variant-heading"><span class="eyebrow green">Green AIWA / 02-A</span><h3>White fan, sunlight rhythm, clean wall.</h3></div>
         <div id="green-corrected-grid" class="study-grid"></div>
       </div>
     </section>
@@ -191,11 +192,11 @@
     ];
 
     const correctedGlobalStudies = [
-      ["FIX", "Staged Light-Line Cascade", "The center stays calm while existing routes leave separately at varied speeds, resolving from near to far. This preview is retimed 20% slower and softened 20% in brightness.", "https://pikaso.cdnpk.net/private/production/5644967513/video.mp4?token=exp=1791590400~hmac=7ca892be6116f008001dcb0975ac08e54f2d8f63538a30417f09cab041ee5179"]
+      ["FIX", "Staged Light-Line Cascade", "The original high-quality master is previewed at 80% speed and 80% brightness. Existing routes leave separately at varied speeds, resolving from near to far.", "https://pikaso.cdnpk.net/private/production/5644933100/5680c422-6315-48c2-a6d7-212d0a0c6601-0.mp4?token=exp=1791590400~hmac=5edae3bdc1b9921c8c155dcb4c8a6b8537c152f0e42bb59b64e0ae9d5beb3a8b9"]
     ];
 
     const correctedGreenStudies = [
-      ["01", "Green AIWA / Logo-free Background", "The Green AIWA 01 motion keeps the fan and sunlight movement while the background logo and text are softly removed.", greenStudies[0][3]]
+      ["02-A", "White Fan / Sunlight / Logo-free Wall", "The original 10-second Green AIWA 02-A motion keeps the white fan and sunlight movement while the wall logo and text are softly removed.", revisionGreenStudies[0][3]]
     ];
 
     function renderStudies(target, studies, green, metaLabel = "5 sec / Magnific") {
@@ -212,8 +213,8 @@
     renderStudies(document.querySelector("#slow-green-grid"), slowGreenStudies, true, "10 sec / Magnific");
     renderStudies(document.querySelector("#revision-global-grid"), revisionGlobalStudies, false, "10 sec / Magnific");
     renderStudies(document.querySelector("#revision-green-grid"), revisionGreenStudies, true, "10 sec / Magnific");
-    renderStudies(document.querySelector("#corrected-global-grid"), correctedGlobalStudies, false, "10 sec / Magnific");
-    renderStudies(document.querySelector("#green-corrected-grid"), correctedGreenStudies, true, "Green AIWA / preview");
+    renderStudies(document.querySelector("#corrected-global-grid"), correctedGlobalStudies, false, "Original master / 0.8x preview");
+    renderStudies(document.querySelector("#green-corrected-grid"), correctedGreenStudies, true, "02-A / 10 sec / Magnific");
     document.querySelectorAll("video[data-playback-rate]").forEach(video => {
       const rate = Number(video.dataset.playbackRate);
       video.playbackRate = rate;
