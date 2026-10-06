@@ -39,6 +39,8 @@
     .card-type { color: rgba(21,23,27,.46); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
     h3 { margin: 0 8px 7px; font-size: 21px; }
     article p { min-height: 44px; margin: 0 8px 13px; color: rgba(21,23,27,.61); font-size: 14px; line-height: 1.5; }
+    .video-shell { position: relative; overflow: hidden; border-radius: 19px; background: #e3e8ec; }
+    .clean-logo-shell::after { content: ""; position: absolute; z-index: 1; top: 14%; left: 0; width: 34%; height: 58%; pointer-events: none; background: radial-gradient(ellipse at 18% 50%, rgba(248,252,248,.98) 0%, rgba(248,252,248,.9) 42%, rgba(248,252,248,.44) 72%, rgba(248,252,248,0) 100%); }
     video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 19px; background: #e3e8ec; object-fit: cover; }
     .footnote { margin: 24px 8px 0; color: rgba(21,23,27,.48); font-size: 12px; line-height: 1.6; }
     @media (max-width: 720px) {
@@ -61,7 +63,7 @@
     <header class="hero">
       <div>
         <span class="eyebrow">AIWA Motion Studies</span>
-        <h1>Thirty-two visual directions, generated from the original hero images.</h1>
+        <h1>Thirty-three visual directions, generated from the original hero images.</h1>
       </div>
       <p>The original 5-second studies remain above for comparison. The new direction set below uses six slower 10-second Magnific generations, keeping the AIWA artwork anchored while motion stays calm, precise and suitable for a premium homepage hero.</p>
     </header>
@@ -70,6 +72,7 @@
       <a class="green" href="#green">Green AIWA / 10 studies</a>
       <a href="#ten-second">New 10-second directions</a>
       <a href="#ten-second-v2">02 revision / 6 new directions</a>
+      <a href="#ten-second-v3">Corrected AIWA line motion</a>
     </nav>
     <section id="global" class="section" aria-labelledby="global-title">
       <div class="section-head">
@@ -111,6 +114,16 @@
       <div class="variant-group green-variant-group">
         <div class="variant-heading"><span class="eyebrow green">Green AIWA</span><h3>White fan, preserved sunlight rhythm.</h3></div>
         <div id="revision-green-grid" class="study-grid"></div>
+      </div>
+    </section>
+    <section id="ten-second-v3" class="section ten-second-section revision-section" aria-labelledby="ten-second-v3-title">
+      <div class="section-head">
+        <div><span class="eyebrow">Corrected Motion</span><h2 id="ten-second-v3-title">Lines leave the center one by one.</h2></div>
+        <p>A focused AIWA revision with a static camera, separate route start times, varied line speeds and a quiet finish at the outer nodes.</p>
+      </div>
+      <div class="variant-group">
+        <div class="variant-heading"><span class="eyebrow">AIWA Global Network</span><h3>Staged light-line cascade.</h3></div>
+        <div id="corrected-global-grid" class="study-grid"></div>
       </div>
     </section>
     <p class="footnote">Preview candidates only. The homepage has not been replaced. Select a direction after review and it can then be prepared as the production hero asset.</p>
@@ -165,8 +178,15 @@
       ["02-C", "White Fan / Daylight Rhythm", "White blades, soft natural shadows and the original sunlight fluctuation form a calm Green AIWA study.", "https://pikaso.cdnpk.net/private/production/5644834137/334f4118-1851-49c8-97aa-89cabc5ae53f-0.mp4?token=exp=1791590400~hmac=508eb6ddba9de28a5c3e827b15123c2bf635b1cc7f1bcf13ff536bfdf6f3fd5e"]
     ];
 
+    const correctedGlobalStudies = [
+      ["FIX", "Staged Light-Line Cascade", "The center stays calm while existing routes leave separately at varied speeds, resolving from near to far.", "https://pikaso.cdnpk.net/private/production/5644933100/5680c422-6315-48c2-a6d7-212d0a0c6601-0.mp4?token=exp=1791590400~hmac=5edae3bdc1b9921c8c155dcb4c8a6b8537c152f0e42bb59b64e0ae9d5beb3a8b9"]
+    ];
+
     function renderStudies(target, studies, green, metaLabel = "5 sec / Magnific") {
-      target.innerHTML = studies.map(([number, title, description, source]) => `<article class="${green ? "green-card" : ""}"><div class="card-meta"><span class="card-number">${number}</span><span class="card-type">${metaLabel}</span></div><h3>${title}</h3><p>${description}</p><video controls playsinline preload="metadata" src="${source}"></video></article>`).join("");
+      target.innerHTML = studies.map(([number, title, description, source]) => {
+        const cleanLogo = green && ["01", "G-01", "02-A"].includes(number) && ["green-grid", "slow-green-grid", "revision-green-grid"].includes(target.id);
+        return `<article class="${green ? "green-card" : ""}"><div class="card-meta"><span class="card-number">${number}</span><span class="card-type">${metaLabel}</span></div><h3>${title}</h3><p>${description}</p><div class="video-shell${cleanLogo ? " clean-logo-shell" : ""}"><video controls playsinline preload="metadata" src="${source}"></video></div></article>`;
+      }).join("");
     }
 
     renderStudies(document.querySelector("#global-grid"), globalStudies, false);
@@ -175,6 +195,7 @@
     renderStudies(document.querySelector("#slow-green-grid"), slowGreenStudies, true, "10 sec / Magnific");
     renderStudies(document.querySelector("#revision-global-grid"), revisionGlobalStudies, false, "10 sec / Magnific");
     renderStudies(document.querySelector("#revision-green-grid"), revisionGreenStudies, true, "10 sec / Magnific");
+    renderStudies(document.querySelector("#corrected-global-grid"), correctedGlobalStudies, false, "10 sec / Magnific");
   </script>
 </body>
 </html>
