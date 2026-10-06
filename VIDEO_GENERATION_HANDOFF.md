@@ -52,6 +52,29 @@
 
 ## 已生成紀錄
 
+### Kling 2.6 latest run（2026-10-06）
+
+本次已透過 Magnific 電腦網頁版、帳號 `milk6511510@gmail.com` 完成兩支生成。
+
+#### AIWA Global asynchronous network
+
+- 工具：Magnific 網頁版 `video-generator`
+- 模型：Kling 2.6
+- 規格：1080p、10 秒、16:9、固定鏡頭
+- 消耗：`450 credits`
+- 預覽：https://www.magnific.com/app/creation/3687086206?utm_source=mcp&utm_medium=ai_connector
+- 狀態：已完成；保留既有地圖、產品、Logo 與文字，依序讓近、中、遠距離線條以不同延遲與速度出發，降低線條光亮度而不壓暗整體畫面。
+
+#### Green AIWA 02-A white fan / sunlight
+
+- 工具：Magnific 網頁版 `video-generator`
+- 模型：Kling 2.6
+- 規格：1080p、10 秒、來源比例 2:1（因起始圖比例，網頁版鎖定輸出比例）
+- 消耗：`450 credits`
+- 預覽：https://www.magnific.com/app/creation/3687088296?utm_source=mcp&utm_medium=ai_connector
+- 狀態：已完成；要求自然重建乾淨牆面、移除 Logo／文字、白色風扇慢速轉動與柔和陽光波動。
+- 備註：若後續需要 16:9，應先準備 16:9 的 Green AIWA 起始圖，再重新生成，避免裁切或變形。
+
 ### AIWA Global asynchronous version
 
 - Creation：`u5Pwi3AQLD`
@@ -93,6 +116,9 @@
 
 ## 帳戶狀態與切換提醒
 
+- 本次生成帳戶：`milk6511510@gmail.com`
+- 本次實際消耗：`900 credits`（兩支各 `450 credits`）
+- 生成後帳戶頁面顯示剩餘約 `215.1K credits`
 - 方案：Magnific Premium+
 - 帳戶雖顯示 Unlimited，但目前工作階段回傳 `unlimitedAppliesHere=false`，所以影片仍會扣 credits。
 - 切換帳號後，請先重新檢查帳戶餘額與 MiniMax 2.3 1080p／10 秒成本，再執行兩支生成。
