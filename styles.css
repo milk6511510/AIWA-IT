@@ -6003,6 +6003,7 @@ body[data-language="fr"] .inquiry-select-option {
 /* Global Network follows the same top offset as the independent service pages. */
 .global-hero-image {
   margin-top: 118px;
+  border-radius: clamp(34px, 6vw, 72px);
 }
 
 @media (max-width: 680px) {
