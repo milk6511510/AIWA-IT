@@ -6000,6 +6000,18 @@ body[data-language="fr"] .inquiry-select-option {
   -webkit-text-fill-color: transparent;
 }
 
+/* Global Network follows the same top offset as the independent service pages. */
+.global-hero-image {
+  margin-top: 118px;
+}
+
+@media (max-width: 680px) {
+  .global-hero-image {
+    margin-top: 102px;
+    padding-top: 30px;
+  }
+}
+
 /* Footer information pass: smaller type, lighter framing, vertically centred details. */
 .site-footer {
   align-items: center;
