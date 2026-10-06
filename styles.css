@@ -5898,8 +5898,8 @@ body[data-language="fr"] .inquiry-select-option {
 /* Contact palette v1: light neutral frame with a restrained coral-orange form surface. */
 .inquiry-section {
   background:
-    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.96), transparent 32%),
-    linear-gradient(135deg, #f7f8fa 0%, #eef0f3 100%);
+    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.72), transparent 32%),
+    linear-gradient(135deg, #e9ebee 0%, #d4d8de 100%);
   color: #202329;
   border-color: rgba(255, 255, 255, 0.96);
   box-shadow: 0 24px 70px rgba(43, 50, 64, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.98);
