@@ -6048,3 +6048,21 @@ body[data-language="fr"] .inquiry-select-option {
     line-height: 1.55;
   }
 }
+
+/* Green language control: the active language and its code stay white on green. */
+.green-page .language-current,
+.green-page .language-current:hover,
+.green-page .language-current:focus-visible,
+.green-page .language-switcher.is-open .language-current {
+  background: linear-gradient(135deg, #1f8f62 0%, #6fbe70 58%, #a9d779 100%);
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+}
+
+.green-page .language-button.is-active,
+.green-page .language-button.is-active > span,
+.green-page .language-button.is-active:hover,
+.green-page .language-button.is-active:focus-visible {
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+}
