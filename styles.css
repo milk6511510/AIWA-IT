@@ -5977,3 +5977,74 @@ body[data-language="fr"] .inquiry-select-option {
   color: #fff;
   box-shadow: 0 0 0 3px rgba(255, 91, 83, 0.14), 0 18px 38px rgba(255, 91, 83, 0.2);
 }
+
+/* Footer information pass: smaller type, lighter framing, vertically centred details. */
+.site-footer {
+  align-items: center;
+  gap: clamp(22px, 4vw, 56px);
+  padding: clamp(32px, 4vw, 52px) clamp(20px, 5vw, 64px);
+}
+
+.footer-brand {
+  gap: 8px;
+}
+
+.footer-brand strong {
+  max-width: 390px;
+  font-size: clamp(19px, 2.25vw, 29px);
+  line-height: 1.12;
+}
+
+.footer-brand span {
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.footer-contact {
+  gap: 12px;
+}
+
+.footer-contact div {
+  min-height: 112px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.footer-contact span {
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+
+.footer-contact strong,
+.footer-contact a {
+  font-size: 13px;
+  line-height: 1.48;
+}
+
+.footer-contact a + a {
+  margin-top: 4px;
+}
+
+@media (max-width: 680px) {
+  .site-footer {
+    gap: 24px;
+    padding: 30px 18px 34px;
+  }
+
+  .footer-brand strong {
+    max-width: 320px;
+    font-size: 20px;
+  }
+
+  .footer-contact div {
+    min-height: 98px;
+    padding: 16px 18px;
+  }
+
+  .footer-contact strong,
+  .footer-contact a {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+}
