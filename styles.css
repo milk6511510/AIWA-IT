@@ -5991,6 +5991,15 @@ body[data-language="fr"] .inquiry-select-option {
   box-shadow: 0 0 0 3px rgba(255, 91, 83, 0.14), 0 18px 38px rgba(255, 91, 83, 0.2);
 }
 
+/* Contact Us heading uses the same deep-red to coral gradient as Our Role. */
+.inquiry-section h2 {
+  color: #a8142e;
+  background: linear-gradient(135deg, #a8142e 0%, #d62f3b 48%, #ff8f79 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Footer information pass: smaller type, lighter framing, vertically centred details. */
 .site-footer {
   align-items: center;
