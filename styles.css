@@ -5897,15 +5897,25 @@ body[data-language="fr"] .inquiry-select-option {
 
 /* Contact palette v1: light neutral frame with a restrained coral-orange form surface. */
 .inquiry-section {
+  position: relative;
   background:
     radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.62), transparent 32%),
     linear-gradient(135deg, #cbd0d6 0%, #aeb5be 100%);
   color: #202329;
-  border-color: rgba(255, 143, 121, 0.78);
+  border: 3px solid rgba(255, 143, 121, 0.84);
   box-shadow:
-    0 0 0 3px rgba(255, 143, 121, 0.1),
+    0 0 0 1px rgba(255, 143, 121, 0.18),
     0 24px 70px rgba(43, 50, 64, 0.16),
     inset 0 1px 0 rgba(255, 255, 255, 0.98);
+}
+
+.inquiry-section::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(255, 143, 121, 0.64);
+  border-radius: clamp(20px, calc(5vw - 8px), 50px);
+  pointer-events: none;
 }
 
 .inquiry-section p {
