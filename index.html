@@ -60,8 +60,12 @@
   <main id="top">
     <section class="hero">
       <div class="hero-media" data-hero-slider aria-hidden="true">
-        <img class="hero-slide is-active" src="assets/aiwa-global-network-hero-v3.png" alt="">
-        <img class="hero-slide" src="assets/aiwa-green-hero.png" alt="">
+        <video class="hero-slide is-active" data-hero-video autoplay muted loop playsinline preload="metadata" poster="assets/aiwa-global-network-hero-v3.png" aria-label="AIWA global operations motion background">
+          <source src="assets/videos/aiwa.mp4" type="video/mp4">
+        </video>
+        <video class="hero-slide" data-hero-video autoplay muted loop playsinline preload="auto" poster="assets/aiwa-green-hero.png" aria-label="Green AIWA sustainability motion background">
+          <source src="assets/videos/green-aiwa2.mp4" type="video/mp4">
+        </video>
         <div class="hero-shade"></div>
       </div>
       <a class="hero-green-link" href="green.html" aria-label="Open Green AIWA"></a>
@@ -419,6 +423,6 @@
     </address>
   </footer>
 
-<script src="script.js?v=i18n-v7"></script>
+<script src="script.js?v=hero-video-v1"></script>
 </body>
 </html>

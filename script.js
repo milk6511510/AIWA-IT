@@ -1101,7 +1101,11 @@ function showHeroSlide(index) {
   if (!heroSlides.length) return;
   activeHeroSlide = (index + heroSlides.length) % heroSlides.length;
   heroSlides.forEach((slide, slideIndex) => {
-    slide.classList.toggle("is-active", slideIndex === activeHeroSlide);
+    const isActive = slideIndex === activeHeroSlide;
+    slide.classList.toggle("is-active", isActive);
+    if (isActive && slide instanceof HTMLVideoElement && slide.paused) {
+      slide.play().catch(() => {});
+    }
   });
   heroDots.forEach((dot, dotIndex) => {
     dot.classList.toggle("is-active", dotIndex === activeHeroSlide);
@@ -1115,6 +1119,7 @@ heroNext?.addEventListener("click", () => showHeroSlide(activeHeroSlide + 1));
 heroDots.forEach((dot, dotIndex) => {
   dot.addEventListener("click", () => showHeroSlide(dotIndex));
 });
+showHeroSlide(activeHeroSlide);
 
 const service3dVisual = document.querySelector("[data-service-3d]");
 
