@@ -681,8 +681,132 @@ const frenchTranslations = {
   "View Catalog": "Voir le catalogue",
   "No matching files found.": "Aucun fichier correspondant",
   "Address": "Adresse",
-  "Contact": "Contact"
+  "Contact": "Contact",
+  "Mini LED Series": "Série Mini LED"
 };
+
+// Approved website copy overrides from the 2026-10-14 launch draft.
+// Keep the legacy keys above for archived/demo sections, while the live pages
+// use this aligned business vocabulary across every supported language.
+Object.assign(translations, {
+  "Partnership Services": "合作服務",
+  "Our Role": "我們的角色",
+  "One brand standard. Multiple markets. Taiwan-led operations.": "一套品牌標準，服務多元市場，由台灣統籌。",
+  "AIWA Electronics International Co., Ltd. manages brand licensing, partner collaboration, manufacturing resource coordination, and product review and approval across AIWA markets outside Japan and Korea.": "AIWA Electronics International Co., Ltd. 負責日本與韓國以外市場的品牌授權、夥伴合作、製造資源協調，以及產品審查與核准。",
+  "Become an AIWA Partner": "成為 AIWA 合作夥伴",
+  "Explore Our Cooperation Model": "探索合作模式",
+  "Our Role: A Taiwan-based headquarters supporting international cooperation.": "我們的定位：立足台灣、支援國際合作的總部。",
+  "Explore Our Role": "探索我們的角色",
+  "Core Services: An integrated cooperation framework from brand licensing to factory coordination.": "核心服務：從品牌授權到工廠協作，提供整合式合作框架。",
+  "Explore Our Core Services": "探索核心合作服務",
+  "AIWA Electronics International Co., Ltd. gives partners a clear path from market opportunity to product proposal. Local partners bring market insight and commercial leadership, while the Taiwan headquarters coordinates brand licensing, factory collaboration, product direction, and ESG requirements through one operating framework. This model provides a single coordination point, access to suitable manufacturing resources, and clearer review milestones while preserving consistent global brand governance and local market flexibility.": "AIWA Electronics International Co., Ltd. 為合作夥伴打造一條從市場機會到產品提案的清晰路徑。在地夥伴帶來市場洞察與商業主導力；台灣總部則透過單一營運框架，協調品牌授權、工廠協作、產品方向與 ESG 要求。此模式提供單一協調窗口、合適製造資源與清楚審查節點，同時維持全球品牌治理一致與在地市場彈性。",
+  "Local teams lead commercial development with market knowledge.": "在地團隊以市場洞察為基礎，主導商務拓展。",
+  "Brand scope, product direction, and review criteria stay clear and consistent across markets.": "品牌範圍、產品方向與審查標準，在各市場清楚且一致。",
+  "Factory proposals and qualified manufacturing resources are evaluated case by case.": "工廠提案與合格製造資源皆依個案評估。",
+  "Local partners understand their sales channels and market needs. AIWA provides the brand licensing framework, manufacturing coordination options, and final standards control.": "在地夥伴掌握銷售通路與市場需求；AIWA 提供品牌授權架構、製造協調選項與最終標準控管。",
+  "The Taiwan headquarters coordinates international partner onboarding, licensing direction, and category discussions.": "台灣總部統籌國際夥伴導入、授權方向與產品類別討論。",
+  "Partners may propose a suitable factory. AIWA coordinates capability discussions, sample development, and the route toward partner-approved production.": "合作夥伴可提出合適工廠，AIWA 負責協調能力評估、樣品開發與進入夥伴核准量產的流程。",
+  "Regional rights are reviewed according to the target market and partner business capability.": "區域權利將依目標市場與合作夥伴的業務能力進行審查。",
+  "Audio, display and visual products, home electronics, and market-specific proposals.": "音訊、顯示與視覺產品、家用電子，以及因應市場需求提出的方案。",
+  "Factory Partnerships": "工廠夥伴關係",
+  "Factory Partnerships: Flexible collaboration, aligned with AIWA brand standards.": "工廠夥伴關係：彈性協作，遵循 AIWA 品牌標準。",
+  "Authorized partners may recommend suitable manufacturing partners or explore qualified resources coordinated by AIWA. Every proposal is reviewed for product fit, documentation, sample approval, manufacturing capability, and final brand approval.": "授權夥伴可推薦合適的製造夥伴，或評估由 AIWA 協調的合格製造資源。所有合作方案皆依產品適配性、文件完整性、樣品確認、製造能力與最終品牌核准進行審查。",
+  "Speakers, headphones, soundbars, and portable audio.": "喇叭、耳機、Soundbar 與可攜式音訊產品。",
+  "Display & Visual Products": "顯示與視覺產品",
+  "Smart TVs, computer monitors, and visual entertainment equipment.": "智慧電視、電腦螢幕與視覺娛樂設備。",
+  "Home appliances and lifestyle electronics developed for specific market needs.": "針對不同市場需求規劃的家用電器與生活電子產品。",
+  "New Category Proposals": "新類別提案",
+  "Evaluated by market, manufacturing capability, product fit, and applicable standards.": "依市場、製造能力、產品適配性與適用標準評估。",
+  "Product Portfolio: Product categories presented as potential market programs.": "產品組合：以產品類別呈現潛在市場方案。",
+  "Product categories are presented as potential market programs, with selected examples from the AIWA international catalog provided for reference.": "產品類別以潛在市場方案呈現，並選取 AIWA 國際產品目錄中的代表性產品作為參考。",
+  "Browse manuals, catalogues, brand guidelines, and corporate reference files prepared for AIWA partners, market discussions, and product review.": "瀏覽為 AIWA 合作夥伴、市場洽談與產品審查準備的說明書、目錄、品牌規範與企業參考文件。",
+  "Access documents prepared for AIWA partners, market discussions, and product review.": "取得為 AIWA 合作夥伴、市場洽談與產品審查準備的文件。",
+  "AIWA works with international partners and authorized market representatives across regions. This directory helps visitors access country-level AIWA pages and understand the wider global partner network.": "AIWA 與各區域的國際合作夥伴及授權市場代表建立合作網絡。本目錄協助訪客前往各國 AIWA 頁面，了解更完整的全球合作布局。",
+  "Search a country / Browse the global partner network": "搜尋國家 / 瀏覽全球合作網絡",
+  "Start a dedicated partnership conversation.": "開啟專屬合作對話",
+  "We welcome forward-looking partners who are ready to explore new market opportunities. Share your company and business details through the form below, and our team will contact you soon to begin a deeper discussion about brand licensing and market cooperation.": "我們期待與具備市場前瞻性的夥伴攜手合作。請填寫下方表單，提供您的公司與業務資訊，我們的專業團隊將盡快與您聯繫，展開深入的品牌授權與市場合作討論。",
+  "Mini LED Series": "Mini LED 系列"
+});
+
+Object.assign(thaiTranslations, {
+  "Partnership Services": "บริการความร่วมมือกับพันธมิตร",
+  "Our Role": "บทบาทของเรา",
+  "One brand standard. Multiple markets. Taiwan-led operations.": "มาตรฐานแบรนด์เดียว ดูแลหลายตลาด ดำเนินงานโดยไต้หวัน",
+  "AIWA Electronics International Co., Ltd. manages brand licensing, partner collaboration, manufacturing resource coordination, and product review and approval across AIWA markets outside Japan and Korea.": "AIWA Electronics International Co., Ltd. รับผิดชอบการอนุญาตใช้แบรนด์ การประสานงานกับคู่ค้า การประสานทรัพยากรการผลิต ตลอดจนการตรวจสอบและอนุมัติผลิตภัณฑ์สำหรับตลาด AIWA นอกญี่ปุ่นและเกาหลี",
+  "Become an AIWA Partner": "ร่วมเป็นพันธมิตรกับ AIWA",
+  "Explore Our Cooperation Model": "สำรวจรูปแบบความร่วมมือ",
+  "Our Role: A Taiwan-based headquarters supporting international cooperation.": "บทบาทของเรา: สำนักงานใหญ่ในไต้หวันที่สนับสนุนความร่วมมือระหว่างประเทศ",
+  "Explore Our Role": "สำรวจบทบาทของเรา",
+  "Core Services: An integrated cooperation framework from brand licensing to factory coordination.": "บริการหลัก: กรอบความร่วมมือแบบบูรณาการ ตั้งแต่การอนุญาตใช้แบรนด์จนถึงการประสานงานด้านโรงงาน",
+  "Explore Our Core Services": "สำรวจบริการความร่วมมือหลัก",
+  "AIWA Electronics International Co., Ltd. gives partners a clear path from market opportunity to product proposal. Local partners bring market insight and commercial leadership, while the Taiwan headquarters coordinates brand licensing, factory collaboration, product direction, and ESG requirements through one operating framework. This model provides a single coordination point, access to suitable manufacturing resources, and clearer review milestones while preserving consistent global brand governance and local market flexibility.": "AIWA Electronics International Co., Ltd. มอบเส้นทางที่ชัดเจนแก่คู่ค้า ตั้งแต่โอกาสทางการตลาดจนถึงข้อเสนอผลิตภัณฑ์ คู่ค้าในแต่ละตลาดนำความเข้าใจตลาดและความเป็นผู้นำด้านธุรกิจ ขณะที่สำนักงานใหญ่ในไต้หวันประสานการอนุญาตใช้แบรนด์ ความร่วมมือกับโรงงาน ทิศทางผลิตภัณฑ์ และข้อกำหนด ESG ภายใต้กรอบการดำเนินงานเดียวกัน โมเดลนี้มีจุดประสานงานหลักเพียงจุดเดียว เชื่อมต่อทรัพยากรการผลิตที่เหมาะสม กำหนดขั้นตอนการตรวจสอบได้ชัดเจน และรักษาการกำกับดูแลแบรนด์ระดับสากลให้สอดคล้องกัน โดยยังคงความยืดหยุ่นของตลาดท้องถิ่น",
+  "Local teams lead commercial development with market knowledge.": "ทีมท้องถิ่นใช้ความเข้าใจตลาดเป็นพื้นฐานและนำการพัฒนาธุรกิจ",
+  "Brand scope, product direction, and review criteria stay clear and consistent across markets.": "ขอบเขตแบรนด์ ทิศทางผลิตภัณฑ์ และเกณฑ์การตรวจสอบมีความชัดเจนและสอดคล้องกันในทุกตลาด",
+  "Factory proposals and qualified manufacturing resources are evaluated case by case.": "ข้อเสนอจากโรงงานและทรัพยากรการผลิตที่ผ่านการคัดเลือกจะได้รับการประเมินเป็นรายกรณี",
+  "Local partners understand their sales channels and market needs. AIWA provides the brand licensing framework, manufacturing coordination options, and final standards control.": "คู่ค้าในพื้นที่เข้าใจช่องทางจำหน่ายและความต้องการของตลาด ขณะที่ AIWA จัดทำกรอบการอนุญาตใช้แบรนด์ ทางเลือกด้านการประสานงานการผลิต และการควบคุมมาตรฐานขั้นสุดท้าย",
+  "The Taiwan headquarters coordinates international partner onboarding, licensing direction, and category discussions.": "สำนักงานใหญ่ในไต้หวันประสานการเริ่มต้นความร่วมมือกับคู่ค้าระหว่างประเทศ ทิศทางการอนุญาตใช้แบรนด์ และการหารือด้านผลิตภัณฑ์",
+  "Partners may propose a suitable factory. AIWA coordinates capability discussions, sample development, and the route toward partner-approved production.": "คู่ค้าสามารถเสนอโรงงานที่เหมาะสมได้ โดย AIWA ประสานการประเมินศักยภาพ การพัฒนาตัวอย่าง และขั้นตอนสู่การผลิตที่คู่ค้าอนุมัติ",
+  "Regional rights are reviewed according to the target market and partner business capability.": "สิทธิในแต่ละภูมิภาคจะได้รับการพิจารณาตามตลาดเป้าหมายและศักยภาพทางธุรกิจของคู่ค้า",
+  "Audio, display and visual products, home electronics, and market-specific proposals.": "ผลิตภัณฑ์เครื่องเสียง จอภาพและภาพ อุปกรณ์อิเล็กทรอนิกส์ภายในบ้าน และข้อเสนอที่พัฒนาตามตลาด",
+  "Factory Partnerships": "ความร่วมมือกับโรงงาน",
+  "Factory Partnerships: Flexible collaboration, aligned with AIWA brand standards.": "ความร่วมมือกับโรงงาน: การทำงานร่วมกันอย่างยืดหยุ่นภายใต้มาตรฐานแบรนด์ AIWA",
+  "Authorized partners may recommend suitable manufacturing partners or explore qualified resources coordinated by AIWA. Every proposal is reviewed for product fit, documentation, sample approval, manufacturing capability, and final brand approval.": "คู่ค้าที่ได้รับอนุญาตสามารถแนะนำพันธมิตรด้านการผลิตที่เหมาะสม หรือพิจารณาทรัพยากรที่ผ่านการคัดเลือกซึ่ง AIWA ประสานงานให้ ทุกข้อเสนอจะได้รับการตรวจสอบด้านความเหมาะสมของผลิตภัณฑ์ เอกสาร การอนุมัติตัวอย่าง ศักยภาพการผลิต และการอนุมัติแบรนด์ขั้นสุดท้าย",
+  "Speakers, headphones, soundbars, and portable audio.": "ลำโพง หูฟัง ซาวด์บาร์ และเครื่องเสียงแบบพกพา",
+  "Display & Visual Products": "ผลิตภัณฑ์จอภาพและภาพ",
+  "Smart TVs, computer monitors, and visual entertainment equipment.": "สมาร์ททีวี จอคอมพิวเตอร์ และอุปกรณ์ความบันเทิงด้านภาพ",
+  "Home appliances and lifestyle electronics developed for specific market needs.": "เครื่องใช้ไฟฟ้าภายในบ้านและอุปกรณ์อิเล็กทรอนิกส์เพื่อการใช้ชีวิตที่พัฒนาตามความต้องการของแต่ละตลาด",
+  "New Category Proposals": "ข้อเสนอผลิตภัณฑ์ประเภทใหม่",
+  "Evaluated by market, manufacturing capability, product fit, and applicable standards.": "ประเมินจากตลาด ศักยภาพการผลิต ความเหมาะสมของผลิตภัณฑ์ และมาตรฐานที่เกี่ยวข้อง",
+  "Product Portfolio: Product categories presented as potential market programs.": "กลุ่มผลิตภัณฑ์: นำเสนอประเภทผลิตภัณฑ์ในฐานะโครงการตลาดที่มีศักยภาพ",
+  "Product categories are presented as potential market programs, with selected examples from the AIWA international catalog provided for reference.": "นำเสนอประเภทผลิตภัณฑ์ในฐานะโครงการตลาดที่มีศักยภาพ พร้อมตัวอย่างที่คัดเลือกจากแคตตาล็อกผลิตภัณฑ์ AIWA ระหว่างประเทศเพื่อใช้อ้างอิง",
+  "Browse manuals, catalogues, brand guidelines, and corporate reference files prepared for AIWA partners, market discussions, and product review.": "เรียกดูคู่มือ แคตตาล็อก แนวทางการใช้แบรนด์ และเอกสารอ้างอิงองค์กรที่จัดเตรียมสำหรับคู่ค้า AIWA การหารือตลาด และการตรวจสอบผลิตภัณฑ์",
+  "Access documents prepared for AIWA partners, market discussions, and product review.": "เข้าถึงเอกสารที่จัดเตรียมสำหรับคู่ค้า AIWA การหารือตลาด และการตรวจสอบผลิตภัณฑ์",
+  "AIWA works with international partners and authorized market representatives across regions. This directory helps visitors access country-level AIWA pages and understand the wider global partner network.": "AIWA ทำงานร่วมกับคู่ค้าระหว่างประเทศและตัวแทนตลาดที่ได้รับอนุญาตในหลายภูมิภาค ไดเรกทอรีนี้ช่วยให้ผู้เยี่ยมชมเข้าถึงหน้า AIWA ของแต่ละประเทศและเข้าใจเครือข่ายพันธมิตรระดับโลกในภาพรวม",
+  "Search a country / Browse the global partner network": "ค้นหาประเทศ / เรียกดูเครือข่ายพันธมิตรทั่วโลก",
+  "Start a dedicated partnership conversation.": "เริ่มการสนทนาความร่วมมือโดยเฉพาะ",
+  "We welcome forward-looking partners who are ready to explore new market opportunities. Share your company and business details through the form below, and our team will contact you soon to begin a deeper discussion about brand licensing and market cooperation.": "เรายินดีต้อนรับคู่ค้าที่มองการณ์ไกลและพร้อมสำรวจโอกาสทางการตลาดใหม่ โปรดกรอกข้อมูลบริษัทและธุรกิจผ่านแบบฟอร์มด้านล่าง ทีมงานของเราจะติดต่อกลับเพื่อเริ่มหารือเชิงลึกเกี่ยวกับการอนุญาตใช้แบรนด์และความร่วมมือทางการตลาด",
+  "Mini LED Series": "ซีรีส์ Mini LED"
+});
+
+Object.assign(frenchTranslations, {
+  "Partnership Services": "Services de partenariat",
+  "Our Role": "Notre rôle",
+  "One brand standard. Multiple markets. Taiwan-led operations.": "Un standard de marque. Plusieurs marchés. Des opérations pilotées depuis Taïwan.",
+  "AIWA Electronics International Co., Ltd. manages brand licensing, partner collaboration, manufacturing resource coordination, and product review and approval across AIWA markets outside Japan and Korea.": "AIWA Electronics International Co., Ltd. pilote l'autorisation de marque, la collaboration avec les partenaires, la coordination des ressources industrielles ainsi que la revue et l'approbation des produits sur les marchés AIWA hors du Japon et de la Corée.",
+  "Become an AIWA Partner": "Devenir partenaire d'AIWA",
+  "Explore Our Cooperation Model": "Découvrir notre modèle de coopération",
+  "Our Role: A Taiwan-based headquarters supporting international cooperation.": "Notre rôle : un siège basé à Taïwan au service des coopérations internationales",
+  "Explore Our Role": "Découvrir notre rôle",
+  "Core Services: An integrated cooperation framework from brand licensing to factory coordination.": "Services clés : un cadre de coopération intégré, de l'autorisation de marque à la coordination industrielle",
+  "Explore Our Core Services": "Découvrir nos services clés",
+  "AIWA Electronics International Co., Ltd. gives partners a clear path from market opportunity to product proposal. Local partners bring market insight and commercial leadership, while the Taiwan headquarters coordinates brand licensing, factory collaboration, product direction, and ESG requirements through one operating framework. This model provides a single coordination point, access to suitable manufacturing resources, and clearer review milestones while preserving consistent global brand governance and local market flexibility.": "AIWA Electronics International Co., Ltd. offre à ses partenaires un parcours clair, de l'opportunité de marché à la proposition produit. Les partenaires locaux apportent leur connaissance du marché et leur leadership commercial, tandis que le siège de Taïwan coordonne l'autorisation de marque, la coopération industrielle, l'orientation produit et les exigences ESG dans un même cadre opérationnel. Ce modèle offre un point de coordination unique, l'accès à des ressources industrielles adaptées et des étapes de revue plus lisibles, tout en préservant une gouvernance internationale cohérente et la souplesse locale.",
+  "Local teams lead commercial development with market knowledge.": "Les équipes locales conduisent le développement commercial grâce à leur connaissance du marché.",
+  "Brand scope, product direction, and review criteria stay clear and consistent across markets.": "Le périmètre de marque, l'orientation produit et les critères de revue restent clairs et cohérents sur tous les marchés.",
+  "Factory proposals and qualified manufacturing resources are evaluated case by case.": "Les propositions d'usines et les ressources industrielles qualifiées sont évaluées au cas par cas.",
+  "Local partners understand their sales channels and market needs. AIWA provides the brand licensing framework, manufacturing coordination options, and final standards control.": "Les partenaires locaux connaissent leurs canaux de vente et les besoins de leur marché. AIWA fournit le cadre d'autorisation de marque, les options de coordination industrielle et le contrôle final des standards.",
+  "The Taiwan headquarters coordinates international partner onboarding, licensing direction, and category discussions.": "Le siège de Taïwan coordonne l'intégration des partenaires internationaux, l'orientation des licences et les échanges par catégorie.",
+  "Partners may propose a suitable factory. AIWA coordinates capability discussions, sample development, and the route toward partner-approved production.": "Les partenaires peuvent proposer une usine adaptée. AIWA coordonne l'évaluation des capacités, le développement des échantillons et le parcours vers une production validée par le partenaire.",
+  "Regional rights are reviewed according to the target market and partner business capability.": "Les droits régionaux sont étudiés selon le marché cible et les capacités opérationnelles du partenaire.",
+  "Audio, display and visual products, home electronics, and market-specific proposals.": "Produits audio, produits d'affichage et visuels, électronique domestique et propositions adaptées à chaque marché.",
+  "Factory Partnerships": "Partenariats industriels",
+  "Factory Partnerships: Flexible collaboration, aligned with AIWA brand standards.": "Partenariats industriels : une collaboration flexible, alignée sur les standards AIWA.",
+  "Authorized partners may recommend suitable manufacturing partners or explore qualified resources coordinated by AIWA. Every proposal is reviewed for product fit, documentation, sample approval, manufacturing capability, and final brand approval.": "Les partenaires autorisés peuvent recommander des partenaires industriels adaptés ou étudier des ressources qualifiées coordonnées par AIWA. Chaque proposition est évaluée selon l'adéquation produit, la documentation, l'approbation des échantillons, les capacités de production et l'approbation finale de la marque.",
+  "Speakers, headphones, soundbars, and portable audio.": "Enceintes, casques, barres de son et audio nomade.",
+  "Display & Visual Products": "Produits d'affichage et visuels",
+  "Smart TVs, computer monitors, and visual entertainment equipment.": "Téléviseurs intelligents, moniteurs informatiques et équipements de divertissement visuel.",
+  "Home appliances and lifestyle electronics developed for specific market needs.": "Appareils domestiques et électronique du quotidien développés pour les besoins de chaque marché.",
+  "New Category Proposals": "Nouvelles propositions de catégories",
+  "Evaluated by market, manufacturing capability, product fit, and applicable standards.": "Évaluées selon le marché, les capacités de production, l'adéquation produit et les standards applicables.",
+  "Product Portfolio: Product categories presented as potential market programs.": "Portefeuille produits : des catégories présentées comme des programmes de marché potentiels.",
+  "Product categories are presented as potential market programs, with selected examples from the AIWA international catalog provided for reference.": "Les catégories sont présentées comme des programmes de marché potentiels, avec une sélection d'exemples du catalogue international AIWA à titre de référence.",
+  "Browse manuals, catalogues, brand guidelines, and corporate reference files prepared for AIWA partners, market discussions, and product review.": "Consultez les manuels, catalogues, directives de marque et documents de référence préparés pour les partenaires AIWA, les échanges de marché et la revue produit.",
+  "Access documents prepared for AIWA partners, market discussions, and product review.": "Accédez aux documents préparés pour les partenaires AIWA, les échanges de marché et la revue produit.",
+  "AIWA works with international partners and authorized market representatives across regions. This directory helps visitors access country-level AIWA pages and understand the wider global partner network.": "AIWA travaille avec des partenaires internationaux et des représentants de marché agréés dans différentes régions. Cet annuaire permet d'accéder aux pages AIWA par pays et de mieux comprendre le réseau mondial de partenaires.",
+  "Search a country / Browse the global partner network": "Rechercher un pays / Découvrir le réseau mondial de partenaires",
+  "Start a dedicated partnership conversation.": "Engager une conversation dédiée avec nos partenaires",
+  "We welcome forward-looking partners who are ready to explore new market opportunities. Share your company and business details through the form below, and our team will contact you soon to begin a deeper discussion about brand licensing and market cooperation.": "Nous accueillons les partenaires visionnaires prêts à explorer de nouvelles opportunités de marché. Partagez les informations de votre entreprise et de votre activité via le formulaire ci-dessous ; notre équipe vous contactera prochainement pour approfondir les échanges sur l'autorisation de marque et la coopération de marché.",
+  "Mini LED Series": "Série Mini LED"
+});
 
 const localeTranslations = {
   en: {},
@@ -1024,7 +1148,7 @@ function applyLanguage(language) {
       "download.html": "Download Center | AIWA Electronics International Co., Ltd.",
       "brand-story.html": "Brand Story | AIWA Electronics International Co., Ltd.",
       "our-role.html": "Our Role | AIWA Electronics International Co., Ltd.",
-      "company-service.html": "Company Service | AIWA Electronics International Co., Ltd."
+      "company-service.html": "Partnership Services | AIWA Electronics International Co., Ltd."
     },
     "zh-TW": pageTitles,
     th: {
@@ -1036,7 +1160,7 @@ function applyLanguage(language) {
       "download.html": "ศูนย์ดาวน์โหลด | AIWA Electronics International Co., Ltd.",
       "brand-story.html": "เรื่องราวของแบรนด์ | AIWA Electronics International Co., Ltd.",
       "our-role.html": "บทบาทของเรา | AIWA Electronics International Co., Ltd.",
-      "company-service.html": "บริการสำหรับคู่ค้า | AIWA Electronics International Co., Ltd."
+      "company-service.html": "บริการความร่วมมือกับพันธมิตร | AIWA Electronics International Co., Ltd."
     },
     fr: {
       "index.html": "AIWA Electronics International Co., Ltd. | Licences de marque et opérations internationales",
@@ -1047,7 +1171,7 @@ function applyLanguage(language) {
       "download.html": "Centre de téléchargement | AIWA Electronics International Co., Ltd.",
       "brand-story.html": "Histoire de la marque | AIWA Electronics International Co., Ltd.",
       "our-role.html": "Notre rôle | AIWA Electronics International Co., Ltd.",
-      "company-service.html": "Services de coopération | AIWA Electronics International Co., Ltd."
+      "company-service.html": "Services de partenariat | AIWA Electronics International Co., Ltd."
     }
   };
   document.title = localizedTitles[activeLanguage]?.[fileName] || localizedTitles.en["index.html"];
@@ -1494,9 +1618,9 @@ document.querySelectorAll("[data-icon]").forEach((icon) => {
 
 const productData = {
   "TV": {
-    series: ["Mini Led Series", "Quantum Series", "Z Series", "A Series", "I Series"],
+    series: ["Mini LED Series", "Quantum Series", "Z Series", "A Series", "I Series"],
     products: [
-      { type: "Mini Led Series", name: "ZM-GN9U65UHD", image: "assets/products/tv-zm-gn9u65uhd-nobg.png" }
+      { type: "Mini LED Series", name: "ZM-GN9U65UHD", image: "assets/products/tv-zm-gn9u65uhd-nobg.png" }
     ]
   },
   "Monitor": {
