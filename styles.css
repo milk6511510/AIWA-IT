@@ -4248,7 +4248,7 @@ body[data-language="th"] .site-nav {
 @media (max-width: 680px) {
   .site-header {
     inset: 10px 10px auto;
-    grid-template-columns: auto minmax(42px, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
     gap: 8px;
     padding: 8px 10px;
     border-radius: 24px;
@@ -4270,11 +4270,21 @@ body[data-language="th"] .site-nav {
   .site-nav {
     top: 66px;
     right: 10px;
-    left: 10px;
+    left: auto;
+    width: min(320px, calc(100vw - 20px));
     max-height: min(620px, calc(100dvh - 86px));
     padding: 10px;
     border-radius: 24px;
     background: linear-gradient(180deg, rgba(255, 255, 255, .995), rgba(249, 251, 255, .985));
+  }
+
+  .menu-button {
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  .header-language {
+    grid-column: 3;
   }
 
   .site-nav a {
