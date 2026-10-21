@@ -3967,8 +3967,18 @@ body[data-language="th"] .site-nav {
 
 @media (max-width: 1360px) {
   .site-header {
+    grid-template-columns: minmax(0, 1fr) auto auto;
     border-radius: 28px;
     gap: 10px;
+  }
+
+  .menu-button {
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  .header-language {
+    grid-column: 3;
   }
 
   .site-nav {
